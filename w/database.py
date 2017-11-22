@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
-from sqlalchemy import Column, Integer, String, Text, DateTime
+from sqlalchemy import Column, Integer, String, Text, DateTime, Float, Text, ForeignKey, Time, desc
 
 #dummied out for time being
 from . import app
@@ -16,8 +16,6 @@ session = Session()
 import gps, os, time
 import datetime
 from datetime import datetime
-from sqlalchemy import Column, Integer, String, DateTime, Float, ForeignKey, desc
-from sqlalchemy.orm import relationship
 
 class Location(Base):
     __tablename__ = "locations"
@@ -33,6 +31,7 @@ class Fauna(Base):
     
     id = Column 
     name = Column(String)(1024))
+    characteristics() = Column(String)(1024))
     
 class Flora(Base):
     __tablename__ = "flora"
