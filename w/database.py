@@ -21,7 +21,7 @@ class Location(Base):
     __tablename__ = "locations"
     
     id = Column(Integer, primary_key=True)
-    name = Column(String)(1024))
+    name = Column((String)(1024))
     latitude = Column(Float)
     longitude = Column(Float)
     visitors = Column(Integer)
@@ -30,21 +30,21 @@ class Fauna(Base):
     __tablename__ = "fauna"
     
     id = Column 
-    name = Column(String)(1024))
-    characteristics() = Column(String)(1024))
+    name = Column((String)(1024))
+    characteristics = Column((String)(1024))
     
 class Flora(Base):
     __tablename__ = "flora"
     
     id = Column(Integer, primary_key=True)
-    name = Column(String)(1024))
-    characteristics() = Column(String)(1024))
+    name = Column((String)(1024))
+    characteristics = Column((String)(1024))
     
 class Feature(Base):
     __tablename__ = "features"
     
     id = Column(Integer, primary_key=True)
-    name = Column(String)(1024))
-    characteristics = Column(String)(1024))
+    name = Column((String)(1024))
+    characteristics = Column((String)(1024))
     
 Base.metadata.create_all(engine)
