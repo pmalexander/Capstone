@@ -15,6 +15,11 @@ from flask import request, redirect, url_for
 def loc_search():
     return render_template("search.html")
     
+
 @app.route("/checklist", methods=["GET"])
 def checklist_get():
     return render_template("checklist.html")    
+    
+@app.route("/guide", methods=["GET"])
+def guide_get():
+    return render_template("guide.html")   
