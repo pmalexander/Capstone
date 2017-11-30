@@ -4,14 +4,15 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, String, Text, DateTime, Float, Text, ForeignKey, Time, desc
+from flask_login import UserMixin
 
-#dummied out for time being
 from . import app
 
-engine = create_engine(app.config["postgresql://ubuntu:thinkful@localhost:5432/wild"])
-Base = declarative_base()
-Session = sessionmaker(bind=engine)
-session = Session()
+##this shhould come straight from the config file##
+#engine = create_engine(app.config["postgresql://ubuntu:thinkful@localhost:5432/wild"])
+#Base = declarative_base()
+#Session = sessionmaker(bind=engine)
+#session = Session()
 
 import gps, os, time
 import datetime
@@ -32,17 +33,17 @@ class Fauna(Base):
     id = Column 
     name = Column((String)(1024))
     characteristics = Column((String)(1024))
-    
     assoc_fauna = relationship("Location", backref="assoc_fauna")
-    
+    loc_id = Column(Integer, ForeignKey(location.id, nullable=False)
+
 class Flora(Base):
     __tablename__ = "flora"
     
     id = Column(Integer, primary_key=True)
     name = Column((String)(1024))
     characteristics = Column((String)(1024))
-    
     assoc_flora = relationship("Location", backref="assoc_flora")
+    loc_id = Column(Integer, ForeignKey(location.id, nullable=False)
     
 class Feature(Base):
     __tablename__ = "features"
@@ -52,6 +53,14 @@ class Feature(Base):
     characteristics = Column((String)(1024))
     
     assoc_feature = relationship("Location", backref="assoc_feature")
+    
+class User(Base, UserMixin):
+    __tablename__ = "users"
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String(128))
+    email = Column(String(128), unique=True)
+    password = Column(String(128))
     
 #adds national park/reserves to be queried in database, latitude and longitude of location saved
 park_1 = Location()
@@ -87,4 +96,9 @@ feature_stream = "A stream is a body of water[1] with a current, confined within
 session.add(feature_stream)
 session.commit()
 
+feature_valley = Feature()
+feature_valley = "Valley"
+feature_valley = "A valley is..."
+
 Base.metadata.create_all(engine)
+
