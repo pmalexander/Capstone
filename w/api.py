@@ -28,7 +28,12 @@ def loc_search_g():
 @login_required
 def loc_search_p():
     return render_template("search.html")
-
+    
+@app.route("/results,")    
+@login_required
+def results():
+    return render_template("results.html")
+    
 @app.route("/information", methods=["GET"])
 @login_required
 def loc_information():
@@ -41,7 +46,7 @@ def checklist_get():
 
 @app.route("/checklist", methods=["POST"])
 def checklist_entries():
-    return
+    return render_template("checklist.html")
     
 @app.route("/guide", methods=["GET"])
 def guide_get():
