@@ -1,13 +1,12 @@
 import os, gps, time
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
-from w.database import Base
+from .database import Base
 from w import app
 
 from getpass import getpass
 from werkzeug.security import generate_password_hash
-from w.database import User
-from w.database import session
+from .database import session
 
 manager = Manager(app)
 session = gps.gps()
@@ -21,7 +20,6 @@ Session = sessionmaker(bind=engine)
 session = Session()
 Base = declarative_base()
 
-#retains
 class DB(object):
     def __init__(self, metadata):
         self.metadata = metadata

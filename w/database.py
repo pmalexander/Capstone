@@ -6,6 +6,8 @@ from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, String, Text, DateTime, Float, Text, ForeignKey, Time, desc
 from flask_login import UserMixin
 
+import psycopg2
+
 from . import app
 
 ##this shhould come straight from the config file##
@@ -18,11 +20,13 @@ import gps, os, time
 import datetime
 from datetime import datetime
 
+###need to change to streamlined format (all in one line)
 class Location(Base):
     __tablename__ = "locations"
     
     id = Column(Integer, primary_key=True)
     name = Column((String)(1024))
+    region = Column(String)
     latitude = Column(Float)
     longitude = Column(Float)
     visitors = Column(Integer)
@@ -61,10 +65,12 @@ class User(Base, UserMixin):
     name = Column(String(128))
     email = Column(String(128), unique=True)
     password = Column(String(128))
-    
+
+###need to change to streamlined format (all in one line)
 #adds national park/reserves to be queried in database, latitude and longitude of location saved
 park_1 = Location()
 park_1.name = "Blue Ridge Parkway"
+park_1.region = "North Carolina and Virgina, United States"
 latitude = 36.659089
 longitude = -81.077139
 park_1.visitors = "15000"
