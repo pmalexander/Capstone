@@ -1,5 +1,3 @@
-from flask import render_template, jsonify, request
-
 import json
 import os
 
@@ -12,11 +10,11 @@ from flask_login import login_user
 from flask_login import logout_user
 from flask_login import login_required
 from flask_login import login_manager
+from flask_login import current_user
 from werkzeug.security import check_password_hash
-from flask import request, redirect, url_for
+from flask import request, redirect, url_for, render_template, jsonify, request
 
 from .database import User
-from flask_login import current_user
 
 import argparse
 import psycopg2
@@ -30,6 +28,8 @@ db = SQLAlchemy(app)
 #default page, shows up upon activation of the app if user is not already logged in
 @app.route("/")
 def start_page(page=1):
+    if current_user.is_authenticated:
+        return redirect(url_for('search'))
     return render_template("index.html")
     
 @app.route("/login", methods=["GET"])

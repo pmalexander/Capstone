@@ -4,7 +4,7 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = "postgresql://ubuntu:thinkful@localhost:5432/wild"
     DEBUG = True
     TESTING = True
-    SECRET_KEY = 'Thor'
+    SECRET_KEY = 
 
 class ProductionConfig(Config):
     DEBUG = False
