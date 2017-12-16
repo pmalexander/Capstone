@@ -10,7 +10,7 @@ import psycopg2
 
 from . import app
 
-##this shhould come straight from the config file##
+#this shhould come straight from the config file##
 #engine = create_engine(app.config["postgresql://ubuntu:thinkful@localhost:5432/wild"])
 #Base = declarative_base()
 #Session = sessionmaker(bind=engine)
@@ -65,6 +65,13 @@ class User(Base, UserMixin):
     name = Column(String(128))
     email = Column(String(128), unique=True)
     password = Column(String(128))
+    
+class Inventory(Base):
+    __tablename__ = "inventory"
+    
+    id = Column(Integer, primary_key=True)
+    name = Column(String(128))
+    characteristics = Column((String)(1024))
 
 ###need to change to streamlined format (all in one line)
 #adds national park/reserves to be queried in database, latitude and longitude of location saved
