@@ -1,4 +1,5 @@
 import json
+import csv
 import os
 
 from . import app
@@ -49,12 +50,12 @@ def login_p():
 #the search page, allows users to query park/nature reserve locations
 @app.route("/search", methods=["GET"])
 @login_required
-def loc_search(name):
-    connection = psycopg2.connect(database="w")
+def loc_search(name,):
+    connection = psycopg2.connect(database="wild")
     cur = con.cursor(cursor_factory=e.DictCursor)
     cur.execute("select * from Locations where Name ILIKE '%s%'")
     l_rows = cur.fetchall()
- 
+
     if l_rows is not None: 
         print(l_rows)
         l_rows = cur.fetchall()
@@ -68,8 +69,27 @@ l_query = "select id, name, region , ( 3959 * acos( cos( radians( %(latitude)s )
 #shows the locations by name of... location
 @app.route("/search/<name>", methods=["GET"])
 @login_required
-def loc_search_parse_name(name):
+def loc_search_parse_name(name,):
+    connection = psycopg2.connect(database="wild")
+    cur = con.cursor(cursor_factory=e.DictCursor)
+    cur.execute("select * from Locations where Name =%s", (name,))
+    l_rows_parse_name = cur.fetchone()
+    if not l_rows_parse_name:
+        return "Cannot locate entry."
     return render_template("search.html")
+
+    """Retrieve the snippet with a given name. If there is no such snippet, return '404: Snippet Not Found'. Returns the snippet."""
+    #taken from snippets, review this to see how I can parse info from there
+    def get(name,):
+    logging.info("Retrieving snippet {!r}".format(name,))
+    with connection, connection.cursor() as cursor:
+        cursor.execute("select message from snippets where keyword=%s", (name,))
+        fetch_row = cursor.fetchone()
+    if not fetch_row: 
+        # No snippet was found with that name.
+        return "404: Snippet Not Found"
+    return fetch_row[0]
+    #taken from snippets
 
 #displays results of query from search page, ...
 @app.route("/results")    
