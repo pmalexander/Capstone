@@ -17,6 +17,9 @@ from flask import request, redirect, url_for, render_template, jsonify, request
 
 from .database import User
 
+#sets default display of results to 10 per page
+PAGINATE_BY = 10
+
 import argparse
 import psycopg2
 import psycopg2.extras
@@ -67,40 +70,42 @@ l_query = "select id, name, region , ( 3959 * acos( cos( radians( %(latitude)s )
 '''
 
 #shows the locations by name of... location
-@app.route("/search/<name>", methods=["GET"])
+@app.route("/search/<name>", methods=["GET", "POST"])
 @login_required
 def loc_search_parse_name(name,):
     connection = psycopg2.connect(database="wild")
     cur = con.cursor(cursor_factory=e.DictCursor)
     cur.execute("select * from Locations where Name =%s", (name,))
     l_rows_parse_name = cur.fetchone()
-    if not l_rows_parse_name:
-        return "Cannot locate entry."
+    if request.method == 'POST' and form.validate_on_submit():
+        return redirect((url_for('results', query=form.search.data)))
+        if not l_rows_parse_name:
+            return "Cannot locate entry."
     return render_template("search.html")
 
     """Retrieve the snippet with a given name. If there is no such snippet, return '404: Snippet Not Found'. Returns the snippet."""
     #taken from snippets, review this to see how I can parse info from there
-    def get(name,):
-    logging.info("Retrieving snippet {!r}".format(name,))
-    with connection, connection.cursor() as cursor:
-        cursor.execute("select message from snippets where keyword=%s", (name,))
-        fetch_row = cursor.fetchone()
-    if not fetch_row: 
-        # No snippet was found with that name.
-        return "404: Snippet Not Found"
-    return fetch_row[0]
+    #def get(name,):
+    #logging.info("Retrieving snippet {!r}".format(name,))
+    #with connection, connection.cursor() as cursor:
+    #    cursor.execute("select message from snippets where keyword=%s", (name,))
+    #    fetch_row = cursor.fetchone()
+    #if not fetch_row: 
+    #    # No snippet was found with that name.
+    #    return "404: Snippet Not Found"
+    #return fetch_row[0]
     #taken from snippets
 
-#displays results of query from search page, ...
-@app.route("/results")    
+@app.route("/results", methods=["GET"])
 @login_required
-def search_results():
-    return render_template("results.html")
-    
+def search_results(location):
+    l_results = User.
+
 #displays information page comprising of general information, animals, plants, and natural features
 @app.route("/information", methods=["GET"])
 @login_required
 def loc_information():
+    
     return render_template("info.html")
     
 #directs users to checklist page to check off on items
@@ -111,14 +116,23 @@ def checklist_get():
 
 @app.route("/checklist", methods=["POST"])
 @login_required
-def checklist_entries():
+def checklist_entry():
     return render_template("checklist.html")
     
 #routes the user to the guide page (guide page is fixed, planned to be updated as time goes on to encompass multiple pages)
 @app.route("/guide", methods=["GET"])
 @login_required
 def guide_get():
+    start = page_index * PAGINATE_BY
+    end = start + PAGINATE_BY
+
+    total_pages = (count - 1) // PAGINATE_BY + 1
+    has_next = page_index < total_pages - 1
+    has_prev = page_index > 0
     return render_template("guide.html")   
+    
+@app.route("guide/?limit=10")
+@app.route("guide/page/2?limit=10")
 
 @app.route("/sighting", methods=["GET"])
 @login_required
