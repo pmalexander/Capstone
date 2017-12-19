@@ -51,12 +51,12 @@ def login_p():
 
 #can be used as a template for the search process, remember to use the percentage sign to get portions of the text of locations, make sure to make it to the name of the location in the database    
 #the search page, allows users to query park/nature reserve locations
-@app.route("/search", methods=["GET"])
+@app.route("/search", methods=["GET", "POST"])
 @login_required
 def loc_search(name,):
     connection = psycopg2.connect(database="wild")
     cur = con.cursor(cursor_factory=e.DictCursor)
-    cur.execute("select * from Locations where Name ILIKE '%s%'")
+    cur.execute("select * from Locations where Name like '%%'", (name,))
     l_rows = cur.fetchall()
 
     if l_rows is not None: 
@@ -75,7 +75,7 @@ l_query = "select id, name, region , ( 3959 * acos( cos( radians( %(latitude)s )
 def loc_search_parse_name(name,):
     connection = psycopg2.connect(database="wild")
     cur = con.cursor(cursor_factory=e.DictCursor)
-    cur.execute("select * from Locations where Name =%s", (name,))
+    cur.execute("select * from Locations where Name like '%%'", (name,))
     l_rows_parse_name = cur.fetchone()
     if request.method == 'POST' and form.validate_on_submit():
         return redirect((url_for('results', query=form.search.data)))
