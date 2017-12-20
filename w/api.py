@@ -58,11 +58,10 @@ def loc_search(name,):
     cur = con.cursor(cursor_factory=e.DictCursor)
     cur.execute("select * from Locations where Name like '%%'", (name,))
     l_rows = cur.fetchall()
-
-    if l_rows is not None: 
-        print(l_rows)
-        l_rows = cur.fetchall()
-    
+    if request.method == 'POST' and form.validate_on_submit():
+        return redirect((url_for('results', query=form.search.data)))
+        if not l_rows:
+            return "Cannot locate entry"
     return render_template("search.html")
 
 '''use this as locator when querying the the area based on location of latitude and longitudinal radius (also, replace the values)

@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>OutdoorSee!</title>
+        <title>Search</title>
 
         <!-- CSS -->
         <!-- Bootstrap -->
@@ -25,50 +25,16 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     </head>
 
-    <body>
-    <div id="Search" class="tabcontent">
-    <h3>Search</h3>
-    <p>Pick your spot!</p>
-    <button class="tablink" onclick="openSearch('Search', this, 'red')" id="defaultOpen">Search</button>
-    </div>
-
-    <div id="Checklist" class="tabcontent">
-    <h3>Equipment Checklist</h3>
-    <p>Prepare properly!</p>
-    <button class="tablink" onclick="openList('Checklist', this, 'green')">Checklist</button>
-    </div>
-
-    <div id="Guide" class="tabcontent">
-    <h3>Outdoor Guide</h3>
-    <p>Tips to help you out... side!</p>
-    <button class="tablink" onclick="openguide('Guide', this, 'blue')">Guide</button>
-    </div>
-
-    <div>
-    <input type="text" name="search" placeholder="Search..">
-    </div>
-    </body>
-    
+{% extends "base.html" %}
+{% block content %}
+{div class="search"}
+<form>form action=, method=
+<input type = 
+</form>
+{% end block %}    
 </html>
 
-function startup() {
- if ( "geolocation in navigator ) {
- var.geolocation.getcurrenposition(function(position) (js
-<script type="text/javascript">
-    function acquire_coordinates
-    if ( "geolocation" in navigator ) {
-    var coordinates_obj = "";
-    navigator.geolocation.getcurrentposition(function(position) {
-        coordinates_obj = { "latitude": position.coords.latitude, "longitude": position.coords.longitude };
-    });
-    
-    var lat =
-    var lon = coordinates_obj
-    lat.value =
-    lon.value =
-    })
-    
-</script>
+
 
 
 
