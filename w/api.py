@@ -49,6 +49,7 @@ def login_p():
         flash("Sorry, incorrect login information")
         return redirect(url_for("login_g"))
 
+#NEED TO USE SESSION QUERY FOR THE SEARCH FUNCTION 12/19/2017, IF THERE IS A CHANGE HERE, I'D HAVE TO HEAD STRAIGHT TO THE REFERENCED ITEM
 #can be used as a template for the search process, remember to use the percentage sign to get portions of the text of locations, make sure to make it to the name of the location in the database    
 #the search page, allows users to query park/nature reserve locations
 @app.route("/search", methods=["GET", "POST"])
@@ -95,6 +96,7 @@ def loc_search_parse_name(name,):
     #return fetch_row[0]
     #taken from snippets
 
+#populates into Search
 @app.route("/results", methods=["GET"])
 @login_required
 def search_results(location):

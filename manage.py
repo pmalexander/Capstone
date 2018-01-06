@@ -1,15 +1,16 @@
-import os, gps, time
+import os, gpxpy, time
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
-from .database import Base
+from w.database import Base
 from w import app
 
 from getpass import getpass
 from werkzeug.security import generate_password_hash
-from .database import session
+from w.database import session
 
 manager = Manager(app)
-session = gps.gps()
+#look over this, this will be written by the Session() on line 21 below, or rather whatever gps app works nowadays
+#session = gps.gps()
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
