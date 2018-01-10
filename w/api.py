@@ -51,8 +51,9 @@ def login_g():
     pass
 
 #user page with personal effects?
-@app.route("authorized/user/<username>")
-@login_required(username):
+@app.route("/authorized/user/<username>")
+@login_required
+def user_personal(username):
     pass
 
 #NEED TO USE SESSION QUERY FOR THE SEARCH FUNCTION 12/19/2017, IF THERE IS A CHANGE HERE, I'D HAVE TO HEAD STRAIGHT TO THE REFERENCED ITEM
@@ -69,6 +70,7 @@ def loc_search(name,):
         return redirect((url_for('results', query=form.search.data)))
         if not l_rows:
             return "Cannot locate entry"
+    else
     return render_template("search.html")
 
 '''use this as locator when querying the the area based on location of latitude and longitudinal radius (also, replace the values)
