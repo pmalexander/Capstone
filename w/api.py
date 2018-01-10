@@ -35,19 +35,25 @@ def start_page(page=1):
     if current_user.is_authenticated:
         return redirect(url_for('search'))
     return render_template("index.html")
-    
-@app.route("/login", methods=["GET"])
+
+#login page for users
+@app.route("/login", methods=["GET", "POST"])
 def login_g():
-    return render_template("login.html")
-    
-@app.route("/login", methods=["POST"])
-def login_p():
-    email = request.form["email"]
-    password = request.form["password"]
-    user = session.query(User).filter_by(email=email).first()
+    if request.method == "GET":
+        return render_template("login.html")
+    elif request.method == "POST":
+        email = request.form["email"]
+        password = request.form["password"]
+        user = session.query(User).filter_by(email=email).first()
     if not user or not check_password_hash(user.password, password):
         flash("Sorry, incorrect login information")
-        return redirect(url_for("login_g"))
+        return redirect(url_for("login_g"))  
+    pass
+
+#user page with personal effects?
+@app.route("authorized/user/<username>")
+@login_required(username):
+    pass
 
 #NEED TO USE SESSION QUERY FOR THE SEARCH FUNCTION 12/19/2017, IF THERE IS A CHANGE HERE, I'D HAVE TO HEAD STRAIGHT TO THE REFERENCED ITEM
 #can be used as a template for the search process, remember to use the percentage sign to get portions of the text of locations, make sure to make it to the name of the location in the database    
@@ -101,27 +107,28 @@ def loc_search_parse_name(name,):
 @login_required
 def search_results(location):
     l_results = User.
+    return render_template("results.html")
 
 #displays information page comprising of general information, animals, plants, and natural features
-@app.route("/information", methods=["GET"])
+@app.route("/content/information", methods=["GET"])
 @login_required
 def loc_information():
-    
-    return render_template("info.html")
+    l_information = User. 
+    return render_template("information.html")
     
 #directs users to checklist page to check off on items
-@app.route("/checklist", methods=["GET"])
+@app.route("/content/checklist", methods=["GET"])
 @login_required
 def checklist_get():
     return render_template("checklist.html")    
 
-@app.route("/checklist", methods=["POST"])
+@app.route("/content/checklist", methods=["POST"])
 @login_required
 def checklist_entry():
     return render_template("checklist.html")
     
 #routes the user to the guide page (guide page is fixed, planned to be updated as time goes on to encompass multiple pages)
-@app.route("/guide", methods=["GET"])
+@app.route("/content/guide", methods=["GET"])
 @login_required
 def guide_get():
     start = page_index * PAGINATE_BY
@@ -135,7 +142,7 @@ def guide_get():
 @app.route("guide/?limit=10")
 @app.route("guide/page/2?limit=10")
 
-@app.route("/sighting", methods=["GET"])
+@app.route("/content/sighting", methods=["GET"])
 @login_required
 def sightings_g():
     return render_template("sighting.html")
