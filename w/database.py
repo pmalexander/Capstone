@@ -37,11 +37,12 @@ class Location(Base):
     
     # one fauna to many locations, since fauna can be found in many locations
     fauna_id = Column(Integer, ForeignKey("Fauna.id"))
-    # one flora to many locations
+    # one flora to many locations, ditto to above
     flora_id = Column(Integer, ForeignKey("Flora.id"))
     # many landmarks to one location
     features = relationship("Feature", backref="location_features")
-    
+
+# as stated above, fauna is not exclusive to a single location, some places may not have fauna in the same range
 class Fauna(Base):
     __tablename__ = "fauna"
     
@@ -52,6 +53,7 @@ class Fauna(Base):
     assoc_fauna = relationship("Location", backref="assoc_fauna")
     loc_id = Column(Integer, ForeignKey(Location.id, nullable=False))
 
+# same with flora, flora is not exclusive to a single location, some places may not have flora in the same range
 class Flora(Base):
     __tablename__ = "flora"
     
@@ -60,7 +62,8 @@ class Flora(Base):
     characteristics = Column((String)(1024))
     assoc_flora = relationship("Location", backref="assoc_flora")
     loc_id = Column(Integer, ForeignKey(Location.id, nullable=False))
-    
+
+# certain landmarks are endemic to specific sites, many can exist in one site
 class Feature(Base):
     __tablename__ = "features"
     
@@ -72,7 +75,8 @@ class Feature(Base):
     
     # there are multiple UNIQUE landmarks in one location, so this is many to one
     location = Column(Integer, ForeignKey("locations.id"))
-    
+
+# establishes user information parameters
 class User(Base, UserMixin):
     __tablename__ = "users"
 
@@ -80,7 +84,8 @@ class User(Base, UserMixin):
     name = Column(String(128))
     email = Column(String(128), unique=True)
     password = Column(String(128))
-    
+
+# creates parameters for inventory items stored in the database
 class Inventory(Base):
     __tablename__ = "inventory"
     
@@ -91,9 +96,9 @@ class Inventory(Base):
 # creates the database, everything following up is what will be loaded into the database
 Base.metadata.create_all(engine)
 
-###need to change to streamlined format (all in one line)
-#adds national park/reserves to be queried in database, latitude and longitude of location saved
-#region (general) was removed due to complications with latitude and longitude (definitive), lat and long will be used as reference points in relation to others (easier mapping)
+# need to change to streamlined format (all in one line)
+# adds national park/reserves to be queried in database, latitude and longitude of location saved
+# region (general) was removed due to complications with latitude and longitude (definitive), lat and long will be used as reference points in relation to others (easier mapping)
 park_1 = Location()
 park_1.name = "Blue Ridge Parkway"
 park_1.region = "North Carolina and Virgina, United States"
@@ -104,23 +109,44 @@ park_1.visitors = "15000"
 session.add(park_1)
 session.commit()
 
-#adds fauna and provide descriptions of fauna, these can be associated with specific locations
+# adds fauna and provide descriptions of fauna, these can be associated with multiple locations
 fauna_black_bear = Fauna()
 fauna_black_bear.name = "Black Bear"
-fauna_black_bear.description = "They are often found in areas with relatively inaccessible terrain, thick understory vegetation and large quantities of edible material (especially masts). The adaptation to woodlands and thick vegetation in this species may have originally been due to the black bear having evolved alongside larger, more aggressive bear species, such as the extinct short-faced bear and the still living grizzly bear, that monopolized more open habitats and the historic presence of larger predators such as smilodon and the American lion that could have preyed on black bears. Although found in the largest numbers in wild, undisturbed areas and rural regions, black bears can adapt to surviving in some numbers in peri-urban regions as long as they contain easily accessible foods and some vegetative coverage."
+fauna_black_bear.characteristics = "A black bear, not brown, not grey, black."
 
-session.add(black_bear)
+session.add(fauna_black_bear)
 session.commit()
 
-#adds flora and provide descriptions of flora, these can be associated with specific locations
+fauna_mountain_lion = Fauna()
+fauna_mountain_lion.name = "Mountain Lion"
+fauna_mountain_lion.characteristics = "A lion that hails from the mountains, but not always."
+
+session.add(fauna_mountain_lion)
+session.commit()
+
+# adds flora and provide descriptions of flora, these can be associated with multiple locations
 flora_fir_tree = Flora()
 flora_fir_tree.name = "Fir Tree"
-flora_fir_tree.characteristics = "Firs are most closely related to the genus Cedrus (cedar). Douglas firs are not true firs, being of the genus Pseudotsuga. hey are large trees, reaching heights of 10–80 m (33–262 ft) tall and trunk diameters of 0.5–4 m (1 ft 8 in–13 ft 1 in) when mature. Firs can be distinguished from other members of the pine family by the unique attachment of their needle-like leaves and by their different cones."
+flora_fir_tree.characteristics = "Not to be confused with fur."
 
-session.add(black_bear)
+session.add(flora_fir_tree)
 session.commit()
 
-#adds features and provide descriptions of landmarks/features endemic to each location, these can be associated with specific locations (parks)
+flora_oak_tree = Flora()
+flora_oak_tree.name = "Oak Tree"
+flora_oak_tree.characteristics = "Strong wood, sometimes of the professor variety of popular franchises."
+
+session.add(flora_oak_tree)
+session.commit()
+
+flora_pine_tree = Flora()
+flora_pine_tree.name = "Pine Tree"
+flora_pine_tree.characteristics = "Smell good, so good that people keep them in cars."
+
+session.add(flora_pine_tree)
+session.commit()
+
+# adds features and provide descriptions of landmarks/features endemic to each location, these can be associated with specific locations (parks)
 feature_ = Feature()
 feature_.name = ""
 feature_.characteristics = ""

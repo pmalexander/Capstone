@@ -36,13 +36,15 @@ def start_page(page=1):
         return redirect(url_for('search'))
     return render_template("index.html")
     
-#registration page for new users, user must register username using e-mail, registration allows ability to personalize app (save pictures, plans, checklists, etc.)
+#registration page for new users, user must register username using e-mail, registration allows ability to personalize app (save pictures, plans, checklists, etc.), if logged in, bypass this stage
 @app.route("/registration", methods=["GET", "POST"])
 def registration():
     if request.method == "GET":
         return render_template("registration.html")
+    elif request.method == "POST":
+        pass
 
-#login page for users
+#login page for users, bypass if user is previously logged  in
 @app.route("/login", methods=["GET", "POST"])
 def login_g():
     if request.method == "GET":
@@ -65,7 +67,7 @@ def user_personal(username):
 #NEED TO USE SESSION QUERY FOR THE SEARCH FUNCTION 12/19/2017, IF THERE IS A CHANGE HERE, I'D HAVE TO HEAD STRAIGHT TO THE REFERENCED ITEM
 #can be used as a template for the search process, remember to use the percentage sign to get portions of the text of locations, make sure to make it to the name of the location in the database    
 #the search page, allows users to query park/nature reserve locations
-@app.route("/search", methods=["GET", "POST"])
+@app.route("/authorized/user/search", methods=["GET", "POST"])
 @login_required
 def loc_search(name,):
     connection = psycopg2.connect(database="wild")
@@ -83,7 +85,7 @@ l_query = "select id, name, region , ( 3959 * acos( cos( radians( %(latitude)s )
 '''
 
 #shows the locations by name of... location, returns error if there are no matches to the query
-@app.route("/search/<name>", methods=["GET", "POST"])
+@app.route("/authorized/user/search/<name>", methods=["GET", "POST"])
 @login_required
 def loc_search_parse_name(name,):
     connection = psycopg2.connect(database="wild")
@@ -97,33 +99,26 @@ def loc_search_parse_name(name,):
     #has to return the resultl
     return render_template("search.html")
 
-#populates into Search
-@app.route("/results", methods=["GET"])
-@login_required
-def search_results(location):
-    l_results = User.
-    return render_template("results.html")
-
 #displays information page comprising of general information, animals, plants, and natural features
-@app.route("/content/information", methods=["GET"])
+@app.route("/authorized/user/content/information", methods=["GET"])
 @login_required
 def loc_information():
     l_information = User. 
     return render_template("information.html")
     
 #directs users to checklist page to check off on items
-@app.route("/content/checklist", methods=["GET"])
+@app.route("/authorized/user/content/checklist", methods=["GET"])
 @login_required
 def checklist_get():
     return render_template("checklist.html")    
 
-@app.route("/content/checklist", methods=["POST"])
+@app.route("/authorized/user/content/checklist", methods=["POST"])
 @login_required
 def checklist_entry():
     return render_template("checklist.html")
     
 #routes the user to the guide page (guide page is fixed, planned to be updated as time goes on to encompass multiple pages)
-@app.route("/content/guide", methods=["GET"])
+@app.route("/authorized/user/content/guide", methods=["GET"])
 @login_required
 def guide_get():
     start = page_index * PAGINATE_BY
@@ -137,7 +132,7 @@ def guide_get():
 @app.route("guide/?limit=10")
 @app.route("guide/page/2?limit=10")
 
-@app.route("/content/sighting", methods=["GET"])
+@app.route("/authorized/user/content/sighting", methods=["GET"])
 @login_required
 def sightings_g():
     return render_template("sighting.html")
