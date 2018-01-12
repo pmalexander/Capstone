@@ -77,7 +77,7 @@ def loc_search(name,):
 l_query = "select id, name, region , ( 3959 * acos( cos( radians( %(latitude)s ) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians( %(longitude)s ) ) + sin( radians( %(latitude)s ) ) * sin( radians( lat ) ) ) ) AS distance FROM sightings HAVING distance < %(radius)s ORDER BY distance LIMIT %(limit)s" % {"latitude": lat, "longitude": lng, "radius": radius, "limit": lim}, visitors
 '''
 
-#shows the locations by name of... location
+#shows the locations by name of... location, returns error if there are no matches to the query
 @app.route("/search/<name>", methods=["GET", "POST"])
 @login_required
 def loc_search_parse_name(name,):
@@ -87,8 +87,8 @@ def loc_search_parse_name(name,):
     l_rows_parse_name = cur.fetchone()
     if request.method == 'POST' and form.validate_on_submit():
         return redirect((url_for('results', query=form.search.data)))
-        if not l_rows_parse_name:
-            return "Cannot locate entry."
+    if not l_rows_parse_name:
+        return "Cannot locate entry."
     return render_template("search.html")
 
     """Retrieve the snippet with a given name. If there is no such snippet, return '404: Snippet Not Found'. Returns the snippet."""

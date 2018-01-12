@@ -8,5 +8,5 @@ class Search_Query(Form):
 from django import forms
 
 #come back to this, look setup class for search query
-class Location(forms.form):
+class Location_Search(forms.form):
 location_name = forms.
