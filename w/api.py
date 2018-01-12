@@ -35,6 +35,12 @@ def start_page(page=1):
     if current_user.is_authenticated:
         return redirect(url_for('search'))
     return render_template("index.html")
+    
+#registration page for new users, user must register username using e-mail, registration allows ability to personalize app (save pictures, plans, checklists, etc.)
+@app.route("/registration", methods=["GET", "POST"])
+def registration():
+    if request.method == "GET":
+        return render_template("registration.html")
 
 #login page for users
 @app.route("/login", methods=["GET", "POST"])
@@ -70,7 +76,6 @@ def loc_search(name,):
         return redirect((url_for('results', query=form.search.data)))
         if not l_rows:
             return "Cannot locate entry"
-    else
     return render_template("search.html")
 
 '''use this as locator when querying the the area based on location of latitude and longitudinal radius (also, replace the values)
@@ -89,20 +94,8 @@ def loc_search_parse_name(name,):
         return redirect((url_for('results', query=form.search.data)))
     if not l_rows_parse_name:
         return "Cannot locate entry."
+    #has to return the resultl
     return render_template("search.html")
-
-    """Retrieve the snippet with a given name. If there is no such snippet, return '404: Snippet Not Found'. Returns the snippet."""
-    #taken from snippets, review this to see how I can parse info from there
-    #def get(name,):
-    #logging.info("Retrieving snippet {!r}".format(name,))
-    #with connection, connection.cursor() as cursor:
-    #    cursor.execute("select message from snippets where keyword=%s", (name,))
-    #    fetch_row = cursor.fetchone()
-    #if not fetch_row: 
-    #    # No snippet was found with that name.
-    #    return "404: Snippet Not Found"
-    #return fetch_row[0]
-    #taken from snippets
 
 #populates into Search
 @app.route("/results", methods=["GET"])
@@ -148,12 +141,6 @@ def guide_get():
 @login_required
 def sightings_g():
     return render_template("sighting.html")
-
-#registration page for new users, user must register username using e-mail
-@app.route("/registration", methods=["GET", "POST"])
-def registration():
-    if request.method == "GET":
-        return render_template("registration.html")
 
 #provides logged user ability to logout
 @app.route("/logout", methods=["GET"])
