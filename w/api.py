@@ -85,7 +85,7 @@ l_query = "select id, name, region , ( 3959 * acos( cos( radians( %(latitude)s )
 '''
 
 #shows the locations by name of... location, returns error if there are no matches to the query
-@app.route("/authorized/user/search/<name>", methods=["GET", "POST"])
+@app.route("/authorized/user/search/<query>", methods=["GET", "POST"])
 @login_required
 def loc_search_parse_name(name,):
     connection = psycopg2.connect(database="wild")
@@ -104,6 +104,12 @@ def loc_search_parse_name(name,):
 @login_required
 def loc_information():
     l_information = User. 
+    return render_template("information.html")
+    
+@app.route("/authorized/user/content/information/<location_id>", methods=["GET"])
+@login_required
+def loc_information_id():
+    l_information_id = User.
     return render_template("information.html")
     
 #directs users to checklist page to check off on items
