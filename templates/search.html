@@ -25,12 +25,30 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     </head>
 
+<!testing this code out to check out viability>
 {% extends "base.html" %}
 {% block content %}
-{div class="search"}
-<form>form action=, method=
-<input type = 
+<div class="search">
+<form action="/authorized/user/search" method=post>
+    <input type=text name=search value="{{ request.form.search}}"></br>
+    <div class="actions"><input type=submit value="Search"></div>
 </form>
+</div>
+{% for message in get_flashed_messages() %}
+<div class=flash>
+    {{ message }}
+</div>
+{% endfor %}
+{% endblock %}
+
+<!going to reintroduce into main content, testing above code out>
+{% extends "base.html" %}
+{% block content %}
+<div class="search">
+<form action="/authorized/user/search", method=post>
+    <input type=text , name=search, value = 
+</form>
+</div>
 {% end block %}    
 </html>
 
