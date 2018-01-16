@@ -118,148 +118,161 @@ session.commit()
 park_2 = Location()
 park_2.name = "Yellowstone National Park"
 park_2.region = "Wyoming, United States"
-latitude = 	44.427895
+latitude = 44.427895
 longitude = -110.588379
-park_2.visitors = "20000"
+park_2.visitors = "15000"
  
 session.add(park_2)
 session.commit()
 
 park_3 = Location()
-park_3.name = ""
-park_3.region = ", United States"
-latitude = 
-longitude = 
-park_3.visitors = ""
+park_3.name = "Rothrock State Forest"
+park_3.region = "Pennsylvania, United States"
+latitude = 40.720585
+longitude = -77.826965
+park_3.visitors = "15000"
  
 session.add(park_3)
 session.commit()
 
 park_4 = Location()
-park_4.name = ""
-park_4.region = ", United States"
-latitude = 
-longitude = 
-park_4.visitors = ""
+park_4.name = "Zion National Park"
+park_4.region = "Utah, United States"
+latitude = 37.317207
+longitude = -113.022537
+park_4.visitors = "15000"
  
 session.add(park_4)
 session.commit()
 
 park_5 = Location()
-park_5.name = ""
-park_5.region = ", United States"
-latitude = 
-longitude = 
-park_5.visitors = ""
+park_5.name = "Yosemite National Park"
+park_5.region = "California, United States"
+latitude = 37.865101
+longitude = -119.538330
+park_5.visitors = "15000"
  
 session.add(park_5)
 session.commit()
 
 park_6 = Location()
-park_6.name = ""
-park_6.region = ", United States"
-latitude = 
-longitude = 
-park_6.visitors = ""
+park_6.name = "Stanislaus National Forest"
+park_6.region = "California, United States"
+latitude = 38.235195
+longitude = -120.066483
+park_6.visitors = "15000"
  
 session.add(park_6)
 session.commit()
 
 park_7 = Location()
-park_7.name = ""
-park_7.region = ", United States"
-latitude = 
-longitude = 
-park_7.visitors = ""
+park_7.name = "Haleakalā National Park"
+park_7.region = " Hawaii, United States"
+latitude = 20.701283
+longitude = -156.173325
+park_7.visitors = "15000"
  
 session.add(park_7)
 session.commit()
 
 park_8 = Location()
-park_8.name = ""
-park_8.region = ", United States"
-latitude = 
-longitude = 
-park_8.visitors = ""
+park_8.name = "Malibu Creek State Park"
+park_8.region = "California, United States"
+latitude = 34.105156
+longitude = -118.731316
+park_8.visitors = "15000"
  
 session.add(park_8)
 session.commit()
 
 park_9 = Location()
-park_9.name = ""
-park_9.region = ", United States"
-latitude = 
-longitude = 
-park_9.visitors = ""
+park_9.name = "Manti-La Sal National Forest"
+park_9.region = "Utah, United States"
+latitude = 39.187050
+longitude = -111.379890
+park_9.visitors = "15000"
  
 session.add(park_9)
 session.commit()
 
 park_10 = Location()
-park_10.name = ""
-park_10.region = ", United States"
-latitude = 
-longitude = 
-park_10.visitors = ""
+park_10.name = "Cherry Creek State Park"
+park_10.region = "Colorado, United States"
+latitude = 39.639973
+longitude = -104.831863
+park_10.visitors = "15000"
  
 session.add(park_10)
 session.commit()
 
 park_11 = Location()
-park_11.name = ""
-park_11.region = ", United States"
-latitude = 
-longitude = 
-park_11.visitors = ""
+park_11.name = "Kissimmee Prairie Preserve State Park"
+park_11.region = "Florida, United States"
+latitude = 27.612417
+longitude = -81.053383
+park_11.visitors = "15000"
  
 session.add(park_11)
 session.commit()
 
 park_12 = Location()
-park_12.name = ""
-park_12.region = ", United States"
-latitude = 
-longitude = 
-park_12.visitors = ""
+park_12.name = "Garden of Gods"
+park_12.region = "Colorado, United States"
+latitude = 38.873840
+longitude = -104.886665
+park_12.visitors = "15000"
  
 session.add(park_12)
 session.commit()
 
 park_13 = Location()
-park_13.name = ""
-park_13.region = ", United States"
-latitude = 
-longitude = 
-park_13.visitors = ""
+park_13.name = "Petrified Forest National Park"
+park_13.region = "Arizona, United States"
+latitude = 34.909988
+longitude = -109.806793 
+park_13.visitors = "15000"
  
 session.add(park_13)
 session.commit()
 
 park_14 = Location()
-park_14.name = ""
-park_14.region = ", United States"
-latitude = 
-longitude = 
-park_14.visitors = ""
+park_14.name = "Chattahoochee National Forest"
+park_14.region = "Georgia, United States"
+latitude = 34.765972 
+longitude = -84.143517
+park_14.visitors = "15000"
  
 session.add(park_14)
 session.commit()
 
 park_15 = Location()
-park_15.name = ""
-park_15.region = ", United States"
-latitude = 
-longitude = 
-park_15.visitors = ""
+park_15.name = "Fort Berthold Indian Reservation"
+park_15.region = "North Dakota, United States"
+latitude = 47.683880
+longitude = -102.354126 
+park_15.visitors = "15000"
  
 session.add(park_15)
 session.commit()
+
+'''dummied out as a template
+park_ = Location()
+park_.name = ""
+park_.region = ""
+latitude =
+longitude =
+park_.visitors = ""
+ 
+session.add(park_)
+session.commit()
+'''
 
 ##########
 ###FAUNA##
 ##########
 
 # adds fauna and provide descriptions of fauna, these can be associated with multiple locations
+# descriptions are not final, just for flavor and fun at the moment until more accurate descriptors (taxonomy and all that) can be issued in a timely manner
 fauna_black_bear = Fauna()
 fauna_black_bear.name = "Black Bear"
 fauna_black_bear.characteristics = "A black bear, not brown, not grey, black."
@@ -274,11 +287,42 @@ fauna_mountain_lion.characteristics = "A lion that hails from the mountains, but
 session.add(fauna_mountain_lion)
 session.commit()
 
+fauna_deer = Fauna()
+fauna_deer.name = "Deer"
+fauna_deer.characteristics = "Comes in the white-tailed variety along with moose and elk, neat."
+
+session.add(fauna_deer)
+session.commit()
+
+fauna_wild_boar = Fauna()
+fauna_wild_boar.name = "Wild Boar"
+fauna_wild_boar.characteristics = "Two tusks and usually not happy to see you."
+
+session.add(fauna_wild_boar)
+session.commit()
+
+fauna_barn_owl = Fauna()
+fauna_barn_owl.name = "Barn Owl"
+fauna_barn_owl.characteristics = "Subspecies of owl that like hanging out in barns, or flying into them."
+
+session.add(fauna_barn_owl)
+session.commit()
+
+'''dummied out as a template
+fauna_ = Fauna()
+fauna_.name = ""
+fauna_.characteristics = ""
+
+session.add(fauna_)
+session.commit()
+'''
+
 ###########
 ###FLORA###
 ###########
 
 # adds flora and provide descriptions of flora, these can be associated with multiple locations
+# descriptions are not final, just for flavor and fun at the moment until more accurate descriptors (taxonomy and all that) can be issued in a timely manner
 flora_fir_tree = Flora()
 flora_fir_tree.name = "Fir Tree"
 flora_fir_tree.characteristics = "Not to be confused with fur."
@@ -300,11 +344,63 @@ flora_pine_tree.characteristics = "Smell good, so good that people keep them in 
 session.add(flora_pine_tree)
 session.commit()
 
+flora_blueberry = Flora()
+flora_blueberry.name = "Blueberry"
+flora_blueberry.characteristics = "They're more purple than blue."
+
+session.add(flora_blueberry)
+session.commit()
+
+flora_raspberry = Flora()
+flora_raspberry.name = "Raspberry"
+flora_raspberry.characteristics = "Very tasty, even better if you like chewing on a bunch of seeds."
+
+session.add(flora_raspberry)
+session.commit()
+
+flora_corn = Flora()
+flora_corn.name = "Corn"
+flora_corn.characteristics = "Amazing plant, tastes good roasted, baked, boiled, and popped with a healthy helping of butter. Can be pretty colorful too!"
+
+session.add(flora_corn)
+session.commit()
+
+'''dummied out as template
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = ""
+
+session.add(flora_)
+session.commit()
+'''
+
 ##############
 ###FEATURES###
 ##############
 
 # adds features and provide descriptions of landmarks/features endemic to each location, these can be associated with specific locations (parks)
+# descriptions are not final, just for flavor and fun at the moment until more accurate descriptors (taxonomy, attractions, natural formations, historical creations and all that) can be issued in a timely manner
+feature_petrified_wood = Feature()
+feature_petrified_wood.name = "Petrified Wood"
+feature_petrified_wood.characteristics = "Really hard and really old wood endemic, but not exclusive to, the Petrified Forest National Park "
+
+session.add(feature_petrified_wood)
+session.commit()
+
+feature_balanced_rock = Feature()
+feature_balanced_rock.name = "Balanced Rock"
+feature_balanced_rock.characteristics = "A precariously placed (by nature) rock that sits atop another rock in Garden of the Gods, don't sleep underneath it."
+
+session.add(feature_balanced_rock)
+session.commit()
+
+feature_ = Feature()
+feature_.name = ""
+feature_.characteristics = ""
+
+session.add(feature_)
+session.commit()
+
 feature_ = Feature()
 feature_.name = ""
 feature_.characteristics = ""
@@ -318,6 +414,5 @@ feature_.characteristics = ""
 
 session.add(feature_)
 session.commit()
-
 
 
