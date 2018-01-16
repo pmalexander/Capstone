@@ -97,6 +97,12 @@ class Inventory(Base):
 Base.metadata.create_all(engine)
 
 # need to change to streamlined format (all in one line)
+
+################################
+###PARKS/RESERVES/WHATHAVEYOU###
+################################
+
+#all visitor numbers are placeholders, will probably leave out in later version
 # adds national park/reserves to be queried in database, latitude and longitude of location saved
 # region (general) was removed due to complications with latitude and longitude (definitive), lat and long will be used as reference points in relation to others (easier mapping)
 park_1 = Location()
@@ -108,6 +114,150 @@ park_1.visitors = "15000"
  
 session.add(park_1)
 session.commit()
+
+park_2 = Location()
+park_2.name = "Yellowstone National Park"
+park_2.region = "Wyoming, United States"
+latitude = 	44.427895
+longitude = -110.588379
+park_2.visitors = "20000"
+ 
+session.add(park_2)
+session.commit()
+
+park_3 = Location()
+park_3.name = ""
+park_3.region = ", United States"
+latitude = 
+longitude = 
+park_3.visitors = ""
+ 
+session.add(park_3)
+session.commit()
+
+park_4 = Location()
+park_4.name = ""
+park_4.region = ", United States"
+latitude = 
+longitude = 
+park_4.visitors = ""
+ 
+session.add(park_4)
+session.commit()
+
+park_5 = Location()
+park_5.name = ""
+park_5.region = ", United States"
+latitude = 
+longitude = 
+park_5.visitors = ""
+ 
+session.add(park_5)
+session.commit()
+
+park_6 = Location()
+park_6.name = ""
+park_6.region = ", United States"
+latitude = 
+longitude = 
+park_6.visitors = ""
+ 
+session.add(park_6)
+session.commit()
+
+park_7 = Location()
+park_7.name = ""
+park_7.region = ", United States"
+latitude = 
+longitude = 
+park_7.visitors = ""
+ 
+session.add(park_7)
+session.commit()
+
+park_8 = Location()
+park_8.name = ""
+park_8.region = ", United States"
+latitude = 
+longitude = 
+park_8.visitors = ""
+ 
+session.add(park_8)
+session.commit()
+
+park_9 = Location()
+park_9.name = ""
+park_9.region = ", United States"
+latitude = 
+longitude = 
+park_9.visitors = ""
+ 
+session.add(park_9)
+session.commit()
+
+park_10 = Location()
+park_10.name = ""
+park_10.region = ", United States"
+latitude = 
+longitude = 
+park_10.visitors = ""
+ 
+session.add(park_10)
+session.commit()
+
+park_11 = Location()
+park_11.name = ""
+park_11.region = ", United States"
+latitude = 
+longitude = 
+park_11.visitors = ""
+ 
+session.add(park_11)
+session.commit()
+
+park_12 = Location()
+park_12.name = ""
+park_12.region = ", United States"
+latitude = 
+longitude = 
+park_12.visitors = ""
+ 
+session.add(park_12)
+session.commit()
+
+park_13 = Location()
+park_13.name = ""
+park_13.region = ", United States"
+latitude = 
+longitude = 
+park_13.visitors = ""
+ 
+session.add(park_13)
+session.commit()
+
+park_14 = Location()
+park_14.name = ""
+park_14.region = ", United States"
+latitude = 
+longitude = 
+park_14.visitors = ""
+ 
+session.add(park_14)
+session.commit()
+
+park_15 = Location()
+park_15.name = ""
+park_15.region = ", United States"
+latitude = 
+longitude = 
+park_15.visitors = ""
+ 
+session.add(park_15)
+session.commit()
+
+##########
+###FAUNA##
+##########
 
 # adds fauna and provide descriptions of fauna, these can be associated with multiple locations
 fauna_black_bear = Fauna()
@@ -123,6 +273,10 @@ fauna_mountain_lion.characteristics = "A lion that hails from the mountains, but
 
 session.add(fauna_mountain_lion)
 session.commit()
+
+###########
+###FLORA###
+###########
 
 # adds flora and provide descriptions of flora, these can be associated with multiple locations
 flora_fir_tree = Flora()
@@ -145,6 +299,10 @@ flora_pine_tree.characteristics = "Smell good, so good that people keep them in 
 
 session.add(flora_pine_tree)
 session.commit()
+
+##############
+###FEATURES###
+##############
 
 # adds features and provide descriptions of landmarks/features endemic to each location, these can be associated with specific locations (parks)
 feature_ = Feature()
