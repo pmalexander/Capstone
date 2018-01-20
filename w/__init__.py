@@ -8,6 +8,9 @@ app.config.from_object(config_path)
 
 #imports user login
 #imports filters to use in app
-from . import app
+#app dummied out, seems to be causing conflicts
+#from . import app
 from . import filters
 from . import login
+
+

@@ -5,7 +5,6 @@ from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, String, Text, DateTime, Float, Text, ForeignKey, Time, desc
 from flask_login import UserMixin
-from flask import Base
 
 import psycopg2
 
