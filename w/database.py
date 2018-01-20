@@ -12,7 +12,7 @@ from . import app
 
 # engine derived from app.config (config.py info)
 # the data is stored in teh varaible SQLALCHEMY_DATABASE_URI
-engine = create_engine(app.config["Config.SQLALCHEMY_DATABASE_URI"])
+engine = create_engine(app.config["SQLALCHEMY_DATABASE_URI"])
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
 session = Session()
@@ -35,9 +35,9 @@ class Location(Base):
     visitors = Column(Integer)
     
     # one fauna to many locations, since fauna can be found in many locations
-    fauna_id = Column(Integer, ForeignKey("Fauna.id"))
+    fauna_id = Column(Integer, ForeignKey("fauna.id"))
     # one flora to many locations, ditto to above
-    flora_id = Column(Integer, ForeignKey("Flora.id"))
+    flora_id = Column(Integer, ForeignKey("flora.id"))
     # many landmarks to one location
     features = relationship("Feature", backref="location_features")
 
@@ -48,9 +48,8 @@ class Fauna(Base):
     id = Column(Integer, primary_key=True)
     name = Column((String)(1024))
     characteristics = Column((String)(1024))
-    location_fauna = relationship("Location", backref="locations")
-    assoc_fauna = relationship("Location", backref="assoc_fauna")
-    loc_id = Column(Integer, ForeignKey(Location.id, nullable=False))
+   
+    loc_id = Column(Integer, ForeignKey(Location.id), nullable=True)
 
 # same with flora, flora is not exclusive to a single location, some places may not have flora in the same range
 class Flora(Base):
@@ -59,8 +58,8 @@ class Flora(Base):
     id = Column(Integer, primary_key=True)
     name = Column((String)(1024))
     characteristics = Column((String)(1024))
-    assoc_flora = relationship("Location", backref="assoc_flora")
-    loc_id = Column(Integer, ForeignKey(Location.id, nullable=False))
+    
+    loc_id = Column(Integer, ForeignKey(Location.id), nullable=True)
 
 # certain landmarks are endemic to specific sites, many can exist in one site
 class Feature(Base):
@@ -69,11 +68,11 @@ class Feature(Base):
     id = Column(Integer, primary_key=True)
     name = Column((String)(1024))
     characteristics = Column((String)(1024))
-    loc_id = Column(Integer, ForeignKey(Location.id, nullable=False))
-    assoc_feature = relationship("Location", backref="assoc_feature")
+    loc_id = Column(Integer, ForeignKey(Location.id), nullable=True)
+    #assoc_feature = relationship("Location", backref="assoc_feature")
     
     # there are multiple UNIQUE landmarks in one location, so this is many to one
-    location = Column(Integer, ForeignKey("locations.id"))
+    #location = Column(Integer, ForeignKey("locations.id"))
 
 # establishes user information parameters
 class User(Base, UserMixin):
@@ -107,8 +106,8 @@ Base.metadata.create_all(engine)
 park_1 = Location()
 park_1.name = "Blue Ridge Parkway"
 park_1.region = "North Carolina and Virgina, United States"
-latitude = 36.659089
-longitude = -81.077139
+park_1.latitude = 36.659089
+park_1.longitude = -81.077139
 park_1.visitors = "15000"
  
 session.add(park_1)
@@ -117,8 +116,8 @@ session.commit()
 park_2 = Location()
 park_2.name = "Yellowstone National Park"
 park_2.region = "Wyoming, United States"
-latitude = 44.427895
-longitude = -110.588379
+park_2.latitude = 44.427895
+park_2.longitude = -110.588379
 park_2.visitors = "15000"
  
 session.add(park_2)
@@ -127,8 +126,8 @@ session.commit()
 park_3 = Location()
 park_3.name = "Rothrock State Forest"
 park_3.region = "Pennsylvania, United States"
-latitude = 40.720585
-longitude = -77.826965
+park_3.latitude = 40.720585
+park_3.longitude = -77.826965
 park_3.visitors = "15000"
  
 session.add(park_3)
@@ -137,8 +136,8 @@ session.commit()
 park_4 = Location()
 park_4.name = "Zion National Park"
 park_4.region = "Utah, United States"
-latitude = 37.317207
-longitude = -113.022537
+park_4.latitude = 37.317207
+park_4.longitude = -113.022537
 park_4.visitors = "15000"
  
 session.add(park_4)
@@ -147,8 +146,8 @@ session.commit()
 park_5 = Location()
 park_5.name = "Yosemite National Park"
 park_5.region = "California, United States"
-latitude = 37.865101
-longitude = -119.538330
+park_5.latitude = 37.865101
+park_5.longitude = -119.538330
 park_5.visitors = "15000"
  
 session.add(park_5)
@@ -157,18 +156,18 @@ session.commit()
 park_6 = Location()
 park_6.name = "Stanislaus National Forest"
 park_6.region = "California, United States"
-latitude = 38.235195
-longitude = -120.066483
+park_6.latitude = 38.235195
+park_6.longitude = -120.066483
 park_6.visitors = "15000"
  
 session.add(park_6)
 session.commit()
 
 park_7 = Location()
-park_7.name = "Haleakalā National Park"
+park_7.name = "Haleakala National Park"
 park_7.region = " Hawaii, United States"
-latitude = 20.701283
-longitude = -156.173325
+park_7.latitude = 20.701283
+park_7.longitude = -156.173325
 park_7.visitors = "15000"
  
 session.add(park_7)
@@ -177,8 +176,8 @@ session.commit()
 park_8 = Location()
 park_8.name = "Malibu Creek State Park"
 park_8.region = "California, United States"
-latitude = 34.105156
-longitude = -118.731316
+park_8.latitude = 34.105156
+park_8.longitude = -118.731316
 park_8.visitors = "15000"
  
 session.add(park_8)
@@ -187,8 +186,8 @@ session.commit()
 park_9 = Location()
 park_9.name = "Manti-La Sal National Forest"
 park_9.region = "Utah, United States"
-latitude = 39.187050
-longitude = -111.379890
+park_9.latitude = 39.187050
+park_9.longitude = -111.379890
 park_9.visitors = "15000"
  
 session.add(park_9)
@@ -197,8 +196,8 @@ session.commit()
 park_10 = Location()
 park_10.name = "Cherry Creek State Park"
 park_10.region = "Colorado, United States"
-latitude = 39.639973
-longitude = -104.831863
+park_10.latitude = 39.639973
+park_10.longitude = -104.831863
 park_10.visitors = "15000"
  
 session.add(park_10)
@@ -207,8 +206,8 @@ session.commit()
 park_11 = Location()
 park_11.name = "Kissimmee Prairie Preserve State Park"
 park_11.region = "Florida, United States"
-latitude = 27.612417
-longitude = -81.053383
+park_11.latitude = 27.612417
+park_11.longitude = -81.053383
 park_11.visitors = "15000"
  
 session.add(park_11)
@@ -217,8 +216,8 @@ session.commit()
 park_12 = Location()
 park_12.name = "Garden of Gods"
 park_12.region = "Colorado, United States"
-latitude = 38.873840
-longitude = -104.886665
+park_12.latitude = 38.873840
+park_12.longitude = -104.886665
 park_12.visitors = "15000"
  
 session.add(park_12)
@@ -227,8 +226,8 @@ session.commit()
 park_13 = Location()
 park_13.name = "Petrified Forest National Park"
 park_13.region = "Arizona, United States"
-latitude = 34.909988
-longitude = -109.806793 
+park_13.latitude = 34.909988
+park_13.longitude = -109.806793 
 park_13.visitors = "15000"
  
 session.add(park_13)
@@ -237,8 +236,8 @@ session.commit()
 park_14 = Location()
 park_14.name = "Chattahoochee National Forest"
 park_14.region = "Georgia, United States"
-latitude = 34.765972 
-longitude = -84.143517
+park_14.latitude = 34.765972 
+park_14.longitude = -84.143517
 park_14.visitors = "15000"
  
 session.add(park_14)
@@ -247,8 +246,8 @@ session.commit()
 park_15 = Location()
 park_15.name = "Fort Berthold Indian Reservation"
 park_15.region = "North Dakota, United States"
-latitude = 47.683880
-longitude = -102.354126 
+park_15.latitude = 47.683880
+park_15.longitude = -102.354126 
 park_15.visitors = "15000"
  
 session.add(park_15)

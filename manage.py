@@ -1,24 +1,12 @@
-import os, time
+import os
 from flask_script import Manager
-from flask_migrate import Migrate, MigrateCommand
 from w import app
-
-from getpass import getpass
-from werkzeug.security import generate_password_hash
-from w.database import session
+from flask_migrate import Migrate, MigrateCommand
+from w.database import Base
 
 manager = Manager(app)
 #look over this, this will be written by the Session() on line 21 below, or rather whatever gps app works nowadays
 #session = gps.gps()
-
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
-
-engine = create_engine('postgresql://ubuntu:thinkful@localhost:5432/wild')
-Session = sessionmaker(bind=engine)
-session = Session()
-Base = declarative_base()
 
 class DB(object):
     def __init__(self, metadata):
