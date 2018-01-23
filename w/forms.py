@@ -1,12 +1,14 @@
-from wtforms import Form, BooleanField, StringField, PasswordField, validators
+from flask_wtf import FlaskForm
+
+from wtforms import Form, BooleanField, StringField, PasswordField, SubmitField, validators
+from wtforms.validators import DataRequired
+
+class Login_Form(Form):
+    username = StringField('User', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    remember_func = BooleanField('Remember Me')
+    submit = SubmitField('Sign In')
 
 class Search_Query(Form):
     search = StringField('search')
-    submit = Submitfield('Find')
-    
-'''dummied out in favor of wtform, Flask
-from django import forms
-
-#come back to this, look setup class for search query
-class Location_Search(forms.form):
-location_name = forms.
+    submit = SubmitField('Find')

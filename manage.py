@@ -19,6 +19,8 @@ manager.add_command('db', MigrateCommand)
 def run():
     port = int(os.environ.get('PORT', 8080))
     app.run(host='0.0.0.0', port=port)
+    
+from w.database import session
 
 if __name__ == "__main__":
     manager.run()

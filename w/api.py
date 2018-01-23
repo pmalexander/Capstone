@@ -3,19 +3,27 @@ import csv
 import os
 
 from . import app
-from .database import session
+from w.database import session
 
+from .forms import Login_Form
+from .forms import Search_Query
+from .forms import Form
+
+from flask_sqlalchemy import SQLAlchemy
+
+from flask import Flask
 from flask import flash
-from flask import SQLAlchemy
+from flask import request, redirect, url_for, render_template, jsonify, request
+
+from .database import User
+
+from werkzeug.security import check_password_hash
+
 from flask_login import login_user
 from flask_login import logout_user
 from flask_login import login_required
 from flask_login import login_manager
 from flask_login import current_user
-from werkzeug.security import check_password_hash
-from flask import request, redirect, url_for, render_template, jsonify, request
-
-from .database import User
 
 #sets default display of results to 10 per page
 PAGINATE_BY = 10
@@ -71,9 +79,10 @@ def user_personal(username):
 @login_required
 def loc_search(name,):
     connection = psycopg2.connect(database="wild")
-    cur = con.cursor(cursor_factory=e.DictCursor)
+    cur = connection.cursor(cursor_factory=psycopg2.extras.DictCursor)
     cur.execute("select * from Locations where Name like '%%'", (name,))
     l_rows = cur.fetchall()
+    form = Search_Query(request.form)
     if request.method == 'POST' and form.validate_on_submit():
         return redirect((url_for('results', query=form.search.data)))
         if not l_rows:
@@ -89,9 +98,10 @@ l_query = "select id, name, region , ( 3959 * acos( cos( radians( %(latitude)s )
 @login_required
 def loc_search_parse_name(name,):
     connection = psycopg2.connect(database="wild")
-    cur = con.cursor(cursor_factory=e.DictCursor)
+    cur = connection.cursor(cursor_factory=psycopg2.extras.DictCursor)
     cur.execute("select * from Locations where Name like '%%'", (name,))
     l_rows_parse_name = cur.fetchone()
+    form = Search_Query(request.form)
     if request.method == 'POST' and form.validate_on_submit():
         return redirect((url_for('results', query=form.search.data)))
     if not l_rows_parse_name:
@@ -103,13 +113,13 @@ def loc_search_parse_name(name,):
 @app.route("/authorized/user/content/information", methods=["GET"])
 @login_required
 def loc_information():
-    l_information = User. 
+#    l_information = User. 
     return render_template("information.html")
     
 @app.route("/authorized/user/content/information/<location_id>", methods=["GET"])
 @login_required
 def loc_information_id():
-    l_information_id = User.
+#    l_information_id = User.
     return render_template("information.html")
     
 #directs users to checklist page to check off on items
@@ -127,12 +137,6 @@ def checklist_entry():
 @app.route("/authorized/user/content/guide", methods=["GET"])
 @login_required
 def guide_get():
-    start = page_index * PAGINATE_BY
-    end = start + PAGINATE_BY
-
-    total_pages = (count - 1) // PAGINATE_BY + 1
-    has_next = page_index < total_pages - 1
-    has_prev = page_index > 0
     return render_template("guide.html")   
     
 @app.route("guide/?limit=10")
@@ -152,4 +156,4 @@ def user_logout():
     return redirect(url_for("start_page"))
 
 if __name__ == '__main__':
-    
+     main()
