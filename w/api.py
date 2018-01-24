@@ -33,8 +33,6 @@ import psycopg2
 import psycopg2.extras
 
 app = Flask(__name__)
-app.config.from_object(os.environ['APP_SETTINGS'])
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 #default page, shows up upon activation of the app if user is not already logged in
@@ -139,8 +137,8 @@ def checklist_entry():
 def guide_get():
     return render_template("guide.html")   
     
-@app.route("guide/?limit=10")
-@app.route("guide/page/2?limit=10")
+@app.route("/guide/?limit=10")
+@app.route("/guide/page/2?limit=10")
 
 @app.route("/authorized/user/content/sighting", methods=["GET"])
 @login_required
