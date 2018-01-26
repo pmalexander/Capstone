@@ -90,6 +90,11 @@ class Inventory(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(128))
     characteristics = Column((String)(1024))
+    
+class LocationQuery(object):
+    def LocQuery(self, name=None):
+        location = Location.query.filter((Location.self == self) | (Location.name == name)).first()
+        return location.name if hasattr(location, 'name') else None
 
 # creates the database, everything following up is what will be loaded into the database
 Base.metadata.create_all(engine)

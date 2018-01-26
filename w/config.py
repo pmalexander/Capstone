@@ -2,6 +2,8 @@
 
 import os
 
+MAX_SEARCH_RESULTS = 30
+
 #acts as Dev, can't be asked to relabel
 class Config(object):
     SQLALCHEMY_DATABASE_URI = "postgresql://ubuntu:thinkful@localhost:5432/wild"

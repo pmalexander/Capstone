@@ -27,10 +27,11 @@
 
 <!testing this code out to check out viability>
 {% extends "base.html" %}
+
 {% block content %}
 <div class="search">
 <form action="/authorized/user/search" method=post>
-    <input type=text name=search value="{{ request.form.search}}"></br>
+    <input type=text name=search value="{{request.form.search}}"></br>
     <div class="actions"><input type=submit value="Search"></div>
 </form>
 </div>
@@ -46,7 +47,8 @@
 {% block content %}
 <div class="search">
 <form action="/authorized/user/search", method=post>
-    <input type=text , name=search, value = 
+    <input type=text name=search value="{{request.form.search}}"></br> 
+    <div class="actions"><input type=submit value="Search"></div>
 </form>
 </div>
 {% end block %}    

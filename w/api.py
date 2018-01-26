@@ -3,11 +3,7 @@ import csv
 import os
 
 from . import app
-from w.database import session
-
-from .forms import Login_Form
-from .forms import Search_Query
-from .forms import Form
+from w.database import session, Location, Base
 
 from flask_sqlalchemy import SQLAlchemy
 
@@ -25,22 +21,13 @@ from flask_login import login_required
 from flask_login import login_manager
 from flask_login import current_user
 
-#sets default display of results to 10 per page
-PAGINATE_BY = 10
-
-import argparse
-import psycopg2
-import psycopg2.extras
-
-app = Flask(__name__)
-db = SQLAlchemy(app)
-
 #default page, shows up upon activation of the app if user is not already logged in
 @app.route("/")
 def start_page(page=1):
     if current_user.is_authenticated:
         return redirect(url_for('search'))
-    return render_template("index.html")
+    if not current_user:
+        return render_template("login.html")
     
 #registration page for new users, user must register username using e-mail, registration allows ability to personalize app (save pictures, plans, checklists, etc.), if logged in, bypass this stage
 @app.route("/registration", methods=["GET", "POST"])
@@ -76,42 +63,21 @@ def user_personal(username):
 @app.route("/authorized/user/search", methods=["GET", "POST"])
 @login_required
 def loc_search(name,):
-    connection = psycopg2.connect(database="wild")
-    cur = connection.cursor(cursor_factory=psycopg2.extras.DictCursor)
-    cur.execute("select * from Locations where Name like '%%'", (name,))
-    l_rows = cur.fetchall()
-    form = Search_Query(request.form)
-    if request.method == 'POST' and form.validate_on_submit():
-        return redirect((url_for('results', query=form.search.data)))
-        if not l_rows:
-            return "Cannot locate entry"
-    return render_template("search.html")
+    location_str = request.args.get('querystr', None)
+    print(location_str)
+    if location_str is None:
+        return 'Which location would you like to search?'
+    try:
+        location_search = session.query(Location).filter(Location.name.like('%%')).all()
+        return redirect(url_for('results'))
 
-'''use this as locator when querying the the area based on location of latitude and longitudinal radius (also, replace the values)
-l_query = "select id, name, region , ( 3959 * acos( cos( radians( %(latitude)s ) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians( %(longitude)s ) ) + sin( radians( %(latitude)s ) ) * sin( radians( lat ) ) ) ) AS distance FROM sightings HAVING distance < %(radius)s ORDER BY distance LIMIT %(limit)s" % {"latitude": lat, "longitude": lng, "radius": radius, "limit": lim}, visitors
-'''
-
-#shows the locations by name of... location, returns error if there are no matches to the query
-@app.route("/authorized/user/search/<query>", methods=["GET", "POST"])
-@login_required
-def loc_search_parse_name(name,):
-    connection = psycopg2.connect(database="wild")
-    cur = connection.cursor(cursor_factory=psycopg2.extras.DictCursor)
-    cur.execute("select * from Locations where Name like '%%'", (name,))
-    l_rows_parse_name = cur.fetchone()
-    form = Search_Query(request.form)
-    if request.method == 'POST' and form.validate_on_submit():
-        return redirect((url_for('results', query=form.search.data)))
-    if not l_rows_parse_name:
-        return "Cannot locate entry."
-    #has to return the resultl
-    return render_template("search.html")
+#use this as locator when querying the the area based on location of latitude and longitudinal radius (also, replace the values)
+#l_query = "select id, name, region , ( 3959 * acos( cos( radians( %(latitude)s ) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians( %(longitude)s ) ) + sin( radians( %(latitude)s ) ) * sin( radians( lat ) ) ) ) AS distance FROM sightings HAVING distance < %(radius)s ORDER BY distance LIMIT %(limit)s" % {"latitude": lat, "longitude": lng, "radius": radius, "limit": lim}, visitors
 
 #displays information page comprising of general information, animals, plants, and natural features
 @app.route("/authorized/user/content/information", methods=["GET"])
 @login_required
 def loc_information():
-#    l_information = User. 
     return render_template("information.html")
     
 @app.route("/authorized/user/content/information/<location_id>", methods=["GET"])
@@ -151,7 +117,7 @@ def sightings_g():
 def user_logout():
     logout_user()
     flash("You have logged out.")
-    return redirect(url_for("start_page"))
+    return redirect(url_for("index"))
 
 if __name__ == '__main__':
      main()
