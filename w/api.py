@@ -5,7 +5,7 @@ import os
 from . import app
 from w.database import session, Location, Base
 
-from flask_sqlalchemy import SQLAlchemy, SQLAlchemyError
+from flask_sqlalchemy import SQLAlchemy
 
 from flask import Flask
 from flask import flash
@@ -63,15 +63,14 @@ def user_personal(username):
 @app.route("/authorized/user/search", methods=["GET", "POST"])
 @login_required
 def loc_search(name,):
-    location_str = request.args.get('querystr', None)
-    print(location_str)
-    if location_str is None:
-        return 'Which location would you like to search?'
-    try:
-        location_search = session.query(Location).filter(Location.name.like('%%')).all()
-        return redirect(url_for('results'))
-    except SQLAlchemyError as err:
-        return 'Cannot pull location.'
+    location_search = session.query(Location).filter(Location.name.like('%%')).all()
+    return redirect(url_for('results', location_search=location_search))
+
+@app.route("/authorized/user/search_results", methods=["GET", "POST"])
+@login_required
+def loc_sresults(name,):
+    location_search = session.query(Location).filter(Location.name.like('%%')).all()
+    return redirect(url_for('results', location_search=location_search))
 
 #displays information page comprising of general information, animals, plants, and natural features
 @app.route("/authorized/user/content/information", methods=["GET"])
