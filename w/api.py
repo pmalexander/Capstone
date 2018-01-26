@@ -5,7 +5,7 @@ import os
 from . import app
 from w.database import session, Location, Base
 
-from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy, SQLAlchemyError
 
 from flask import Flask
 from flask import flash
@@ -70,9 +70,8 @@ def loc_search(name,):
     try:
         location_search = session.query(Location).filter(Location.name.like('%%')).all()
         return redirect(url_for('results'))
-
-#use this as locator when querying the the area based on location of latitude and longitudinal radius (also, replace the values)
-#l_query = "select id, name, region , ( 3959 * acos( cos( radians( %(latitude)s ) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians( %(longitude)s ) ) + sin( radians( %(latitude)s ) ) * sin( radians( lat ) ) ) ) AS distance FROM sightings HAVING distance < %(radius)s ORDER BY distance LIMIT %(limit)s" % {"latitude": lat, "longitude": lng, "radius": radius, "limit": lim}, visitors
+    except SQLAlchemyError as err:
+        return 'Cannot pull location.'
 
 #displays information page comprising of general information, animals, plants, and natural features
 @app.route("/authorized/user/content/information", methods=["GET"])
