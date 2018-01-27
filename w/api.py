@@ -23,12 +23,10 @@ from flask_login import current_user
 
 #default page, shows up upon activation of the app if user is not already logged in
 @app.route("/")
+@login_required
 def start_page(page=1):
-    if current_user.is_authenticated:
-        return redirect(url_for('search'))
-    if not current_user:
-        return render_template("login.html")
-    
+    return redirect(url_for('search'))
+
 #registration page for new users, user must register username using e-mail, registration allows ability to personalize app (save pictures, plans, checklists, etc.), if logged in, bypass this stage
 @app.route("/registration", methods=["GET", "POST"])
 def registration():
@@ -52,10 +50,10 @@ def login_g():
     pass
 
 #user page with personal effects?
-@app.route("/authorized/user/<username>")
-@login_required
-def user_personal(username):
-    pass
+#@app.route("/authorized/user/<username>")
+#@login_required
+#def user_personal(username):
+#    pass
 
 #NEED TO USE SESSION QUERY FOR THE SEARCH FUNCTION 12/19/2017, IF THERE IS A CHANGE HERE, I'D HAVE TO HEAD STRAIGHT TO THE REFERENCED ITEM
 #can be used as a template for the search process, remember to use the percentage sign to get portions of the text of locations, make sure to make it to the name of the location in the database    
@@ -116,6 +114,3 @@ def user_logout():
     logout_user()
     flash("You have logged out.")
     return redirect(url_for("index"))
-
-if __name__ == '__main__':
-     main()
