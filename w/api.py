@@ -35,8 +35,8 @@ def registration():
     if request.method == "GET":
         return render_template("registration.html")
     elif request.method == "POST":
-        pass
-
+        return render_template("search.html")
+     
 #login page for users, bypass if user is previously logged  in
 @app.route("/login", methods=["GET", "POST"])
 def login_g():
@@ -49,7 +49,8 @@ def login_g():
     if not user or not check_password_hash(user.password, password):
         flash("Sorry, incorrect login information")
         return redirect(url_for("login_g"))  
-    pass
+    login_user(user)
+    return redirect(url_for('search')) 
 
 #user page with personal effects?
 #@app.route("/authorized/user/<username>")
@@ -60,17 +61,19 @@ def login_g():
 #NEED TO USE SESSION QUERY FOR THE SEARCH FUNCTION 12/19/2017, IF THERE IS A CHANGE HERE, I'D HAVE TO HEAD STRAIGHT TO THE REFERENCED ITEM
 #can be used as a template for the search process, remember to use the percentage sign to get portions of the text of locations, make sure to make it to the name of the location in the database    
 #the search page, allows users to query park/nature reserve locations
-@app.route("/authorized/user/search", methods=["GET", "POST"])
+@app.route("/authorized/user/content/search", methods=["GET", "POST"])
 @login_required
 def loc_search(name,):
     location_search = session.query(Location).filter(Location.name.like('%%')).all()
-    return redirect(url_for('results', location_search=location_search))
+    if request.method == "POST":
+        return redirect(url_for('search', location_search=location_search))
+    pass
 
-@app.route("/authorized/user/search_results", methods=["GET", "POST"])
+@app.route("/authorized/user/content/search/<query>", methods=["GET", "POST"])
 @login_required
-def loc_sresults(name,):
+def loc_query(name,):
     location_search = session.query(Location).filter(Location.name.like('%%')).all()
-    return redirect(url_for('results', location_search=location_search))
+    return redirect(url_for('search', location_search=location_search))
 
 #displays information page comprising of general information, animals, plants, and natural features
 @app.route("/authorized/user/content/information", methods=["GET"])

@@ -42,16 +42,6 @@
 {% endfor %}
 {% endblock %}
 
-<!going to reintroduce into main content, testing above code out>
-{% extends "base.html" %}
-{% block content %}
-<div class="search">
-<form action="/authorized/user/search", method=post>
-    <input type=text name=search value="{{request.form.search}}"></br> 
-    <div class="actions"><input type=submit value="Search"></div>
-</form>
-</div>
-{% end block %}    
 </html>
 
 
