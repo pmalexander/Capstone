@@ -24,7 +24,7 @@ from datetime import datetime
 ###need to change to streamlined format (all in one line)
 class Location(Base):
     __tablename__ = "locations"
-
+    
 #ISSUE - REGION IS GENERAL, LAT AND LONG DENOTE SOMETHING SPECIFIC - REMOVED REGION
 #BECAUSE THE LAT AND LONGITUDE ARE PRECISE, THEY CAN MEASURE DISTANCE BETWEEN EACH OTHER,
 #USE LAT AND LONG, THINK OF THIS AS A MAPPING TOOL IN THAT SENSE
@@ -90,6 +90,16 @@ class Inventory(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(128))
     characteristics = Column((String)(1024))
+
+# creates parameters for adding the sightings by users    
+class Sighting(Base):
+    __tablename__ = "sightings"
+    
+    id = Column(Integer, primary_key=True)
+    title = Column(String(1024))
+    content = Column(Text)
+    datetime = Column(DateTime, default=datetime.datetime.now)
+    author_id = Column(Integer, ForeignKey('users.id'))
     
 # creates the database, everything following up is what will be loaded into the database
 Base.metadata.create_all(engine)

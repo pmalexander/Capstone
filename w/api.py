@@ -13,7 +13,7 @@ from flask import Flask
 from flask import flash
 from flask import request, redirect, url_for, render_template, jsonify, request
 
-from .database import User
+from .database import User, Sighting
 
 from werkzeug.security import check_password_hash
 
@@ -103,13 +103,22 @@ def checklist_entry():
 @login_required
 def guide_get():
     return render_template("guide.html")   
-    
-@app.route("/guide/?limit=10")
-@app.route("/guide/page/2?limit=10")
 
+#provides users with means to post sightings to share with others, presence of animals and/or plants in certain locations to update others, etc.    
 @app.route("/authorized/user/content/sighting", methods=["GET"])
 @login_required
 def sightings_g():
+    return render_template("sighting.html")
+
+@app.route("/authorized/user/content/sighting", methods=["GET"])
+@login_required
+def sightings_p():
+    sighting = Sighting(
+        title=request.form["title"],
+        content=request.form["content"],
+    )
+    session.add(sighting)
+    session.commit()
     return render_template("sighting.html")
 
 #provides logged user ability to logout
