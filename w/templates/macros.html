@@ -1,20 +1,20 @@
-{% macro render_entry(entry) %}
+{% macro render_sighting(sighting) %}
 <div class="row">
     <div class="col-md-2 text-right metadata">
         <div>
         <ul class="list-unstyled">
             <li>
-                {{ entry.datetime | dateformat("%d/%m/%y") }}
+                {{ sighting.datetime | dateformat("%d/%m/%y") }}
             </li>
         </ul>
-            {{ entry.author.name }}    
+            {{ sighting.author.name }}    
         </div>
     </div>
     <div class="col-md-10">
         <h1>
-            {{ entry.title }}
+            {{ sighting.title }}
         </h1>
-        {{ entry.content | markdown }}
+        {{ sighting.content | markdown }}
     </div>
 </div>
 {% endmacro %}
