@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<html>
+<div class="container" style="margin-top:20px;">
+	<div class="row">
+    <div class="container-fluid">
+      <div class="col-xs-6">
+        <h3 class="text-center">Equipment Checklist</h3>
+          <div class="well" style="max-height: 300px;overflow: auto;">
+            <ul id="check-list-box" class="list-group checked-list-box">
+              <li class="list-group-item" data-color="success">Water</li>
+              <li class="list-group-item" data-color="success">Rope</li>
+              <li class="list-group-item" data-color="info">Tent</li>
+              <li class="list-group-item" data-color="warning">Sleeping Bag</li>
+              <li class="list-group-item" data-color="danger">Matches</li>
+              <li class="list-group-item" data-color="danger">Tarp</li>
+            </ul>
+          </div>
+          <button class="btn btn-primary col-xs-12" id="get-checked-data">Get Checked Data</button>
+        <!-- <pre id="display-json"></pre> -->
+      </div>
+	  </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="container-fluid">
+    <label for="exampleFormControlTextarea1">Additional Items / Notes</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+</div>
+<button type="submit" class="btn btn-default">Submit</button>
+</form>
+</html>
+{% endblock %}

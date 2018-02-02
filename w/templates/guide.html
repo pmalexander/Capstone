@@ -1,38 +1,39 @@
 {% extends "base.html" %}
 {% block content %}
 <html>
-<section class=guide-section>
-<h1>Helpful Tips</h1>
-<ul>
-    <li>If caught without potable drinking water, a water trap can be used in a pinch if you are unable to find an appropriate water source for hydration, a step-by-step diagram can be found here ((placeholder, link goes here))</li>
-    <li>A bear bag is any container used for the purpose of keeping essentials, primarily food, out of the reach of bears and other wild animals. It requires the use of a line, harness, and tree, a ste-by-step diagram can be found here ((placeholder, link goes here))</li>
-    <li>Moss always faces north, use this as a reference point when making landmarks to find your way.</li>
-    <li>It is always better to have more than enough than not enough. If planning for an extending outing, prepare your inventory for a time period at least twice as long as your expected stay.</li>
-    <li>Always have the means to contact the outside. Spending times in the great outdoors is great, spending it alone and lost isn't.</li>
-</ul>
-<h1>Useful Items</h1>
-    <dl class="dl-horizontal">
-      <dt>Knife</dt>
-      <dd>An important implement in the outdoors used for the preparation of kindling, cutting lines, self-defense weapon, preparing food, and first aid. Can be fashioned into an impromptu spear with the help of an appropriately prepared piece of wood and paracord.</dd>
-      <dt>Matches</dt>
-      <dd>An important tool to provide a source of light and heat. A box of matches or two can provide the means to keep the body warm and food cooked for an extended period of time when used spraingly, before submitting to the use of flint or bow drill to ignite your tinder. Waterproof matches and/or waterproof containers are suggested to avoid possible mishaps with exposure to water or moisture.</dd>
-      <dt>Paracord</dt>
-      <dd>A useful item known for its versatility, it can be utilized as a securing line for tents and tarps, used to replace pack straps, replace bootlaces, applied as emergency tourniquet, used as an improvised grip for many tools, and much more. 50 feet of paracord should be sufficient to carry for most applications in the outdoors.</dd>
-    </dl>
-  </body>
+<div class="container" style="margin-top:20px;">
+	<div class="row">
+        <div class="container-fluid">
+          <div class="col-xs-6">
+            <h3 class="text-center">Helpful Tips</h3>
+              <div class="well" style="max-height: 300px;overflow: auto;">
+                <ul>
+                    <li>If caught without potable drinking water, a water trap can be used in a pinch if you are unable to find an appropriate water source for hydration, a step-by-step diagram can be found here ((placeholder, link goes here))</li>
+                    <li>A bear bag is any container used for the purpose of keeping essentials, primarily food, out of the reach of bears and other wild animals. It requires the use of a line, harness, and tree, a ste-by-step diagram can be found here ((placeholder, link goes here))</li>
+                    <li>Moss always faces north, use this as a reference point when making landmarks to find your way.</li>
+                    <li>It is always better to have more than enough than not enough. If planning for an extending outing, prepare your inventory for a time period at least twice as long as your expected stay.</li>
+                    <li>Always have the means to make yourself stand out in the event you get lost. Spending time in the great outdoors is great, spending it lost isn't, bring a whistle, flare gun, and/or bright clothing to attract attention in the event of an emergency.</li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<ul class="pager">
-    {% if has_next %}
-    <li class="previous" >
-    <a href="{{ url_for('guide', page=page + 1) }}">&larr; Next Page</a>
-    </li>
-    {% endif %}
-    {% if has_prev %}
-    <li class="next">
-    <a href="{{ url_for('guide', page=page - 1) }}">&rarr; Previous Page</a>
-    </li>
-    {% endif %}
-</ul>
-
+<div class="container" style="margin-top:20px;">
+	<div class="row">
+        <div class="container-fluid">
+            <div class="col-xs-6">
+            <h3 class="text-center">Outdoors Equipment</h3>
+              <div class="well" style="max-height: 300px;overflow: auto;">    
+                  <dt>Knife</dt>
+                  <dd>An important implement in the outdoors used for the preparation of kindling, cutting lines, self-defense weapon, preparing food, and first aid. Can be fashioned into an impromptu spear with the help of an appropriately prepared piece of wood and paracord.</dd>
+                  <dt>Matches</dt>
+                  <dd>An important tool to provide a source of light and heat. A box of matches or two can provide the means to keep the body warm and food cooked for an extended period of time when used spraingly, before submitting to the use of flint or bow drill to ignite your tinder. Waterproof matches and/or waterproof containers are suggested to avoid possible mishaps with exposure to water or moisture.</dd>
+                  <dt>Paracord</dt>
+                  <dd>A useful tool known for its versatility in improvising various functions, it can be utilized as a securing line for tents and tarps, used to replace pack straps, replace bootlaces, applied as emergency tourniquet, used as an improvised grip for many tools, and much more. 50 feet of paracord should be sufficient to carry for most applications in the outdoors.</dd>
+               </div>
+            </div>
+        </div>
+    </div>
 </html>
 {% endblock %}

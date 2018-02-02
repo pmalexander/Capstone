@@ -25,7 +25,7 @@ from flask_login import current_user
 
 #default page, shows up upon activation of the app if user is not already logged in
 @app.route("/")
-@login_required
+#@login_required
 def start_page(page=1):
     return redirect(url_for('search'))
 
@@ -62,7 +62,7 @@ def login_g():
 #can be used as a template for the search process, remember to use the percentage sign to get portions of the text of locations, make sure to make it to the name of the location in the database    
 #the search page, allows users to query park/nature reserve locations
 @app.route("/authorized/user/content/search", methods=["GET", "POST"])
-@login_required
+#@login_required
 def loc_search(name,):
     location_search = session.query(Location).filter(Location.name.like('%%')).all()
     if request.method == "POST":
@@ -70,48 +70,48 @@ def loc_search(name,):
     pass
 
 @app.route("/authorized/user/content/search/<query>", methods=["GET", "POST"])
-@login_required
+#@login_required
 def loc_query(name,):
     location_search = session.query(Location).filter(Location.name.like('%%')).all()
     return redirect(url_for('search', location_search=location_search))
 
 #displays information page comprising of general information, animals, plants, and natural features
 @app.route("/authorized/user/content/information", methods=["GET"])
-@login_required
+#@login_required
 def loc_information():
     return render_template("information.html")
     
 @app.route("/authorized/user/content/information/<location_id>", methods=["GET"])
-@login_required
+#@login_required
 def loc_information_id():
 #    l_information_id = User.
     return render_template("information.html")
     
 #directs users to checklist page to check off on items
 @app.route("/authorized/user/content/checklist", methods=["GET"])
-@login_required
+#@login_required
 def checklist_get():
     return render_template("checklist.html")    
 
 @app.route("/authorized/user/content/checklist", methods=["POST"])
-@login_required
+#@login_required
 def checklist_entry():
     return render_template("checklist.html")
     
 #routes the user to the guide page (guide page is fixed, planned to be updated as time goes on to encompass multiple pages)
 @app.route("/authorized/user/content/guide", methods=["GET"])
-@login_required
+#@login_required
 def guide_get():
     return render_template("guide.html")   
 
 #provides users with means to post sightings to share with others, presence of animals and/or plants in certain locations to update others, etc.    
 @app.route("/authorized/user/content/sighting", methods=["GET"])
-@login_required
+#@login_required
 def sightings_g():
     return render_template("sighting.html")
 
 @app.route("/authorized/user/content/sighting", methods=["GET"])
-@login_required
+#@login_required
 def sightings_p():
     sighting = Sighting(
         title=request.form["title"],
@@ -123,7 +123,7 @@ def sightings_p():
 
 #provides logged user ability to logout
 @app.route("/logout", methods=["GET"])
-@login_required
+#@login_required
 def user_logout():
     logout_user()
     flash("You have logged out.")

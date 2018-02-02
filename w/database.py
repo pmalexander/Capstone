@@ -98,7 +98,7 @@ class Sighting(Base):
     id = Column(Integer, primary_key=True)
     title = Column(String(1024))
     content = Column(Text)
-    datetime = Column(DateTime, default=datetime.datetime.now)
+#    datetime = Column(DateTime, default=datetime.datetime.now)
     author_id = Column(Integer, ForeignKey('users.id'))
     
 # creates the database, everything following up is what will be loaded into the database
