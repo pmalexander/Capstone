@@ -5,7 +5,7 @@ import csv
 import os
 
 from . import app
-from w.database import session, Location, Base
+from w.database import session, Location, Fauna, Flora, Feature, Base
 
 from flask_sqlalchemy import SQLAlchemy
 
@@ -61,30 +61,45 @@ def login_g():
 #NEED TO USE SESSION QUERY FOR THE SEARCH FUNCTION 12/19/2017, IF THERE IS A CHANGE HERE, I'D HAVE TO HEAD STRAIGHT TO THE REFERENCED ITEM
 #can be used as a template for the search process, remember to use the percentage sign to get portions of the text of locations, make sure to make it to the name of the location in the database    
 #the search page, allows users to query park/nature reserve locations
-@app.route("/authorized/user/content/search", methods=["GET", "POST"])
+@app.route("/authorized/user/content/search", methods=["GET"])
 #@login_required
-def loc_search(name,):
-    location_search = session.query(Location).filter(Location.name.like('%%')).all()
-    if request.method == "POST":
-        return redirect(url_for('search', location_search=location_search))
-    pass
+def search_all(name):
+    gen_query = "%%"
+    entries = session.query.all()
+    return render_template("search.html", entries=entries)
 
-@app.route("/authorized/user/content/search/<query>", methods=["GET", "POST"])
-#@login_required
-def loc_query(name,):
-    location_search = session.query(Location).filter(Location.name.like('%%')).all()
-    return redirect(url_for('search', location_search=location_search))
+@app.route("authorized/user/content/search/location/<name:str>", methods=["GET"])
+@login_required
+def search_by_location(name):
+    loc_query = "'%""%'"
+    entries = session.query.filter(Location.name.like)
+    return render_template("search.html", entries=entries)
+
+@app.route("authorized/user/content/search/fauna/<name:str>", methods=["GET"])
+@login_required
+def search_by_fauna(name):
+    fauna_query = "'%%'"
+    entries = session.query.filter(Fauna.name.like)
+    return render_template("search.html", entries=entries)
+
+@app.route("authorized/user/content/search/flora/<name:str>", methods=["GET"])
+@login_required
+def search_by_flora(name):
+    flora_query = "'%%'"
+    entries = session.query.filter(Flora.name.like)
+    return render_template("search.html", entries=entries)
+    
+@app.route("authorized/user/content/search/feature/<name:str>", methods=["GET"])
+@login_required
+def search_by_feature(name):
+    feature_query = "'%%'"
+    entries = session.query.filter(Feature.name.like)
+    return render_template("search.html", entries=entries)
 
 #displays information page comprising of general information, animals, plants, and natural features
 @app.route("/authorized/user/content/information", methods=["GET"])
-#@login_required
+@login_required
 def loc_information():
-    return render_template("information.html")
-    
-@app.route("/authorized/user/content/information/<location_id>", methods=["GET"])
-#@login_required
-def loc_information_id():
-#    l_information_id = User.
     return render_template("information.html")
     
 #directs users to checklist page to check off on items

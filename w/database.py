@@ -30,6 +30,7 @@ class Location(Base):
 #USE LAT AND LONG, THINK OF THIS AS A MAPPING TOOL IN THAT SENSE
     id = Column(Integer, primary_key=True)
     name = Column((String)(1024))
+    region = Column()
     latitude = Column(Float)
     longitude = Column(Float)
     visitors = Column(Integer)
@@ -263,6 +264,156 @@ park_15.visitors = "15000"
 session.add(park_15)
 session.commit()
 
+park_16 = Location()
+park_16.name = "Yosemite National Park"
+park_16.region = "California, United States"
+park_16.latitude = 37.8728
+park_16.longitude = -119.573
+park_16.visitors = "15000"
+ 
+session.add(park_16)
+session.commit()
+
+park_17 = Location()
+park_17.name = ""
+park_17.region = ", United States"
+park_17.latitude = 
+park_17.longitude = 
+park_17.visitors = "15000"
+ 
+session.add(park_17)
+session.commit()
+
+park_18 = Location()
+park_18.name = ""
+park_18.region = ""
+park_18.latitude = 
+park_18.longitude = -
+park_18.visitors = "15000"
+ 
+session.add(park_18)
+session.commit()
+
+park_19 = Location()
+park_19.name = ""
+park_19.region = ""
+park_19.latitude = 
+park_19.longitude = -
+park_19.visitors = ""
+ 
+session.add(park_19)
+session.commit()
+
+park_20 = Location()
+park_20.name = ""
+park_20.region = ", United States"
+park_20.latitude = 
+park_20.longitude = 
+park_20.visitors = "15000"
+ 
+session.add(park_20)
+session.commit()
+
+park_21 = Location()
+park_21.name = ""
+park_21.region = ", United States"
+park_21.latitude = 
+park_21.longitude =  
+park_21.visitors = "15000"
+ 
+session.add(park_21)
+session.commit()
+
+park_22 = Location()
+park_22.name = ""
+park_22.region = ", United States"
+park_22.latitude = 
+park_22.longitude = 
+park_22.visitors = "15000"
+ 
+session.add(park_22)
+session.commit()
+
+park_23 = Location()
+park_23.name = ""
+park_23.region = ", United States"
+park_23.latitude = 
+park_23.longitude = 
+park_23.visitors = "15000"
+ 
+session.add(park_23)
+session.commit()
+
+park_24 = Location()
+park_24.name = ""
+park_24.region = ", United States"
+park_24.latitude = 
+park_24.longitude = 
+park_24.visitors = "15000"
+ 
+session.add(park_24)
+session.commit()
+
+park_25 = Location()
+park_25.name = ""
+park_25.region = ", United States"
+park_25.latitude = 
+park_25.longitude = 
+park_25.visitors = "15000"
+ 
+session.add(park_25)
+session.commit()
+
+park_26 = Location()
+park_26.name = ""
+park_26.region = ", United States"
+park_26.latitude = 
+park_26.longitude = 
+park_26.visitors = "15000"
+ 
+session.add(park_26)
+session.commit()
+
+park_27 = Location()
+park_27.name = "n"
+park_27.region = ", United States"
+park_27.latitude = 
+park_27.longitude = 
+park_27.visitors = "15000"
+ 
+session.add(park_27)
+session.commit()
+
+park_28 = Location()
+park_28.name = ""
+park_28.region = ", United States"
+park_28.latitude = 
+park_28.longitude = 
+park_28.visitors = "15000"
+ 
+session.add(park_28)
+session.commit()
+
+park_29 = Location()
+park_29.name = ""
+park_29.region = ", United States"
+park_29.latitude = 
+park_29.longitude = 
+park_29.visitors = "15000"
+ 
+session.add(park_29)
+session.commit()
+
+park_30 = Location()
+park_30.name = ""
+park_30.region = ", United States"
+park_30.latitude = 
+park_30.longitude = 
+park_30.visitors = "15000"
+ 
+session.add(park_30)
+session.commit()
+
 '''dummied out as a template
 park_ = Location()
 park_.name = ""
@@ -281,16 +432,60 @@ session.commit()
 
 # adds fauna and provide descriptions of fauna, these can be associated with multiple locations
 # descriptions are not final, just for flavor and fun at the moment until more accurate descriptors (taxonomy and all that) can be issued in a timely manner
+# pictures will be provided at a later date, planning on having at least 3 pictures for each entry
+
+#Bears, big and scary ooo
 fauna_black_bear = Fauna()
 fauna_black_bear.name = "Black Bear"
-fauna_black_bear.characteristics = "A black bear, not brown, not grey, black."
+fauna_black_bear.characteristics = "A black bear, not brown, not grey, black. the smallest of the North American bear species."
 
 session.add(fauna_black_bear)
 session.commit()
 
+fauna_brown_bear = Fauna()
+fauna_brown_bear.name = "Brown Bear"
+fauna_brown_bear.characteristics = "Colloquially known as the Kodiak brown bear, also known as 'AGGHHH!!!' when directly encountered, brown bear indeed."
+
+session.add(fauna_brown_bear)
+session.commit()
+
+fauna_polar_bear = Fauna()
+fauna_polar_bear.name = "Polar Bear"
+fauna_polar_bear.characteristics = "This hardy bear survives in the extrmee cold without a coat, scientists are baffled."
+
+session.add(fauna_brown_bear)
+session.commit()
+
+#Birds
+fauna_ = Fauna()
+fauna_.name = ""
+fauna_.characteristics = ""
+
+session.add(fauna_)
+session.commit()
+
+fauna_ = Fauna()
+fauna_.name = ""
+fauna_.characteristics = ""
+
+session.add(fauna_)
+session.commit()
+
+fauna_barn_owl = Fauna()
+fauna_barn_owl.name = "Barn Owl"
+fauna_barn_owl.characteristics = "Subspecies of owl that like hanging out in barns, or flying into them."
+
+session.add(fauna_barn_owl)
+session.commit()
+
+fauna_osprey = Fauna()
+fauna_osprey.name = "Osprey"
+fauna_osprey.characteristics = "The largest bird of prey in North America, and its greatest enemy, fish."
+
+#Big Cats, and just Cats
 fauna_mountain_lion = Fauna()
 fauna_mountain_lion.name = "Mountain Lion"
-fauna_mountain_lion.characteristics = "A lion that hails from the mountains, but not always."
+fauna_mountain_lion.characteristics = "A lion that hails from the mountains, but not always, sometimes from a hill."
 
 session.add(fauna_mountain_lion)
 session.commit()
@@ -309,11 +504,81 @@ fauna_wild_boar.characteristics = "Two tusks and usually not happy to see you."
 session.add(fauna_wild_boar)
 session.commit()
 
-fauna_barn_owl = Fauna()
-fauna_barn_owl.name = "Barn Owl"
-fauna_barn_owl.characteristics = "Subspecies of owl that like hanging out in barns, or flying into them."
+fauna_ = Fauna()
+fauna_.name = ""
+fauna_.characteristics = ""
 
-session.add(fauna_barn_owl)
+session.add(fauna_)
+session.commit()
+
+fauna_ = Fauna()
+fauna_.name = ""
+fauna_.characteristics = ""
+
+session.add(fauna_)
+session.commit()
+
+fauna_ = Fauna()
+fauna_.name = ""
+fauna_.characteristics = ""
+
+session.add(fauna_)
+session.commit()
+
+fauna_ = Fauna()
+fauna_.name = ""
+fauna_.characteristics = ""
+
+session.add(fauna_)
+session.commit()
+
+fauna_ = Fauna()
+fauna_.name = ""
+fauna_.characteristics = ""
+
+session.add(fauna_)
+session.commit()
+
+fauna_ = Fauna()
+fauna_.name = ""
+fauna_.characteristics = ""
+
+session.add(fauna_)
+session.commit()
+
+fauna_ = Fauna()
+fauna_.name = ""
+fauna_.characteristics = ""
+
+session.add(fauna_)
+session.commit()
+
+fauna_ = Fauna()
+fauna_.name = ""
+fauna_.characteristics = ""
+
+session.add(fauna_)
+session.commit()
+
+fauna_ = Fauna()
+fauna_.name = ""
+fauna_.characteristics = ""
+
+session.add(fauna_)
+session.commit()
+
+fauna_ = Fauna()
+fauna_.name = ""
+fauna_.characteristics = ""
+
+session.add(fauna_)
+session.commit()
+
+fauna_ = Fauna()
+fauna_.name = ""
+fauna_.characteristics = ""
+
+session.add(fauna_)
 session.commit()
 
 '''dummied out as a template
@@ -402,11 +667,109 @@ feature_balanced_rock.characteristics = "A precariously placed (by nature) rock 
 session.add(feature_balanced_rock)
 session.commit()
 
-feature_ = Feature()
-feature_.name = ""
-feature_.characteristics = ""
+feature_old_faithful = Feature()
+feature_old_faithful.name = "Old Faithful"
+feature_old_faithful.characteristics = "An old geyser, spurts reliably, located in Yellowstone National Park."
 
-session.add(feature_)
+session.add(feature_old_faithful)
+session.commit()
+
+feature_grand_prismatic_spring = Feature()
+feature_grand_prismatic_spring.name = "Grand Prismatic Spring"
+feature_grand_prismatic_spring.characteristics = "Giant colorful natural spring found in Yellowstone National Park."
+
+session.add(feature_grand_prismatic_spring)
+session.commit()
+
+feature_cadillac_mountain = Feature()
+feature_cadillac_mountain.name = ""
+feature_cadillac_mountain.characteristics = "Not a new car model, but the highes"
+
+session.add(feature_cadillac_mountain)
+session.commit()
+
+feature_havasu_falls = Feature()
+feature_havasu_falls.name = "Havasu Falls"
+feature_havasu_falls.characteristics = "A colorful and scenic diversion found in the Grand Canyon, as well as an opportunity to get wet."
+
+session.add(feature_havasu_falls)
+session.commit()
+
+feature_high_dune = Feature()
+feature_high_dune.name = "High Dune"
+feature_high_dune.hcharacteristics = "No worries about wormsign, the High Dune is 30 miles wide and has some of the highest dunes in North America, it is located in the appropriately named Great Sand Dunes National Park and Preserve."
+
+session.add(feature_high_dune)
+session.commit()
+
+feature_harding_icefield_trail = Feature()
+feature_harding_icefield_trail.name = "Harding Icefield Trail"
+feature_harding_icefield_trail.characteristics = "Pack and prepare for nearly 8 miles of trail on a glacial path at a glacial or not-so glacial pace in Kenjai Fords National Park."
+
+session.add(feature_harding_icefield_trail)
+session.commit()
+
+feature_the_narrows = Feature()
+feature_the_narrows.name = "The Narrows"
+feature_the_narrows.characteristics = "Aptly named as it is the narrowest stretch during your hike in Zion Canyon at the Zion National Park."
+
+session.add(feature_the_narrows)
+session.commit()
+
+feature_landscape_arch = Feature()
+feature_landscape_arch.name = "Landscape Arch"
+feature_landscape_arch.characteristics = "Not falling, nor golden, but a group of naturally formed arches at Arches National Park."
+
+session.add(feature_landscape_arch)
+session.commit()
+
+feature_tunnel_view_overlook = Feature()
+feature_tunnel_view_overlook.name = "Tunnel View Overlook"
+feature_tunnel_view_overlook.characteristics = "A good view of Yosemite National Park's other attractions, Half Dome, Bridalveil Fall and El Capitan."
+
+session.add(feature_tunnel_view_overlook)
+session.commit()
+
+feature_general_sherman_tree = Feature()
+feature_general_sherman_tree.name = "The General Sherman Tree"
+feature_general_sherman_tree.characteristics = "Unlike Union Army general of its namesake, this tree does not appreciate fire, but is also a historical standout in being the largest tree in the world, located right in Sequoia National Park."
+
+session.add(feature_general_sherman_tree)
+session.commit()
+
+feature_crater_lake = Feature()
+feature_crater_lake.name = "Crater Lake"
+feature_crater_lake.characteristics = "Just as the name implies, it's a crater lake. Formed by an eruption from a now inactive volcano a long, long, long, time ago, to be the deepest lake in the United States. Located in the appropirately named Crater Lake National Park."
+
+session.add(feature_crater_lake)
+session.commit()
+
+feature_highline_trail = Feature()
+feature_highline_trail.name = "Highline Trail"
+feature_highline_trail.characteristics = "A high-elevation trail in Glacier National Park, with a good view of the mountain peaks and valleys, unless you're acrophobic, in which case it gives a good view of fear."
+
+session.add(feature_highline_trail)
+session.commit()
+
+feature_mount_kilauea = Feature()
+feature_mount_kilauea.name = "Mount Kilauea"
+feature_mount_kilauea.characteristics = "This notorious and extremely volatile active volcano is located in the Hawaii Volcanoes National Park, busy producing up to 500,000 cubic meters of lava per day. Don't get too close."
+
+session.add(feature_mount_kilauea)
+session.commit()
+
+feature_hoh_rain_forest = Feature()
+feature_hoh_rain_forest.name = "Hoh Rain Forest"
+feature_hoh_rain_forest.characteristics = "Figured your compass turned you wrong? Nope, this rainforest is a part of Olympic National Park's attractions, representative of a temperate rainforest biome located in North America."
+
+session.add(feature_hoh_rain_forest)
+session.commit()
+
+feature_bryce_amphitheater = Feature()
+feature_bryce_amphitheater.name = "Bryce Amphitheater"
+feature_bryce_amphitheater.characteristics = "A 6-mile stretch of Bryce Canyon National Park features a series of spires, eerily colorful a different points of the day, and invoking the image of a crowd of individuals standing shoulder to shoulder."
+
+session.add(feature_bryce_amphitheater)
 session.commit()
 
 feature_ = Feature()
@@ -415,12 +778,3 @@ feature_.characteristics = ""
 
 session.add(feature_)
 session.commit()
-
-feature_ = Feature()
-feature_.name = ""
-feature_.characteristics = ""
-
-session.add(feature_)
-session.commit()
-
-
