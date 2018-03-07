@@ -598,6 +598,61 @@ session.commit()
 # adds flora and provide descriptions of flora, these can be associated with multiple locations
 # descriptions are not final, just for flavor and fun at the moment until more accurate descriptors (taxonomy and all that) can be issued in a timely manner
 #Fruits/Fruit-bearing plants
+flora_american_elderberry = Flora()
+flora_american_elderberry.name = "American Elderberry"
+flora_american_elderberry.characteristics = "Your mother smells of themn."
+
+session.add(flora_american_elderberry)
+session.commit()
+
+flora_american_grape = Flora()
+flora_american_grape.name = "American Grape"
+flora_american_grape.characteristics = "Jam, jelly, wine, good."
+
+session.add(flora_american_grape)
+session.commit()
+
+flora_american_mayapple = Flora()
+flora_american_mayapple.name = "American Mayapple"
+flora_american_mayapple.characteristics = "May or may not be an apple."
+
+session.add(flora_american_mayapple)
+session.commit()
+
+flora_american_persimmon = Flora()
+flora_american_persimmon.name = "American Persimmon"
+flora_american_persimmon.characteristics = "Per simmon of what?"
+
+session.add(flora_american_persimmon)
+session.commit()
+
+flora_american_plum = Flora()
+flora_american_plum.name = "American Plum"
+flora_american_plum.characteristics = "Plum...p fruits that are good and good for you."
+
+session.add(flora_american_plum)
+session.commit()
+
+flora_beach_plum = Flora()
+flora_beach_plum.name = "Beach Plum"
+flora_beach_plum.characteristics = "Beach bum, beach plum, same thing."
+
+session.add(flora_beach_plum)
+session.commit()
+
+flora_black_cherry = Flora()
+flora_black_cherry.name = "Black Cherry"
+flora_black_cherry.characteristics = "It's true, it is sweeter."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = ""
+
+session.add(flora_)
+session.commit()
 flora_blueberry = Flora()
 flora_blueberry.name = "Blueberry"
 flora_blueberry.characteristics = "They're more purple than blue."
@@ -612,6 +667,27 @@ flora_cranberry.characteristics = "Grows in the water... should have been called
 session.add(flora_cranberry)
 session.commit()
 
+flora_dewberry = Flora()
+flora_dewberry.name = "Dewberry"
+flora_dewberry.characteristics = "Can be mistaken for a blackberry, same family and all that."
+
+session.add(flora_dewberry)
+session.commit()
+
+flora_desert_apricot = Flora()
+flora_desert_apricot.name = "Desert Apricot"
+flora_desert_apricot.characteristics = "Strange, right?"
+
+session.add(flora_desert_apricot)
+session.commit()
+
+flora_huckleberry = Flora()
+flora_huckleberry.name = "Huckleberry"
+flora_huckleberry.characteristics = "Named ones have been to known to exist and take human form."
+
+session.add(flora_huckleberry)
+session.commit()
+
 flora_raspberry = Flora()
 flora_raspberry.name = "Raspberry"
 flora_raspberry.characteristics = "Very tasty, even better if you like chewing on a bunch of seeds."
@@ -623,7 +699,7 @@ flora_strawberry = Flora()
 flora_strawberry.name = "Strawberry"
 flora_strawberry.characteristics = "The ubiquitous berry, from the vine to your fruit salad or milkshake."
 
-session.add(flora_)
+session.add(flora_strawberry)
 session.commit()
 
 flora_ = Flora()
