@@ -693,14 +693,14 @@ flora_cocoplum = Flora()
 flora_cocoplum.name = "Cocoplum"
 flora_cocoplum.characteristics = "Neither coconut or plum, a mystery."
 
-session.add(flora_)
+session.add(flora_cocoplum)
 session.commit()
 
-flora_ = Flora()
-flora_.name = ""
-flora_.characteristics = ""
+flora_concord_grape = Flora()
+flora_concord_grape.name = "Concord Grape"
+flora_concord_grape.characteristics = "... more jam, jelly, and wine."
 
-session.add(flora_)
+session.add(flora_concord_grape)
 session.commit()
 
 flora_cranberry = Flora()
