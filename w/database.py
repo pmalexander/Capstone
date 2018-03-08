@@ -644,6 +644,55 @@ flora_black_cherry = Flora()
 flora_black_cherry.name = "Black Cherry"
 flora_black_cherry.characteristics = "It's true, it is sweeter."
 
+session.add(flora_black_cherry)
+session.commit()
+
+flora_black_raspberry = Flora()
+flora_black_raspberry.name = "Black Raspberry"
+flora_black_raspberry.characteristics = "Ditto for these."
+
+session.add(flora_black_raspberry)
+session.commit()
+
+flora_blueberry = Flora()
+flora_blueberry.name = "Blueberry"
+flora_blueberry.characteristics = "They're more purple than blue."
+
+session.add(flora_blueberry)
+session.commit()
+
+flora_buffalo_berry = Flora()
+flora_buffalo_berry.name = "Buffalo Berry"
+flora_buffalo_berry.characteristics = "Doesn't taste like one, I hope."
+
+session.add(flora_buffalo_berry)
+session.commit()
+
+flora_canada_plum = Flora()
+flora_canada_plum.name = "Canada Plum"
+flora_canada_plum.characteristics = "See American plum, just a bit milder."
+
+session.add(flora_canada_plum)
+session.commit()
+
+flora_canadian_serviceberry = Flora()
+flora_canadian_serviceberry.name = "Canadian Serviceberry"
+flora_canadian_serviceberry.characteristics = "Colloquially known as 'sugarplum' ... yeah, I'm confused too."
+
+session.add(flora_canadian_serviceberry)
+session.commit()
+
+flora_chokecherry = Flora()
+flora_chokecherry.name = "Chokecherry"
+flora_chokecherry.characteristics = "Please don't."
+
+session.add(flora_chokecherry)
+session.commit()
+
+flora_cocoplum = Flora()
+flora_cocoplum.name = "Cocoplum"
+flora_cocoplum.characteristics = "Neither coconut or plum, a mystery."
+
 session.add(flora_)
 session.commit()
 
@@ -652,12 +701,6 @@ flora_.name = ""
 flora_.characteristics = ""
 
 session.add(flora_)
-session.commit()
-flora_blueberry = Flora()
-flora_blueberry.name = "Blueberry"
-flora_blueberry.characteristics = "They're more purple than blue."
-
-session.add(flora_blueberry)
 session.commit()
 
 flora_cranberry = Flora()
