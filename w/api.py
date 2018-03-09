@@ -68,28 +68,28 @@ def search_all(name):
     entries = session.query.all()
     return render_template("search.html", entries=entries)
 
-@app.route("/authorized/user/content/search/location/<name:str>", methods=["GET"])
+@app.route("/authorized/user/content/search/location/<string:name>", methods=["GET"])
 @login_required
 def search_by_location(name):
     loc_query = "'%""%'"
     entries = session.query.filter(Location.name.like)
     return render_template("search.html", entries=entries)
 
-@app.route("/authorized/user/content/search/fauna/<name:str>", methods=["GET"])
+@app.route("/authorized/user/content/search/fauna/<string:name>", methods=["GET"])
 @login_required
 def search_by_fauna(name):
     fauna_query = "'%%'"
     entries = session.query.filter(Fauna.name.like)
     return render_template("search.html", entries=entries)
 
-@app.route("/authorized/user/content/search/flora/<name:str>", methods=["GET"])
+@app.route("/authorized/user/content/search/flora/<string:name>", methods=["GET"])
 @login_required
 def search_by_flora(name):
     flora_query = "'%%'"
     entries = session.query.filter(Flora.name.like)
     return render_template("search.html", entries=entries)
     
-@app.route("/authorized/user/content/search/feature/<name:str>", methods=["GET"])
+@app.route("/authorized/user/content/search/feature/<string:name>", methods=["GET"])
 @login_required
 def search_by_feature(name):
     feature_query = "'%%'"
