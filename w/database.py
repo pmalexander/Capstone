@@ -30,7 +30,7 @@ class Location(Base):
 #USE LAT AND LONG, THINK OF THIS AS A MAPPING TOOL IN THAT SENSE
     id = Column(Integer, primary_key=True)
     name = Column((String)(1024))
-    region = Column()
+    region = Column((String)(1024))
     latitude = Column(Float)
     longitude = Column(Float)
     visitors = Column(Integer)
@@ -274,6 +274,7 @@ park_16.visitors = "15000"
 session.add(park_16)
 session.commit()
 
+'''
 park_17 = Location()
 park_17.name = ""
 park_17.region = ", United States"
@@ -414,7 +415,7 @@ park_30.visitors = "15000"
 session.add(park_30)
 session.commit()
 
-'''dummied out as a template
+dummied out as a template
 park_ = Location()
 park_.name = ""
 park_.region = ""
@@ -468,7 +469,7 @@ fauna_brown_thresher = Fauna()
 fauna_brown_thresher.name = "Brown thresher"
 fauna_brown_thresher.characteristics = "Don't expect this bird to do your farmwork."
 
-session.add(fauna_)
+session.add(fauna_brown_thresher)
 session.commit()
 
 fauna_barn_owl = Fauna()
@@ -803,6 +804,7 @@ flora_pine_tree.characteristics = "Smell good, so good that people keep them in 
 session.add(flora_pine_tree)
 session.commit()
 
+'''
 Abies Amabilis
 Abies Balsamea
 Abies Bracteata
@@ -1930,6 +1932,7 @@ Yellowbark Oak
 Yew
 Yew Brush
 Yucu-ndatura
+'''
 
 flora_ = Flora()
 flora_.name = ""
