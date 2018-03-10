@@ -1,26 +1,127 @@
-{% extends "base.html" %}
-{% block content %}
-<html>
+<html lang="en">
+    <header class="masthead">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Information</title
+
+        <!-- CSS -->
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <!-- Capstone -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+        <!-- JavaScript -->
+        <!-- jQuery -->
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <!-- Capstone -->
+        <script src="stylesheet" href="{{ url_for('static', filename='js/main.js') }}"></script>
+  <style>
+  .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #5E4485;
+    color: #FFF;
+    padding: 1% 0;
+    font-size: 1.2em;
+    border: 0;
   
-<div id="" class="tabcontent">
-  <h3>Location</h3>
-  <p>Included are the coordinates </p>
+  }
+  .navbar-brand {
+    float: left;
+    min-height: 55px;
+    padding: 0 15px 5px;
+  }
+  .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .acgtive a:focus, .navbar-inverse .navbar-nav .active:hover
+  {
+    color: #FFF;
+    background-color: #5E4485;
+  }
+    .navbar-inverse .navbar-nav li a
+  {
+    color: #d5d5d5
+  }
+
+  </style>
+    </header>
+
+<body>
+<body class="masthead">
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data toggle="collapse" data-target="#myNavBar">
+<span class="icon-bar"></span>  
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="#"><img src="img">
+</div>
+<div class="collapse navbar-collapse" id="myNavBar">
+<ul class="nav navbar-nav navbar-center">
+<li id="nSearch"><a href="/authorized/user/content/search">Search</a></li>
+<li id="nChecklist"><a href="/authorized/user/content/checklist">Checklist</a></li>
+<li id="nGuide"><a href="/authorized/user/content/guide">Guide</a></li>
+<li id="nSighting"><a href="/authorized/user/content/sighting">Sighting</a></li>
+</ul>
+</div>
+</nav>
+
+<section class=location-section>
+<h1>Location</h1>
+<h2>Included are the coordinates associated with the location, along with the annual number of visitors to each site.</h2>
+{% for coordinates in get_location_coordinates() %}
+<div class=flash>
+{{ message }}
+{% for visitors in get_location_visitors() %}
+<div class=flash>
+{{ message }}
+</section>
 </div>  
-  
-<div id="" class="tabcontent">
-  <h3>Fauna</h3>
-  <p>These are fauna typically encountered in the area, encounter rates depend on a number of factors from migratory patterns, abundance of food, or the presence of other wildlife.</p>
 </div>
 
-<div id="" class="tabcontent">
-  <h3>Flora</h3>
-  <p>The following are an assortment of flora endemic to the region, share a sighting if you manage to spot anything that catches your eye!</p>
+<section class=fauna-section>
+<h1>Fauna</h1>
+<h2>These are fauna typically encountered in the area, encounter rates depend on a number of factors from migratory patterns, abundance of food, or the presence of other wildlife.</h2>
+{% for fauna in get_location_fauna() %}
+<div class=flash>
+{{ message }}
+</section>
 </div>
 
-<div id="" class="tabcontent">
-  <h3>Features</h3>
-  <p>Here are the features present in at the selected location, these include unique landmarks and </p>
+
+<section class=flora-section>
+<h1>Flora</h1>
+<h2>The following are an assortment of flora endemic to the region, share a sighting if you manage to spot anything that catches your eye!</h2>
+{% for flora in get_location_flora() %}
+<div class=flash>
+{{ message }}
+</section>
 </div>
-  
+
+<section class=features-section>
+<h1>Features</h1>
+<h2>Here are the features present in at the selected location, these include unique landmarks and </h2>
+{% for features in get_location_features() %}
+<div class=flash>
+{{ message }}
+</section>
+</div>
+</body>
+
+<footer>
+<footer class="pagefooter">
+<ul>
+<dt><a href="">Back to top</a></dt>
+</ul>
+</footer>
+
 </html>
-{% endblock %}

@@ -25,7 +25,7 @@ from flask_login import current_user
 
 #default page, shows up upon activation of the app if user is not already logged in
 @app.route("/")
-#@login_required
+@login_required
 def start_page(page=1):
     return redirect(url_for('search'))
 

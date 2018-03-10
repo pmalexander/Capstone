@@ -1,74 +1,99 @@
-{% extends "base.html" %}
-{% block content %}
-<html>
-<div class="container" style="margin-top:20px;">
-	<div class="row">
-    <div class="container-fluid">
-      <div class="col-xs-6">
-        <h3 class="text-center">Equipment Checklist</h3>
-          <div class="well" style="max-height: 300px;overflow: auto;">
-            <ul id="check-list-box" class="list-group checked-list-box">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                  <label class="form-check-label" for="defaultCheck1">Rope</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-                  <label class="form-check-label" for="defaultCheck2">Tent</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-                  <label class="form-check-label" for="defaultCheck3">Sleeping Bag</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
-                  <label class="form-check-label" for="defaultCheck4">Lantern</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
-                  <label class="form-check-label" for="defaultCheck5">Matches</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck6">
-                  <label class="form-check-label" for="defaultCheck6">Tinder</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck7">
-                  <label class="form-check-label" for="defaultCheck7">Camp Hatchet</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck8">
-                  <label class="form-check-label" for="defaultCheck8">Lantern</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck9">
-                  <label class="form-check-label" for="defaultCheck9">Lantern Oil</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck10">
-                  <label class="form-check-label" for="defaultCheck10">Batteries</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck11">
-                  <label class="form-check-label" for="defaultCheck11">Walking Stick</label>  
-              </div>
-            </div>
-            </ul>
-          </div>
-          <button class="btn btn-primary col-xs-12" id="get-checked-data">Get Checked Data</button>
-        <!-- <pre id="display-json"></pre> -->
-      </div>
-	  </div>
-  </div>
+<html lang="en">
+    <header class="masthead">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>Checklist</title>
+
+        <!-- CSS -->
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <!-- Capstone -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+        <!-- JavaScript -->
+        <!-- jQuery -->
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <!-- Capstone -->
+        <script src="stylesheet" href="{{ url_for('static', filename='js/main.js') }}"></script>
+  <style>
+  .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #5E4485;
+    color: #FFF;
+    padding: 1% 0;
+    font-size: 1.2em;
+    border: 0;
+  
+  }
+  .navbar-brand {
+    float: left;
+    min-height: 55px;
+    padding: 0 15px 5px;
+  }
+  .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .acgtive a:focus, .navbar-inverse .navbar-nav .active:hover
+  {
+    color: #FFF;
+    background-color: #5E4485;
+  }
+    .navbar-inverse .navbar-nav li a
+  {
+    color: #d5d5d5
+  }
+
+      
+  </style>
+    </header>
+
+<body>
+<body class="masthead">
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data toggle="collapse" data-target="#myNavBar">
+<span class="icon-bar"></span>  
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="#"><img src="img">
+</div>
+<div class="collapse navbar-collapse" id="myNavBar">
+<ul class="nav navbar-nav navbar-center">
+<li id="nSearch"><a href="/authorized/user/content/search">Search</a></li>
+<li id="nChecklist" class=active><a href="/authorized/user/content/checklist">Checklist</a></li>
+<li id="nGuide"><a href="/authorized/user/content/guide">Guide</a></li>
+<li id="nSighting"><a href="/authorized/user/content/sighting">Sighting</a></li>
+</ul>
+</div>
+</nav>
+      
+        <br></br>
+
+<section class=equipment-section>
+<div id="myDIV" class="header">
+  <h1>Equipment Checklist</h1>
+  <input type="text" id="myInput" placeholder="Add item and amount...">
+  <span onclick="newElement()" class="addBtn">Add Item</span>
 </div>
 
-<div class="form-group">
-  <div class="container-fluid">
-    <label for="exampleFormControlTextarea1" class=text-center>Additional Items / Notes</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-</div>
-<button type="submit" class="btn btn-primary col-xs-12">Submit</button>
-</form>
+<ul id="myUL">
+</ul>
+
+<button class="btn btn-primary col-xs-12" id="get-checked-data">Save List and Notes</button>
+      
+<footer class="pagefooter">
+<ul>
+<div><a href="">Back to top</a></div>
+</ul>
+</footer>
+
 </html>
-{% endblock %}

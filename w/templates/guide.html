@@ -1,41 +1,132 @@
-{% extends "base.html" %}
-{% block content %}
-<html>
-<div class="container" style="margin-top:20px;">
-	<div class="row">
-        <div class="container-fluid">
-          <div class="col-xs-6">
-            <h3 class="text-center">Helpful Tips</h3>
-              <div class="well" style="max-height: 300px;max-width: 600px;overflow: auto;">
-                <ul>
-                    <li>If caught without potable drinking water, a water trap can be used in a pinch if you are unable to find an appropriate water source for hydration, a step-by-step diagram can be found here ((placeholder, link goes here))</li>
-                    <li>A bear bag is any container used for the purpose of keeping essentials, primarily food, out of the reach of bears and other wild animals. It requires the use of a line, harness, and tree, a ste-by-step diagram can be found here ((placeholder, link goes here))</li>
-                    <li>Moss always faces north, use this as a reference point when making landmarks to find your way.</li>
-                    <li>It is always better to have more than enough than not enough. If planning for an extending outing, prepare your inventory for a time period at least twice as long as your expected stay.</li>
-                    <li>Always have the means to make yourself stand out in the event you get lost. Spending time in the great outdoors is great, spending it lost isn't, bring a whistle, flare gun, and/or bright clothing to attract attention in the event of an emergency.</li>
-                </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+<html lang="en">
+    <header class="masthead">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<div class="container" style="margin-top:20px;">
-	<div class="row">
-        <div class="container-fluid">
-            <div class="col-xs-6">
-            <h3 class="text-center">Outdoors Equipment</h3>
-              <div class="well" style="max-height: 300px;max-width: 600px;overflow: auto;">    
-                  <dt class="text-center">Knife</dt>
-                  <dd>An important implement in the outdoors used for the preparation of kindling, cutting lines, self-defense weapon, preparing food, and first aid. Can be fashioned into an impromptu spear with the help of an appropriately prepared piece of wood and paracord.</dd>
-                  <dt class="text-center">Matches</dt>
-                  <dd>An important tool to provide a source of light and heat. A box of matches or two can provide the means to keep the body warm and food cooked for an extended period of time when used spraingly, before submitting to the use of flint or bow drill to ignite your tinder. Waterproof matches and/or waterproof containers are suggested to avoid possible mishaps with exposure to water or moisture.</dd>
-                  <dt class="text-center">Paracord</dt>
-                  <dd>A useful tool known for its versatility in improvising various functions, it can be utilized as a securing line for tents and tarps, used to replace pack straps, replace bootlaces, applied as emergency tourniquet, used as an improvised grip for many tools, and much more. 50 feet of paracord should be sufficient to carry for most applications in the outdoors.</dd>
-                  <dt class="text-center">Canteen/Flask</dt>
-                  <dd>Always have a means of carrying water on you in the event stored water is unavailable or goes bad, as well as staying hydrated in transit.</dd>
-               </div>
-            </div>
-        </div>
-    </div>
+<title>Guide</title
+
+        <!-- CSS -->
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <!-- Capstone -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+        <!-- JavaScript -->
+        <!-- jQuery -->
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <!-- Capstone -->
+        <script src="stylesheet" href="{{ url_for('static', filename='js/main.js') }}"></script>
+  <style>
+  .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #5E4485;
+    color: #FFF;
+    padding: 1% 0;
+    font-size: 1.2em;
+    border: 0;
+  
+  }
+  .navbar-brand {
+    float: left;
+    min-height: 55px;
+    padding: 0 15px 5px;
+  }
+  .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .acgtive a:focus, .navbar-inverse .navbar-nav .active:hover
+  {
+    color: #FFF;
+    background-color: #5E4485;
+  }
+    .navbar-inverse .navbar-nav li a
+  {
+    color: #d5d5d5
+  }
+
+  </style>
+    </header>
+
+<body>
+<body class="masthead">
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data toggle="collapse" data-target="#myNavBar">
+<span class="icon-bar"></span>  
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="#"><img src="img">
+</div>
+<div class="collapse navbar-collapse" id="myNavBar">
+<ul class="nav navbar-nav navbar-center">
+<li id="nSearch"><a href="/authorized/user/content/search">Search</a></li>
+<li id="nChecklist"><a href="/authorized/user/content/checklist">Checklist</a></li>
+<li id="nGuide" class=active><a href="/authorized/user/content/guide">Guide</a></li>
+<li id="nSighting"><a href="/authorized/user/content/sighting">Sighting</a></li>
+</ul>
+</div>
+</nav>
+      
+        <br></br>
+
+<section class=tips-section>
+<h1>Helpful Tips</h1>
+<h2>Things to keep in mind while in the outdoors!</h2>
+<ul>
+<li>If caught without potable drinking water, a water trap can be used in a pinch if you are unable to find an appropriate water source for hydration, a step-by-step diagram can be found here ((placeholder, link goes here))</li>
+<li>A bear bag is any container used for the purpose of keeping essentials, primarily food, out of the reach of bears and other wild animals. It requires the use of a line, harness, and tree, a ste-by-step diagram can be found here ((placeholder, link goes here))</li>
+<li>Moss always faces north, use this as a reference point when making landmarks to find your way.</li>
+<li>It is always better to have more than enough than not enough. If planning for an extending outing, prepare your inventory for a time period at least twice as long as your expected stay.</li>
+</ul>
+</section>
+  
+      <br></br>
+
+<section class=tools-section>
+<h1>Useful Tools/Equipment</h1>
+<h2>Keep yourself safe and well-supplied on your outing!</h2>     
+<h3>Knife</h3>
+<ul>
+<li>An important implement in the outdoors used for the preparation of kindling, cutting lines, self-defense weapon, preparing food, and first aid. Can be fashioned into an impromptu spear with the help of an appropriately prepared piece of wood and paracord.</li>
+</ul>
+<h3>Matches</h3>
+<ul>
+<li>An important tool to provide a source of light and heat. A box of matches or two can provide the means to keep the body warm and food cooked for an extended period of time when used spraingly, before submitting to the use of flint or bow drill to ignite your tinder. Waterproof matches and/or waterproof containers are suggested to avoid possible mishaps with exposure to water or moisture.</li>
+</ul>
+<h3>Paracord</h3>
+<ul>
+<li>A useful item known for its versatility, it can be utilized as a securing line for tents and tarps, used to replace pack straps, replace bootlaces, applied as emergency tourniquet, used as an improvised grip for many tools, and much more. 50 feet of paracord should be sufficient to carry for most applications in the outdoors.</li>
+</ul>
+<h3>Canteen/Flask</h3>
+<ul>
+<li>Always have a means of carrying water on you in the event stored water is unavailable or goes bad, as well as staying hydrated in transit.</li>
+</ul>
+</section>
+</body>
+
+  <br></br>
+
+<nav aria-label="...">
+  <ul class="pager">
+    <li><a href="#">Previous</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+</nav>
+ 
+<footer>
+<footer class="pagefooter">
+<ul>
+<dt><a href="">Back to top</a></dt>
+</ul>
+</footer>
 </html>
-{% endblock %}
+
+      
