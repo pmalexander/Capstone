@@ -35,7 +35,7 @@ def registration():
     if request.method == "GET":
         return render_template("registration.html")
     elif request.method == "POST":
-        return render_template("search.html")
+        return redirect(url_for('search_all'))
      
 #login page for users, bypass if user is previously logged  in
 @app.route("/login", methods=["GET", "POST"])
@@ -63,16 +63,24 @@ def login_g():
 #the search page, allows users to query park/nature reserve locations
 @app.route("/authorized/user/content/search", methods=["GET"])
 #@login_required
-def search_all(name):
+def search_all():
     gen_query = "%%"
-    entries = session.query.all()
+    entries = session.query(Location).all()
     return render_template("search.html", entries=entries)
+
+@app.route("/authorized/user/content/search/name/<string:name>", methods=["GET"])
+#@login_required
+def search_by_name(name):
+    gen_query = "%%"
+    entries = session.query()
+    return render_template("search.html", entries=entries)    
 
 @app.route("/authorized/user/content/search/location/<string:name>", methods=["GET"])
 @login_required
 def search_by_location(name):
-    loc_query = "'%""%'"
-    entries = session.query.filter(Location.name.like)
+    loc_query = "'%" + name + "%'"
+    entries = session.filter(Location.name.like(loc_query))
+#    entries = session.query(Location).filter(Location.name.like)
     return render_template("search.html", entries=entries)
 
 @app.route("/authorized/user/content/search/fauna/<string:name>", methods=["GET"])
