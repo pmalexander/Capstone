@@ -71,7 +71,7 @@ def search_all():
 @app.route("/authorized/user/content/search/name/<string:name>", methods=["GET"])
 #@login_required
 def search_by_name(name):
-    gen_query = "%%"
+    gen_query = "'%" + name + "%'"
     entries = session.query()
     return render_template("search.html", entries=entries)    
 
@@ -86,22 +86,22 @@ def search_by_location(name):
 @app.route("/authorized/user/content/search/fauna/<string:name>", methods=["GET"])
 @login_required
 def search_by_fauna(name):
-    fauna_query = "'%%'"
-    entries = session.query.filter(Fauna.name.like)
+    fauna_query = "'%" + name + "%'"
+    entries = session.filter(Fauna.name.like(fauna_query))
     return render_template("search.html", entries=entries)
 
 @app.route("/authorized/user/content/search/flora/<string:name>", methods=["GET"])
 @login_required
 def search_by_flora(name):
-    flora_query = "'%%'"
-    entries = session.query.filter(Flora.name.like)
+    flora_query = "'%" + name + "%'"
+    entries = session.filter(Flora.name.like(flora_query))
     return render_template("search.html", entries=entries)
     
 @app.route("/authorized/user/content/search/feature/<string:name>", methods=["GET"])
 @login_required
 def search_by_feature(name):
-    feature_query = "'%%'"
-    entries = session.query.filter(Feature.name.like)
+    feature_query = "'%" + name + "%'"
+    entries = session.filter(Feature.name.like(feature_query))
     return render_template("search.html", entries=entries)
 
 #displays information page comprising of general information, animals, plants, and natural features
@@ -139,6 +139,7 @@ def sightings_p():
     sighting = Sighting(
         title=request.form["title"],
         content=request.form["content"],
+        author=current_user["author"]
     )
     session.add(sighting)
     session.commit()

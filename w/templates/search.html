@@ -74,7 +74,10 @@
 </ul>
 </div>
 </nav>
-        
+
+<br></br>
+
+<form role="form" method="GET"> 
 <section class="search-section">
 <div class="container">
   <div class="row searchFilter" >
@@ -86,25 +89,26 @@
         <div class="dropdown-menu dropdown-menu-right">
            <ul class="category_filters" >
             <li>
-             <input type="radio" name="radios" id="Location" value="Location" ><label class="category-label" for="Location" >Location</label>
+             <input type="radio" name="radios" id="Location" value="Location" href="/authorized/user/content/search/location/<string:name>"><label class="category-label" for="Location" >Location</label>
             </li>
             <li>
-             <input type="radio" name="radios" id="Fauna" value="Fauna" ><label class="category-label" for="Fauna" >Fauna</label>
+             <input type="radio" name="radios" id="Fauna" value="Fauna" href="/authorized/user/content/search/fauna/<string:name>"><label class="category-label" for="Fauna" >Fauna</label>
             </li>
             <li>
-             <input type="radio" name="radios" id="Flora" value="Flora" ><label class="category-label" for="Flora" >Flora</label>
+             <input type="radio" name="radios" id="Flora" value="Flora" href="/authorized/user/content/search/flora/<string:name>"><label class="category-label" for="Flora" >Flora</label>
             </li>
             <li>
-             <input type="radio" name="radios" id="Features" value="Features" ><label class="category-label" for="Features" >Features</label>
+             <input type="radio" name="radios" id="Feature" value="Feature" href="/authorized/user/content/search/feature/<string:name>"><label class="category-label" for="Features" >Features</label>
             </li>
            </ul>
         </div>
-        <button id="searchBtn" type="button" class="btn btn-secondary btn-search" ><span class="glyphicon glyphicon-search" >&nbsp;</span> <span class="label-icon" >Search</span></button>
+        <button type="submit" class="btn btn-default">Submit</button>
        </div>
       </div>
      </div>
   </div>
 </div>
+</form>
 {% for message in get_flashed_messages() %}
 <div class=flash>
     {{ message }}
