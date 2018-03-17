@@ -68,12 +68,12 @@ def search_all():
     entries = session.query(Location).all()
     return render_template("search.html", entries=entries)
 
-@app.route("/authorized/user/content/search/name/<string:name>", methods=["GET"])
+#@app.route("/authorized/user/content/search/name/<string:name>", methods=["GET"])
 #@login_required
-def search_by_name(name):
-    gen_query = "'%" + name + "%'"
-    entries = session.query()
-    return render_template("search.html", entries=entries)    
+#def search_by_name(name):
+#    gen_query = "'%" + name + "%'"
+#    entries = session.query()
+#    return render_template("search.html", entries=entries)    
 
 @app.route("/authorized/user/content/search/location/<string:name>", methods=["GET"])
 @login_required
@@ -129,12 +129,12 @@ def guide_get():
 
 #provides users with means to post sightings to share with others, presence of animals and/or plants in certain locations to update others, etc.    
 @app.route("/authorized/user/content/sighting", methods=["GET"])
-#@login_required
+@login_required
 def sightings_g():
     return render_template("sighting.html")
 
 @app.route("/authorized/user/content/sighting", methods=["GET"])
-#@login_required
+@login_required
 def sightings_p():
     sighting = Sighting(
         title=request.form["title"],
@@ -150,5 +150,5 @@ def sightings_p():
 #@login_required
 def user_logout():
     logout_user()
-    flash("You have logged out.")
-    return redirect(url_for("index"))
+    flash("You have been logged out.")
+    return redirect(url_for("login"))
