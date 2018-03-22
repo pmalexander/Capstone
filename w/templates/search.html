@@ -53,84 +53,105 @@
   </style>
     </header>
 
-<body>
-<body class="masthead">
-<nav class="navbar navbar-inverse">
-<div class="container-fluid">
-<div class="navbar-header">
-<button type="button" class="navbar-toggle" data toggle="collapse" data-target="#myNavBar">
-<span class="icon-bar"></span>  
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-<a class="navbar-brand" href="#"><img src="img">
-</div>
-<div class="collapse navbar-collapse" id="myNavBar">
-<ul class="nav navbar-nav navbar-center">
-<li id="nSearch" class=active><a href="/authorized/user/content/search">Search</a></li>
-<li id="nChecklist"><a href="/authorized/user/content/checklist">Checklist</a></li>
-<li id="nGuide"><a href="/authorized/user/content/guide">Guide</a></li>
-<li id="nSighting"><a href="/authorized/user/content/sighting">Sighting</a></li>
-</ul>
-</div>
-</nav>
+  <body>
+    <body class="masthead">
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data toggle="collapse" data-target="#myNavBar">
+        <span class="icon-bar"></span>  
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <a class="navbar-brand" href="#"><img src="img">
+    </div>
+    
+    <div class="collapse navbar-collapse" id="myNavBar">
+      <ul class="nav navbar-nav navbar-center">
+        <li id="nSearch" class=active><a href="/authorized/user/content/search">Search</a></li>
+        <li id="nChecklist"><a href="/authorized/user/content/checklist">Checklist</a></li>
+        <li id="nGuide"><a href="/authorized/user/content/guide">Guide</a></li>
+        <li id="nSighting"><a href="/authorized/user/content/sighting">Sighting</a></li>
+        <li id="nLogin"><a href="/login">Log In</a></li>
+        <li id="nSignup"><a href="/registration">Sign Up</a></li>
+      </ul>
+    </div>
+    </nav><!-- end of navbar group, copy this to other html files -->
 
 <br></br>
 
-<form role="form" method="GET"> 
-<section class="search-section">
-<div class="container">
-  <div class="row searchFilter" >
-     <div class="col-sm-12" >
-      <div class="input-group" >
-       <input id="table_filter" type="text" class="form-control" aria-label="Text input with segmented button dropdown" >
-       <div class="input-group-btn" >
-        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="label-icon" >Category</span> <span class="caret" >&nbsp;</span></button>
-        <div class="dropdown-menu dropdown-menu-right">
-        <form method ="GET" action="/authorized/user/content/search/">
-           <ul class="category_filters" >
-            <li>
-             <input type="radio" name="query" id="Location" value="Location" href="/authorized/user/content/search/location/"/><label class="category-label" for="Location" >Location</label>
-            </li>
-            <li>
-             <input type="radio" name="query" id="Fauna" value="Fauna" href="/authorized/user/content/search/fauna/"/><label class="category-label" for="Fauna" >Fauna</label>
-            </li>
-            <li>
-             <input type="radio" name="query" id="Flora" value="Flora" href="/authorized/user/content/search/flora/"/><label class="category-label" for="Flora" >Flora</label>
-            </li>
-            <li>
-             <input type="radio" name="query" id="Feature" value="Feature" href="/authorized/user/content/search/feature/"/><label class="category-label" for="Feature" >Features</label>
-            </li>
-           </ul>
-           <input type="submit" value="submit"></input>
-        </form>
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-       </div>
-      </div>
-     </div>
-  </div>
+<div class="header">
+  <h1>Search</h1>
 </div>
-</form>
+
+  <div class="container">
+    <form class="form-inline" id="searchform"><!-- entire form -->
+	
+	<div class="form-group">
+	  <input type="text" class="form-control"
+		 id="searchq"
+		 name="searchq"
+		 placeholder="Enter name...">
+	</div><!-- first form-group -->
+    
+    <!-- this functions in the same vein as self' in Python -->  
+	<div class="form-group">
+	  <select class="form-control"
+		  id="categoryq"
+		  onchange="update_action(this);"
+		  >
+	    <option>All</option>
+	    <option>Location</option>
+	    <option>Fauna</option>
+	    <option>Flora</option>
+	    <option>Feature</option>
+	  </select>
+	</div><!--end second form-group -->
+	<button type="submit" class="btn btn-primary">Search</button>
+    </form><!-- end of entire form -->
+
+  </div><!-- end of container -->
+    
+    <script>
+      list_of_actions = [
+         "/authorized/user/content/search/all/<string:name>",
+         "/authorized/user/content/search/location/<string:name>",
+         "/authorized/user/content/search/fauna/<string:name>",
+         "/authorized/user/content/search/flora/<string:name>",
+         "/authorized/user/content/search/feature/<string:name>",
+      ];
+
+      function update_action(selector) {
+          console.log(selector[selector.selectedIndex]);
+          sform = document.getElementById('searchform');
+          sform.setAttribute('action',
+                list_of_actions[selector.selectedIndex]);
+      }
+    </script>
+    </body>
+  </body>
+
 {% for message in get_flashed_messages() %}
-<div class=flash>
-    {{ message }}
-</div>
+    <div class=flash>
+        {{ message }}
+    </div>
 {% endfor %}
 
 <nav aria-label="...">
-  <ul class="pager">
-    <li><a href="#">Previous</a></li>
-    <li><a href="#">Next</a></li>
-  </ul>
+    <ul class="pager">
+        <li><a href="#">Previous</a></li>
+        <li><a href="#">Next</a></li>
+    </ul>
 </nav>
   
 </section>
       
-<footer>
-  <footer class="pagefooter">
-    <ul>
-      <dt><a href="">Back to top</a></dt>
-    </ul>
-</footer>
+  <footer>
+      <footer class="pagefooter">
+         <ul>
+             <dt><a href="">Back to top</a></dt>
+         </ul>
+      </footer>
+  </footer>
+  
 </html>

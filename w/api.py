@@ -68,7 +68,7 @@ def search_all():
     entries = session.query(Location).all()
     return render_template("search.html", entries=entries)
 
-#@app.route("/authorized/user/content/search/name/<string:name>", methods=["GET"])
+#@app.route("/authorized/user/content/search/all/<string:name>", methods=["GET"])
 #@login_required
 #def search_by_name(name):
 #    gen_query = "'%" + name + "%'"
@@ -76,7 +76,7 @@ def search_all():
 #    return render_template("search.html", entries=entries)    
 
 @app.route("/authorized/user/content/search/location/<string:name>", methods=["GET"])
-@login_required
+#@login_required
 def search_by_location(name):
     loc_query = "'%" + name + "%'"
     entries = session.filter(Location.name.like(loc_query))
@@ -84,21 +84,21 @@ def search_by_location(name):
     return render_template("search.html", entries=entries)
 
 @app.route("/authorized/user/content/search/fauna/<string:name>", methods=["GET"])
-@login_required
+#@login_required
 def search_by_fauna(name):
     fauna_query = "'%" + name + "%'"
     entries = session.filter(Fauna.name.like(fauna_query))
     return render_template("search.html", entries=entries)
 
 @app.route("/authorized/user/content/search/flora/<string:name>", methods=["GET"])
-@login_required
+#@login_required
 def search_by_flora(name):
     flora_query = "'%" + name + "%'"
     entries = session.filter(Flora.name.like(flora_query))
     return render_template("search.html", entries=entries)
     
 @app.route("/authorized/user/content/search/feature/<string:name>", methods=["GET"])
-@login_required
+#@login_required
 def search_by_feature(name):
     feature_query = "'%" + name + "%'"
     entries = session.filter(Feature.name.like(feature_query))
