@@ -213,6 +213,30 @@ input[type=text]:focus {
     border: 0;
 }
 
+#nLogin {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #5E4485;
+    color: #FFF;
+    padding: 1% 0;
+    font-size: 1em;
+    border: 0;
+}
+
+#nSignup {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #5E4485;
+    color: #FFF;
+    padding: 1% 0;
+    font-size: 1em;
+    border: 0;
+}
+
+
+#searchform {
+}
+
 .masthead {
   background-image:url("");
   background-repeat:no-repeat;
@@ -241,6 +265,7 @@ body {
   margin-right: auto;
   margin-top: 2em;
   font-weight: bold;
+  text-align: center;
 }
 
 .pagefooter {
@@ -253,11 +278,11 @@ body {
 .equipment-section{
  /* Typography Declarations */
   font-family: "Gentium Book Basic", Georgia, serif;
-  font-size: 1.5em;
+  font-size: 1.2em;
   max-width: 50em;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 3em;
+  margin-top: 2em;
   font-weight: bold;
   text-align: center; 
 }

@@ -78,11 +78,11 @@
     </div>
     </nav><!-- end of navbar group, copy this to other html files -->
 
-<br></br>
+  <br></br>
 
-<div class="header">
-  <h1>Search</h1>
-</div>
+  <div class="header">
+    <h1>Search</h1>
+  </div>
 
   <div class="container">
     <form class="form-inline" id="searchform"><!-- entire form -->
@@ -111,14 +111,14 @@
     </form><!-- end of entire form -->
 
   </div><!-- end of container -->
-    
+  
     <script>
       list_of_actions = [
-         "/authorized/user/content/search/all/<string:name>",
-         "/authorized/user/content/search/location/<string:name>",
-         "/authorized/user/content/search/fauna/<string:name>",
-         "/authorized/user/content/search/flora/<string:name>",
-         "/authorized/user/content/search/feature/<string:name>",
+         "/authorized/user/content/search/all/",
+         "/authorized/user/content/search/location/",
+         "/authorized/user/content/search/fauna/",
+         "/authorized/user/content/search/flora/",
+         "/authorized/user/content/search/feature/",
       ];
 
       function update_action(selector) {
@@ -131,27 +131,26 @@
     </body>
   </body>
 
-{% for message in get_flashed_messages() %}
-    <div class=flash>
-        {{ message }}
-    </div>
-{% endfor %}
+  {% for message in get_flashed_messages() %}
+      <div class=flash>
+          {{ message }}
+      </div>
+  {% endfor %}
 
-<nav aria-label="...">
-    <ul class="pager">
-        <li><a href="#">Previous</a></li>
-        <li><a href="#">Next</a></li>
-    </ul>
-</nav>
+  <nav aria-label="...">
+      <ul class="pager">
+          <li><a href="#">Previous</a></li>
+          <li><a href="#">Next</a></li>
+      </ul>
+  </nav>
   
-</section>
-      
-  <footer>
-      <footer class="pagefooter">
-         <ul>
-             <dt><a href="">Back to top</a></dt>
-         </ul>
-      </footer>
-  </footer>
-  
+<ul>
+  <dt><a href="/authorized/user/content/checklist" class="cd-top js-cd-top">Back to top</a></dt>
+</ul>
+
+</body>
+
+<footer class="pagefooter">
+</footer>
+
 </html>

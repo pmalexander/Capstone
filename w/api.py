@@ -13,7 +13,7 @@ from flask import Flask
 from flask import flash
 from flask import request, redirect, url_for, render_template, jsonify, request
 
-from .database import User, Sighting
+from w.database import User, Sighting #added w to .database o 3/21/2018, might reconsider changing back to .
 
 from werkzeug.security import check_password_hash
 
@@ -37,7 +37,7 @@ def registration():
     elif request.method == "POST":
         return redirect(url_for('search_all'))
      
-#login page for users, bypass if user is previously logged  in
+#login page for users, bypass if user is previously logged in
 @app.route("/login", methods=["GET", "POST"])
 def login_g():
     if request.method == "GET":
@@ -75,29 +75,32 @@ def search_all():
 #    entries = session.query()
 #    return render_template("search.html", entries=entries)    
 
-@app.route("/authorized/user/content/search/location/<string:name>", methods=["GET"])
+@app.route("/authorized/user/content/search/location/?searchq=none", methods=["GET"])
 #@login_required
-def search_by_location(name):
+def search_by_location():
+    name = request.args.get('searchq', ' ')
+    print(name)
     loc_query = "'%" + name + "%'"
     entries = session.filter(Location.name.like(loc_query))
+#    lopt = session.query(Option).filter_by(question=qinst)
 #    entries = session.query(Location).filter(Location.name.like)
     return render_template("search.html", entries=entries)
 
-@app.route("/authorized/user/content/search/fauna/<string:name>", methods=["GET"])
+@app.route("/authorized/user/content/search/fauna/<name>", methods=["GET"])
 #@login_required
 def search_by_fauna(name):
     fauna_query = "'%" + name + "%'"
     entries = session.filter(Fauna.name.like(fauna_query))
     return render_template("search.html", entries=entries)
 
-@app.route("/authorized/user/content/search/flora/<string:name>", methods=["GET"])
+@app.route("/authorized/user/content/search/flora/<name>", methods=["GET"])
 #@login_required
 def search_by_flora(name):
     flora_query = "'%" + name + "%'"
     entries = session.filter(Flora.name.like(flora_query))
     return render_template("search.html", entries=entries)
     
-@app.route("/authorized/user/content/search/feature/<string:name>", methods=["GET"])
+@app.route("/authorized/user/content/search/feature/<name>", methods=["GET"])
 #@login_required
 def search_by_feature(name):
     feature_query = "'%" + name + "%'"
@@ -151,4 +154,4 @@ def sightings_p():
 def user_logout():
     logout_user()
     flash("You have been logged out.")
-    return redirect(url_for("login"))
+    return redirect(url_for("login_g"))
