@@ -23,6 +23,10 @@ from flask_login import login_required
 from flask_login import login_manager
 from flask_login import current_user
 
+#pulls the names from the location, fauna, flora, and feature tables, attributes location, fauna, etc. from dictionary to the class
+name = request.args.get('searchq', ' ')
+categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
+
 #default page, shows up upon activation of the app if user is not already logged in
 @app.route("/")
 @login_required
@@ -62,23 +66,25 @@ def login_g():
 #can be used as a template for the search process, remember to use the percentage sign to get portions of the text of locations, make sure to make it to the name of the location in the database    
 #the search page, allows users to query park/nature reserve locations
 @app.route("/authorized/user/content/search", methods=["GET"])
+@app.route("/authorized/user/content/search/?searchq=none", methods=["GET"])
 #@login_required
 def search_all():
     gen_query = "%%"
     entries = session.query(Location).all()
     return render_template("search.html", entries=entries)
 
-#@app.route("/authorized/user/content/search/all/<string:name>", methods=["GET"])
-#@login_required
+@app.route("/authorized/user/content/search/all/", methods=["GET"])
+@app.route("/authorized/user/content/search/all/?searchq=none", methods=["GET"])
+@login_required
 #def search_by_name(name):
 #    gen_query = "'%" + name + "%'"
 #    entries = session.query()
-#    return render_template("search.html", entries=entries)    
+#    return render_template("search.html", entries=entries)
 
+@app.route("/authorized/user/content/search/location/", methods=["GET"])
 @app.route("/authorized/user/content/search/location/?searchq=none", methods=["GET"])
-#@login_required
+@login_required
 def search_by_location():
-    name = request.args.get('searchq', ' ')
     print(name)
     loc_query = "'%" + name + "%'"
     entries = session.filter(Location.name.like(loc_query))
@@ -86,23 +92,28 @@ def search_by_location():
 #    entries = session.query(Location).filter(Location.name.like)
     return render_template("search.html", entries=entries)
 
-@app.route("/authorized/user/content/search/fauna/<name>", methods=["GET"])
-#@login_required
-def search_by_fauna(name):
+@app.route("/authorized/user/content/search/fauna/", methods=["GET"])
+@app.route("/authorized/user/content/search/fauna/?searchq=none", methods=["GET"])
+@login_required
+def search_by_fauna():
+    print(name)
     fauna_query = "'%" + name + "%'"
     entries = session.filter(Fauna.name.like(fauna_query))
     return render_template("search.html", entries=entries)
 
-@app.route("/authorized/user/content/search/flora/<name>", methods=["GET"])
+@app.route("/authorized/user/content/search/flora/", methods=["GET"])
+@app.route("/authorized/user/content/search/flora/?searchq=none", methods=["GET"])
 #@login_required
-def search_by_flora(name):
+def search_by_flora():
+    print(name)
     flora_query = "'%" + name + "%'"
     entries = session.filter(Flora.name.like(flora_query))
     return render_template("search.html", entries=entries)
     
-@app.route("/authorized/user/content/search/feature/<name>", methods=["GET"])
+@app.route("/authorized/user/content/search/feature/", methods=["GET"])
+@app.route("/authorized/user/content/search/feature/?searchq=none", methods=["GET"])
 #@login_required
-def search_by_feature(name):
+def search_by_feature():
     feature_query = "'%" + name + "%'"
     entries = session.filter(Feature.name.like(feature_query))
     return render_template("search.html", entries=entries)
