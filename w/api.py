@@ -24,7 +24,6 @@ from flask_login import login_manager
 from flask_login import current_user
 
 #pulls the names from the location, fauna, flora, and feature tables, attributes location, fauna, etc. from dictionary to the class
-name = request.args.get('searchq', ' ')
 categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
 
 #default page, shows up upon activation of the app if user is not already logged in
@@ -65,140 +64,139 @@ def login_g():
 def search_all():
     gen_query = "%%"
     entries = session.query(Location).all()
-    return render_template("search.html", entries=entries)
+    return render_template("search.html")
 
 @app.route("/authorized/user/content/search/all/", methods=["GET"])
 @app.route("/authorized/user/content/search/all/?searchq=none", methods=["GET"])
-@login_required
+#@login_required
 def search_by_all():
-    print(name) 
     
-    cat=['Location','Fauna','Flora','Feature']
-    query=request.args.get('searchq','None')
+    #pulls from the classes set in database.py    
+    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
     
-    #returns to search page if no name provided
-    if cat=='None' or query=='None':
-        print("Please enter a name in the field")
-        return render_template('search.html',entries=[])
-    
-    #prints names based on what was queried in the search bar
-    print(categories[cat],query)
-    
-    #parses through all names present in the database
-    all_query = '%%' + query + '%%'
-    entries = session.query(categoriespcat[cat]).filter(categories[cat].name.like(query).all)
+    #cat is defined as any of the classes in database.py, can be used as a substitute for any single class when making an argument
+    cat = 'Location', 'Fauna', 'Flora', 'Feature'
+    query = request.args.get('searchq', 'None')
+
+    #if nothing is provided in the search form, message below is provided and search form is reset
+    if cat == 'None' or query == 'None':
+        print("Please provide a name to query")
+        return render_template('search.html', entries=[])
+
+    print(categories[cat], query)
+
+    query = '%%' + query + '%%'
+
+    entries = session.query(categories[cat]).filter(categories[cat].name.like(query)).all()
 
     for entry in entries:
         print(entry)
-    
-    return render_template("search.html", entries=entries)
+
+    return render_template('search.html', entries=entries)
 
 @app.route("/authorized/user/content/search/location/", methods=["GET"])
 @app.route("/authorized/user/content/search/location/?searchq=none", methods=["GET"])
-@login_required
-def search_by_location():
-    print(name) 
+#@login_required
+def search_by_loc():
     
-    cat='Location'
-    query=request.args.get('searchq','None')
+    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
     
-    #returns to search page if no name provided
-    if cat=='None' or query=='None':
-        print("Please enter a name in the field")
-        return render_template('search.html',entries=[])
-    
-    #prints names based on what was queried in the search bar
-    print(categories[cat],query)
-    
-    #parses through all names present in the database
-    loc_query = '%%' + query + '%%'
-    entries = session.query(categoriespcat[cat]).filter(categories[cat].name.like(query).all)
+    cat = 'Location'
+    query = request.args.get('searchq', 'None')
+
+    if cat == 'None' or query == 'None':
+        print("Please provide a name to query")
+        return render_template('search.html', entries=[])
+
+    print(categories[cat], query)
+
+    query = '%%' + query + '%%'
+
+    entries = session.query(categories[cat]).filter(categories[cat].name.like(query)).all()
 
     for entry in entries:
         print(entry)
-    
-    return render_template("search.html", entries=entries)
+
+    return render_template('search.html', entries=entries)
 
 @app.route("/authorized/user/content/search/fauna/", methods=["GET"])
 @app.route("/authorized/user/content/search/fauna/?searchq=none", methods=["GET"])
-@login_required
+#@login_required
 def search_by_fauna():
-        print(name) 
     
-    cat='Fauna'
-    query=request.args.get('searchq','None')
+    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
     
-    #returns to search page if no name provided
-    if cat=='None' or query=='None':
-        print("Please enter a name in the field")
-        return render_template('search.html',entries=[])
-    
-    #prints names based on what was queried in the search bar
-    print(categories[cat],query)
-    
-    #parses through all names present in the database
-    fau_query = '%%' + query + '%%'
-    entries = session.query(categoriespcat[cat]).filter(categories[cat].name.like(query).all)
+    cat = 'Fauna'
+    query = request.args.get('searchq', 'None')
+
+    if cat == 'None' or query == 'None':
+        print("Please provide a name to query")
+        return render_template('search.html', entries=[])
+
+    print(categories[cat], query)
+
+    query = '%%' + query + '%%'
+
+    entries = session.query(categories[cat]).filter(categories[cat].name.like(query)).all()
 
     for entry in entries:
         print(entry)
-    
-    return render_template("search.html", entries=entries)
+
+    return render_template('search.html', entries=entries)
 
 @app.route("/authorized/user/content/search/flora/", methods=["GET"])
 @app.route("/authorized/user/content/search/flora/?searchq=none", methods=["GET"])
 #@login_required
 def search_by_flora():
-    print(name) 
     
-    cat='Flora'
-    query=request.args.get('searchq','None')
+    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
     
-    #returns to search page if no name provided
-    if cat=='None' or query=='None':
-        print("Please enter a name in the field")
-        return render_template('search.html',entries=[])
-    
-    #prints names based on what was queried in the search bar
-    print(categories[cat],query)
-    
-    #parses through all names present in the database
-    flo_query = '%%' + query + '%%'
-    entries = session.query(categoriespcat[cat]).filter(categories[cat].name.like(query).all)
+    cat = 'Flora'
+    query = request.args.get('searchq', 'None')
+
+    if cat == 'None' or query == 'None':
+        print("Please provide a name to query")
+        return render_template('search.html', entries=[])
+
+    print(categories[cat], query)
+
+    query = '%%' + query + '%%'
+
+    entries = session.query(categories[cat]).filter(categories[cat].name.like(query)).all()
 
     for entry in entries:
         print(entry)
-    
-    return render_template("search.html", entries=entries)
+
+    return render_template('search.html', entries=entries)
 
 @app.route("/authorized/user/content/search/feature/", methods=["GET"])
 @app.route("/authorized/user/content/search/feature/?searchq=none", methods=["GET"])
 #@login_required
-    print(name) 
+def search_by_feature():
     
-    cat='Feature'
-    query=request.args.get('searchq','None')
+    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
     
-    #returns to search page if no name provided
-    if cat=='None' or query=='None':
-        print("Please enter a name in the field")
-        return render_template('search.html',entries=[])
-    
-    #prints names based on what was queried in the search bar
-    print(categories[cat],query)
-    
-    #parses through all names present in the database
-    feat_query = '%%' + query + '%%'
-    entries = session.query(categoriespcat[cat]).filter(categories[cat].name.like(query).all)
+    cat = 'Feature'
+    query = request.args.get('searchq', 'None')
+
+    if cat == 'None' or query == 'None':
+        print("Please provide a name to query")
+        return render_template('search.html', entries=[])
+
+    print(categories[cat], query)
+
+    query = '%%' + query + '%%'
+
+    entries = session.query(categories[cat]).filter(categories[cat].name.like(query)).all()
 
     for entry in entries:
         print(entry)
-    
-    return render_template("search.html", entries=entries)
+
+    return render_template('search.html', entries=entries)
 
 #displays information page comprising of general information, animals, plants, and natural features
 @app.route("/authorized/user/content/information", methods=["GET"])
-@login_required
+#@login_required
 def loc_information():
     return render_template("information.html")
     

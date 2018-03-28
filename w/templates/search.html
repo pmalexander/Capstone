@@ -131,11 +131,9 @@
     </body>
   </body>
 
-  {% for message in get_flashed_messages() %}
-      <div class=flash>
-          {{ message }}
-      </div>
-  {% endfor %}
+    {% for entry in entries %}
+    {{ entry.name }}
+    {% endfor %}
 
   <nav aria-label="...">
       <ul class="pager">
@@ -145,7 +143,7 @@
   </nav>
   
 <ul>
-  <dt><a href="/authorized/user/content/checklist" class="cd-top js-cd-top">Back to top</a></dt>
+  <dt><a href="/authorized/user/content/search" class="cd-top js-cd-top">Back to top</a></dt>
 </ul>
 
 </body>
