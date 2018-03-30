@@ -84,10 +84,10 @@
     <h1>Search</h1>
   </div>
 
-  <div class="container">
+  <div class="container" align="center">
     <form class="form-inline" id="searchform"><!-- entire form -->
 	
-	<div class="form-group">
+	<div class="form-group" align="center">
 	  <input type="text" class="form-control"
 		 id="searchq"
 		 name="searchq"
@@ -95,7 +95,7 @@
 	</div><!-- first form-group -->
     
     <!-- this functions in the same vein as self' in Python -->  
-	<div class="form-group">
+	<div class="form-group" align="center">
 	  <select class="form-control"
 		  id="categoryq"
 		  onchange="update_action(this);"
@@ -131,9 +131,11 @@
     </body>
   </body>
 
-    {% for entry in entries %}
-    {{ entry.name }}
-    {% endfor %}
+{% import "macros.html" as macros %}
+
+  {% for entry in entries %}
+  {{ macros.render_entry(entry) }}
+  {% endfor %}
 
   <nav aria-label="...">
       <ul class="pager">
@@ -141,10 +143,12 @@
           <li><a href="#">Next</a></li>
       </ul>
   </nav>
-  
-<ul>
-  <dt><a href="/authorized/user/content/search" class="cd-top js-cd-top">Back to top</a></dt>
-</ul>
+
+  <div align="center">
+    <ul>
+      <dt><a href="/authorized/user/content/search" class="cd-top js-cd-top">Back to top</a></dt>
+    </ul>
+  </div>
 
 </body>
 

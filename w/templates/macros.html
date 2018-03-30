@@ -1,20 +1,83 @@
-{% macro render_sighting(sighting) %}
+{% macro render_entry(entry) %}
 <div class="row">
-    <div class="col-md-2 text-right metadata">
+    <div class="col-md-6 text-right metadata">
         <div>
         <ul class="list-unstyled">
             <li>
-                {{ sighting.datetime | dateformat("%d/%m/%y") }}
+                {{ entry.name}}
+                {{ entry.region }}  
             </li>
         </ul>
-            {{ sighting.author.name }}    
         </div>
     </div>
-    <div class="col-md-10">
-        <h1>
-            {{ sighting.title }}
-        </h1>
-        {{ sighting.content | markdown }}
+</div>
+{% endmacro %}
+
+{% macro render_location(location) %}
+<div class="row">
+    <div class="col-md-3 text-right metadata">
+        <div>
+        <ul class="list-unstyled">
+            <li>
+                {{ location.name}}
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>
+{% endmacro %}
+
+{% macro render_fauna(fauna) %}
+<div class="row">
+    <div class="col-md-3 text-right metadata">
+        <div>
+        <ul class="list-unstyled">
+            <li>
+                {{ fauna.name}}
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>    
+{% endmacro %}
+
+{% macro render_flora(flora) %}
+<div class="row">
+    <div class="col-md-3 text-right metadata">
+        <div>
+        <ul class="list-unstyled">
+            <li>
+                {{ flora.name}}
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>    
+{% endmacro %}
+
+{% macro render_feature(feature) %}
+<div class="row">
+    <div class="col-md-3 text-right metadata">
+        <div>
+        <ul class="list-unstyled">
+            <li>
+                {{ feature.name}}
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>    
+{% endmacro %}    
+
+{% macro render_sighting() %}
+<div class="row">
+    <div class="col-md-6 text-right metadata">
+        <div>
+        <ul class="list-unstyled">
+            <li>
+            </li>
+        </ul>
+        </div>
     </div>
 </div>
 {% endmacro %}

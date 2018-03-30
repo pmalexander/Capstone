@@ -92,6 +92,7 @@
       {{ message }}
       </div>  
     </div>
+  {% endfor %}
 </section>
 
 <section class=fauna-section>
@@ -99,7 +100,8 @@
   <h2>These are fauna typically encountered in the area, encounter rates depend on a number of factors from migratory patterns, abundance of food, or the presence of other wildlife.</h2>
   {% for fauna in get_location_fauna() %}
     <div class=flash>
-      {{ message }}
+      {% macro render_fauna(fauna) %}
+  {% endfor %}
     </div>
 </section>
 
@@ -109,16 +111,18 @@
   <h2>The following are an assortment of flora endemic to the region, share a sighting if you manage to spot anything that catches your eye!</h2>
   {% for flora in get_location_flora() %}
     <div class=flash>
-      {{ message }}
+      {% macro render_flora(flora) %}
+  {% endfor %}
     </div>
 </section>
 
 <section class=features-section>
 <h1>Features</h1>
   <h2>Here are the features present in at the selected location, these include unique landmarks and </h2>
-  {% for features in get_location_features() %}
+  {% for feature in get_location_feature() %}
     <div class=flash>
-    {{ message }}
+    {% macro render_feature(feature) %}
+  {% endfor %}
     </div>
 </section>
 

@@ -506,6 +506,7 @@ fauna_wild_boar.characteristics = "Two tusks and usually not happy to see you."
 session.add(fauna_wild_boar)
 session.commit()
 
+'''
 fauna_ = Fauna()
 fauna_.name = ""
 fauna_.characteristics = ""
@@ -583,7 +584,7 @@ fauna_.characteristics = ""
 session.add(fauna_)
 session.commit()
 
-'''dummied out as a template
+dummied out as a template
 fauna_ = Fauna()
 fauna_.name = ""
 fauna_.characteristics = ""
@@ -746,6 +747,7 @@ flora_strawberry.characteristics = "The ubiquitous berry, from the vine to your 
 session.add(flora_strawberry)
 session.commit()
 
+'''
 flora_ = Flora()
 flora_.name = ""
 flora_.characteristics = ""
@@ -773,6 +775,7 @@ flora_.characteristics = ""
 
 session.add(flora_)
 session.commit()
+'''
 
 #Vegetables
 flora_corn = Flora()
@@ -1934,6 +1937,7 @@ Yew Brush
 Yucu-ndatura
 '''
 
+'''
 flora_ = Flora()
 flora_.name = ""
 flora_.characteristics = ""
@@ -1990,7 +1994,7 @@ flora_.characteristics = ""
 session.add(flora_)
 session.commit()
 
-'''dummied out as template
+dummied out as template
 flora_ = Flora()
 flora_.name = ""
 flora_.characteristics = ""
