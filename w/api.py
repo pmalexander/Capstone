@@ -26,49 +26,13 @@ from flask_login import current_user
 #pulls the names from the location, fauna, flora, and feature tables, attributes location, fauna, etc. from dictionary to the class
 categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
 
-#limits the entries of each search to twenty per page
-@app.route("/?limit=20")
-@app.route("/page/2?limit=20")
-
+#need to implement pagination at one point
 #default page, shows up upon activation of the app if user is not already logged in
 @app.route("/")
 @login_required
-def start_page(page=1, paginate_by=10):
+def start_page(page=1):
     return redirect(url_for('search'))
-    
-    if current_user == False:
-       return redirect(url_for('login')) 
-       
-       
-    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
-    
-    cat = 'Location'
-    query = request.args.get('searchq', 'None')
-    
-    #zero-indexed page
-    page_index = page - 1
 
-    count = entries = session.query(categories[cat]).filter(categories[cat].name.like(query)).all()
-
-    start = page_index * paginate_by
-    end = start + paginate_by
-
-    #counts page and keeps track from start to end
-    total_pages = (count - 1) // paginate_by + 1
-    has_next = page_index < total_pages - 1
-    has_prev = page_index > 0
-
-    entries = session.query(categories[cat]).filter(categories[cat].name.like(query)).all()
-    entries = entries[start:end]
-
-    return render_template("search.html",
-        entries=entries,
-        has_next=has_next,
-        has_prev=has_prev,
-        page=page,
-        total_pages=total_pages
-    )
-    
 #registration page for new users, user must register username using e-mail, registration allows ability to personalize app (save pictures, plans, checklists, etc.), if logged in, bypass this stage
 @app.route("/registration", methods=["GET", "POST"])
 def registration():
@@ -95,6 +59,7 @@ def login_g():
 #NEED TO USE SESSION QUERY FOR THE SEARCH FUNCTION 12/19/2017, IF THERE IS A CHANGE HERE, I'D HAVE TO HEAD STRAIGHT TO THE REFERENCED ITEM
 #can be used as a template for the search process, remember to use the percentage sign to get portions of the text of locations, make sure to make it to the name of the location in the database    
 #the search page, allows users to query park/nature reserve locations
+#need to implement pagination at one point
 @app.route("/authorized/user/content/search", methods=["GET"])
 @app.route("/authorized/user/content/search/?searchq=none", methods=["GET"])
 #@login_required
@@ -103,6 +68,7 @@ def search_all():
     entries = session.query(Location).all()
     return render_template("search.html")
 
+#need to implement pagination at one point
 @app.route("/authorized/user/content/search/all/", methods=["GET"])
 @app.route("/authorized/user/content/search/all/?searchq=none", methods=["GET"])
 #@login_required
