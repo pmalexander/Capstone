@@ -1538,6 +1538,251 @@ session.add(flora_)
 session.commit()
 
 flora_ = Flora()
+flora_.name = "Betula Nigra"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Betula Occidentalis"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Betula Papyrifera"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Betula Populifolia"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Big Drunk Bean"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Big-cone Pine"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Big-laurel"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Big-leaf Maple"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bigcone Douglas-fir"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bigcone Douglas-spruce"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bigcone Spruce"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bigleaf Maple"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bigtooth Aspen"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bigtree"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Biltmore Ash"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Biltmore White Ash"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bishop Pine"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bishop's Pine"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bitter Cherry"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bitternut"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bitternut Hickory"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Black Birch"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Black Birck"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Black Cherry"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Black Hemlock"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
 flora_.name = ""
 flora_.characteristics = "A tree."
 
@@ -1558,34 +1803,7 @@ flora_.characteristics = "A tree."
 session.add(flora_)
 session.commit()
 '''
-Beech
-Bellota
-Betula Alleghaniensis
-Betula Nigra
-Betula Occidentalis
-Betula Papyrifera
-Betula Populifolia
-Big Drunk Bean
-Big-cone Pine
-Big-laurel
-Big-leaf Maple
-Bigcone Douglas-fir
-Bigcone Douglas-spruce
-Bigcone Spruce
-Bigleaf Maple
-Bigtooth Aspen
-Bigtree
-Biltmore Ash
-Biltmore White Ash
-Bishop Pine
-Bishop's Pine
-Bitter Cherry
-Bitternut
-Bitternut Hickory
-Black Birch
-Black Birck
-Black Cherry
-Black Hemlock
+ 
 Black Hills Spruce
 Black Jack Oak
 Black Locust
