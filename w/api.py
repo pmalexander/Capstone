@@ -59,7 +59,7 @@ def login_g():
 #NEED TO USE SESSION QUERY FOR THE SEARCH FUNCTION 12/19/2017, IF THERE IS A CHANGE HERE, I'D HAVE TO HEAD STRAIGHT TO THE REFERENCED ITEM
 #can be used as a template for the search process, remember to use the percentage sign to get portions of the text of locations, make sure to make it to the name of the location in the database    
 #the search page, allows users to query park/nature reserve locations
-#need to implement pagination at one point
+#remember to implement pagination at one point
 @app.route("/authorized/user/content/search", methods=["GET"])
 @app.route("/authorized/user/content/search/?searchq=none", methods=["GET"])
 #@login_required
@@ -74,11 +74,8 @@ def search_all():
 #@login_required
 def search_by_all():
     
-    #pulls from the classes set in database.py    
-    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
-    
     #cat is defined as any of the classes in database.py, can be used as a substitute for any single class when making an argument
-    cat = 'Location' and 'Fauna' and 'Flora' and 'Feature'
+    cat = 'Location'
     query = request.args.get('searchq', 'None')
 
     #if nothing is provided in the search form, message below is provided and search form is reset
@@ -101,9 +98,7 @@ def search_by_all():
 @app.route("/authorized/user/content/search/location/?searchq=none", methods=["GET"])
 #@login_required
 def search_by_loc():
-    
-    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
-    
+
     cat = 'Location'
     query = request.args.get('searchq', 'None')
 
@@ -126,8 +121,6 @@ def search_by_loc():
 @app.route("/authorized/user/content/search/fauna/?searchq=none", methods=["GET"])
 #@login_required
 def search_by_fauna():
-    
-    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
     
     cat = 'Fauna'
     query = request.args.get('searchq', 'None')
@@ -152,8 +145,6 @@ def search_by_fauna():
 #@login_required
 def search_by_flora():
     
-    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
-    
     cat = 'Flora'
     query = request.args.get('searchq', 'None')
 
@@ -177,8 +168,6 @@ def search_by_flora():
 #@login_required
 def search_by_feature():
     
-    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
-    
     cat = 'Feature'
     query = request.args.get('searchq', 'None')
 
@@ -199,6 +188,8 @@ def search_by_feature():
 
 #displays information page comprising of general information, animals, plants, and natural features
 @app.route("/authorized/user/content/information", methods=["GET"])
+@app.route("/authorized/user/content/information/<category>/<id>", methods=["GET"])
+
 #@login_required
 def loc_information():
     return render_template("information.html")

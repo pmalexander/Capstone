@@ -807,110 +807,757 @@ flora_pine_tree.characteristics = "Smell good, so good that people keep them in 
 session.add(flora_pine_tree)
 session.commit()
 
-'''
-Abies Amabilis
-Abies Balsamea
-Abies Bracteata
-Abies Fraseri
-Abies Lasiocarpa
-Abies Magnifica
-Abies Procera
-Acer Macrophyllum
-Acer Negundo
-Acer Pensylvanicum
-Acer Rubrum
-Acer Saccharinum
-Acer Saccharum
-Aesculus Californica
-Ague Tree
-Ahuehuete
-Alaska Cedar
-Alaska Cypress
-Alaska Yellow-cedar
-Alaska Yellowcedar
-Alaska-cedar
-Alaskan Larch
-Alberta Spruce
-Alberta White Spruce
-Allegheny Chinkapin
-Alligator-tree
-Almond Willow
-Almondleaf Willow
-Alnus Incana Subsp. Rugosa
-Alnus Incana Subsp. Tenuifolia
-Alnus Rhombifolia
-Alnus Rubra
-Alnus Viridis Subsp. Crispa
-Alnus Viridis Subsp. Sinuata
-Alpine Fir
-Alpine Hemlock
-Alpine Larch
-Amabilis Fir
-Amelanchier Arborea
-American Basswood
-American Beech
-American Elm
-American Green Alder
-American Hackberry
-American Holly
-American Hophornbeam
-American Hornbeam
-American Larch
-American Mountain-ash
-American Plum
-American Sycamore
-American Walnut
-Angelica Tree
-Apache Pine
-Aralia Spinosa
-Arbor Vitae
-Arborvitae
-Arbutus Arizonica
-Arbutus Menziesii
-Arbutus Texana
-Arce (Spanish)
-Arizona Black Walnut
-Arizona Cypress
-Arizona Fir
-Arizona Longleaf Pine
-Arizona Madrone
-Arizona Madrono
-Arizona Oak
-Arizona Rough Cypress
-Arizona Walnut
-Arizona White Oak
-Arkansas Pine
-Arkansas Soft Pine
-Ash-leaved Maple
-Ashe Juniper
-Ashleaf Maple
-Asimina Triloba
-Aspen
-Athel Tamarisk
-Atlantic White-cedar
-Australian-pine
-Austrian Pine
+flora_abies_amabilis = Flora()
+flora_abies_amabilis.name = "Abies Amabilis"
+flora_abies_amabilis.characteristics = "A tree."
 
-Baker Cypress
-Baldcypress
-Balsam
-Balsam Fir
-Balsam Fraser Fir
-Balsam Poplar
-Banks Pine
-Banksian Pine
-Barren Oak
-Basket Oak
-Basswood
-Bay
-Bay Laurel
-Baytree
-Beach Pine
-Beak Willow
-Beaked Willow
-Bearberry
-Beaverwood
-Bebb Willow
+session.add(flora_abies_amabilis)
+session.commit()
+
+flora_abies_bracteata = Flora()
+flora_abies_bracteata.name = "Abies Bracteata"
+flora_abies_bracteata.characteristics = "A tree."
+
+session.add(flora_abies_bracteata)
+session.commit()
+
+flora_abies_fraseri = Flora()
+flora_abies_fraseri.name = "Abies Fraseri"
+flora_abies_fraseri.characteristics = "A tree."
+
+session.add(flora_abies_fraseri)
+session.commit()
+
+############################################# A Tree Index ############################################# 
+flora_ = Flora()
+flora_.name = "Abies Lasiocarpa"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Abies Magnifica"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Abies Procera"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Acer Macrophyllum"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Acer Negundo"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Acer Pensylvanicum"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Acer Rubrum"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Acer Saccharinum"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Acer Saccharum"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Aesculus Californica"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Ague Tree"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Ahuehuete"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Alaska Cedar"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Alaska Cypress"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Alaska Yellow-cedar"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Alaska Yellowcedar"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Alaska-cedar"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Alaskan Larch"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Alberta Spruce"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Alberta White Spruce"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Allegheny Chinkapin"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Alligator-tree"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Almond Willow"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Almondleaf Willow"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Alnus Incana Subspecies Rugosa"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Alnus Incana Subspecies Tenuifolia"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Alnus Rhombifolia"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Alnus Rubra"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Alnus Viridis Subspecies Crispa"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Alnus Viridis Subspecies Sinuata"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Alpine Fir"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Alpine Hemlock"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Alpine Larch"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Amabilis Fir"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Amelanchier Arborea"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "American Basswood"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "American Beech"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "American Elm"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "American Green Alder"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "American Hackberry"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "American Holly"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "American Hophornbeam"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "American Hornbeam"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "American Larch"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "American Mountain-ash"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "American Plum"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "American Sycamore"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "American Walnut"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Angelica Tree"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Apache Pine"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Aralia Spinosa"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Arbor Vitae"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Arborvitae"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Arbutus Arizonica"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Arbutus Menziesii"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Arbutus Texana"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Arce - Spanish"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Arizona Black Walnut"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Arizona Cypress"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Arizona Fir"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Arizona Longleaf Pine"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Arizona Madrone"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Arizona Madrono"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Arizona Oak"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Arizona Rough Cypress"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Arizona Walnut"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Arizona White Oak"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Arkansas Pine"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Arkansas Soft Pine"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Ash-leaved Maple"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Ashe Juniper"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Ashleaf Maple"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Asimina Triloba"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Aspen"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Athel Tamarisk"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Atlantic White-cedar"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Australian-pine"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Austrian Pine"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+############################################# B Tree Index ############################################# 
+flora_ = Flora()
+flora_.name = "Baker Cypress"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Baldcypress"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Balsam"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Balsam Fir"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Balsam Fraser Fir"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Balsam Poplar"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Banks Pine"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Banksian Pine"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Barren Oak"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Basket Oak"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Basswood"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bay"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bay Laurel"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Baytree"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Beach Pine"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Beak Willow"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Beaked Willow"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bearberry"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Beaverwood"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bebb Willow"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Beech"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bellota"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Betula Alleghaniensis"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+'''
 Beech
 Bellota
 Betula Alleghaniensis

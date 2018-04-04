@@ -22,6 +22,9 @@
                 {{ location.name}}
             </li>
         </ul>
+        <p>
+            <a href = "{{ url_for ('information', id=location.id)}}"></a>
+        </p>
         </div>
     </div>
 </div>
@@ -36,6 +39,9 @@
                 {{ fauna.name}}
             </li>
         </ul>
+        <p>
+            <a href = "{{ url_for ('information', id=fauna.id)}}"></a>
+        </p>
         </div>
     </div>
 </div>    
@@ -50,6 +56,9 @@
                 {{ flora.name}}
             </li>
         </ul>
+        <p>
+            <a href = "{{ url_for ('information', id=flora.id)}}"></a>
+        </p>
         </div>
     </div>
 </div>    
@@ -64,6 +73,9 @@
                 {{ feature.name}}
             </li>
         </ul>
+        <p>
+            <a href = "{{ url_for ('information', id=feature.id)}}"></a>
+        </p>
         </div>
     </div>
 </div>    
