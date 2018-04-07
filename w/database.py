@@ -1713,84 +1713,84 @@ session.add(flora_)
 session.commit()
 
 flora_ = Flora()
-flora_.name = ""
+flora_.name = "Black Hills Spruce"
 flora_.characteristics = "A tree."
 
 session.add(flora_)
 session.commit()
 
 flora_ = Flora()
-flora_.name = ""
+flora_.name = "Black Jack Oak"
 flora_.characteristics = "A tree."
 
 session.add(flora_)
 session.commit()
 
 flora_ = Flora()
-flora_.name = ""
+flora_.name = "Black Locust"
 flora_.characteristics = "A tree."
 
 session.add(flora_)
 session.commit()
 
 flora_ = Flora()
-flora_.name = ""
+flora_.name = "Black Myrtle"
 flora_.characteristics = "A tree."
 
 session.add(flora_)
 session.commit()
 
 flora_ = Flora()
-flora_.name = ""
+flora_.name = "Black Oak"
 flora_.characteristics = "A tree."
 
 session.add(flora_)
 session.commit()
 
 flora_ = Flora()
-flora_.name = ""
+flora_.name = "Black Pine"
 flora_.characteristics = "A tree."
 
 session.add(flora_)
 session.commit()
 
 flora_ = Flora()
-flora_.name = ""
+flora_.name = "Black Tupelo"
 flora_.characteristics = "A tree."
 
 session.add(flora_)
 session.commit()
 
 flora_ = Flora()
-flora_.name = ""
+flora_.name = "Black Walnut"
 flora_.characteristics = "A tree."
 
 session.add(flora_)
 session.commit()
 
 flora_ = Flora()
-flora_.name = ""
+flora_.name = "Black Willow"
 flora_.characteristics = "A tree."
 
 session.add(flora_)
 session.commit()
 
 flora_ = Flora()
-flora_.name = ""
+flora_.name = "Blackgum"
 flora_.characteristics = "A tree."
 
 session.add(flora_)
 session.commit()
 
 flora_ = Flora()
-flora_.name = ""
+flora_.name = "Blackjack Oak"
 flora_.characteristics = "A tree."
 
 session.add(flora_)
 session.commit()
 
 flora_ = Flora()
-flora_.name = ""
+flora_.name = "Blisted"
 flora_.characteristics = "A tree."
 
 session.add(flora_)
@@ -1804,18 +1804,6 @@ session.add(flora_)
 session.commit()
 '''
  
-Black Hills Spruce
-Black Jack Oak
-Black Locust
-Black Myrtle
-Black Oak
-Black Pine
-Black Tupelo
-Black Walnut
-Black Willow
-Blackgum
-Blackjack Oak
-Blisted
 Blister Fir
 Blue Oak
 Blue Paloverde

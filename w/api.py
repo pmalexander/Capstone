@@ -189,7 +189,12 @@ def search_by_feature():
 #displays information page comprising of general information, animals, plants, and natural features
 @app.route("/authorized/user/content/information", methods=["GET"])
 @app.route("/authorized/user/content/information/<category>/<id>", methods=["GET"])
-
+def info_route(category, id):
+    category_info = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
+    
+    
+    
+    
 #@login_required
 def loc_information():
     return render_template("information.html")
@@ -213,12 +218,12 @@ def guide_get():
 
 #provides users with means to post sightings to share with others, presence of animals and/or plants in certain locations to update others, etc.    
 @app.route("/authorized/user/content/sighting", methods=["GET"])
-@login_required
+#@login_required
 def sightings_g():
     return render_template("sighting.html")
 
 @app.route("/authorized/user/content/sighting", methods=["GET"])
-@login_required
+#@login_required
 def sightings_p():
     sighting = Sighting(
         title=request.form["title"],
