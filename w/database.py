@@ -1797,46 +1797,285 @@ session.add(flora_)
 session.commit()
 
 flora_ = Flora()
+flora_.name = "Blister Fir"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Blue Oak"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Blue Paloverde"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Blue Spruce"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Blue-beech"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Blue-poplar"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bluegum"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bluegum Eucalyptus"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bluejack Oak"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bois D'arc"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Border Limber Pine"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Border Pinyon"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Border White Pine"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bottom White Pine"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bottom-land Post Oak"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bottomland Post Oak"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bottomland Red Oak"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Boxelder"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Boynton Post Oak"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bracted Balsam Fir"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Brake Cedar"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Break Cedar"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Brewer Spruce"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bristlecone Fir"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Broadleaf Maple"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Broom Hickory"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Buckeye"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bull Pine"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bull-bay"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bullnut"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Bur Oak"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Butternut"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = "Buttonball Tree"
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
+flora_.name = ""
+flora_.characteristics = "A tree."
+
+session.add(flora_)
+session.commit()
+
+flora_ = Flora()
 flora_.name = ""
 flora_.characteristics = "A tree."
 
 session.add(flora_)
 session.commit()
 '''
- 
-Blister Fir
-Blue Oak
-Blue Paloverde
-Blue Spruce
-Blue-beech
-Blue-poplar
-Bluegum
-Bluegum Eucalyptus
-Bluejack Oak
-Bois D'arc
-Border Limber Pine
-Border Pinyon
-Border White Pine
-Bottom White Pine
-Bottom-land Post Oak
-Bottomland Post Oak
-Bottomland Red Oak
-Boxelder
-Boynton Post Oak
-Bracted Balsam Fir
-Brake Cedar
-Break Cedar
-Brewer Spruce
-Bristlecone Fir
-Broadleaf Maple
-Broom Hickory
-Buckeye
-Bull Pine
-Bull-bay
-Bullnut
-Bur Oak
-Butternut
-Buttonball Tree
 
 Cabbage Palmetto
 California Bay

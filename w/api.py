@@ -189,13 +189,23 @@ def search_by_feature():
 #displays information page comprising of general information, animals, plants, and natural features
 @app.route("/authorized/user/content/information", methods=["GET"])
 @app.route("/authorized/user/content/information/<category>/<id>", methods=["GET"])
+#@login_required
 def info_route(category, id):
     category_info = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
     
+    category_specific = session.query(entries).filter(entries.id == id).first()
+    return render_template("")
     
+def unique_entry_id(id):
+    uniqueentry = session.query(Entry).filter(Entry.id == id).first()
+    return render_template("information.html", entry=entry
+    )
+
+def entry_id_edit_g(id):
+    entry_unid = session.query(Entry).get(id)
+    return render_template("entry_edit.html", entry_unid=entry_unid
+    )
     
-    
-#@login_required
 def loc_information():
     return render_template("information.html")
     
