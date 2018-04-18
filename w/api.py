@@ -192,20 +192,18 @@ def search_by_feature():
 #@login_required
 def info_route(category, id):
     category_info = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
-    
     category_specific = session.query(entries).filter(entries.id == id).first()
-    return render_template("")
+    return render_template("information.html")
     
 def unique_entry_id(id):
-    uniqueentry = session.query(Entry).filter(Entry.id == id).first()
+    unique_id = session.query(Entry).get(id)
     return render_template("information.html", entry=entry
     )
 
-def entry_id_edit_g(id):
     entry_unid = session.query(Entry).get(id)
     return render_template("entry_edit.html", entry_unid=entry_unid
     )
-    
+
 def loc_information():
     return render_template("information.html")
     
