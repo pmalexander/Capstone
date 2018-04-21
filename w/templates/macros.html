@@ -30,6 +30,43 @@
 </div>
 {% endmacro %}
 
+{% macro render_location_unid(location) %}
+<div class="row">
+    <div class="col-md-3 text-right metadata">
+        <div>
+        <ul class="list-unstyled">
+            <li>
+                {{ location.name}}
+            </li>
+        </ul>
+        <ul class="list-unstyled">
+            <li>
+                {{ location.latitude}}
+            </li>
+        </ul>
+        <ul class="list-unstyled">
+            <li>
+                {{ location.longitude}}
+            </li>
+        </ul>
+        <ul class="list-unstyled">
+            <li>
+                {{ location.region}}
+            </li>
+        </ul>
+        <ul class="list-unstyled">
+            <li>
+                {{ location.visitors}}
+            </li>
+        </ul>
+        <p>
+            <a href = "{{ url_for ('information', id=location.id)}}"></a>
+        </p>
+        </div>
+    </div>
+</div>
+{% endmacro %}
+
 {% macro render_fauna(fauna) %}
 <div class="row">
     <div class="col-md-3 text-right metadata">
@@ -47,6 +84,28 @@
 </div>    
 {% endmacro %}
 
+{% macro render_fauna_unid(fauna) %}
+<div class="row">
+    <div class="col-md-3 text-right metadata">
+        <div>
+        <ul class="list-unstyled">
+            <li>
+                {{ fauna.name}}
+            </li>
+        </ul>
+        <ul class="list-unstyled">
+            <li>
+                {{ fauna.characteristics}}
+            </li>
+        </ul>
+        <p>
+            <a href = "{{ url_for ('information', id=fauna.id)}}"></a>
+        </p>
+        </div>
+    </div>
+</div>    
+{% endmacro %}
+
 {% macro render_flora(flora) %}
 <div class="row">
     <div class="col-md-3 text-right metadata">
@@ -54,6 +113,28 @@
         <ul class="list-unstyled">
             <li>
                 {{ flora.name}}
+            </li>
+        </ul>
+        <p>
+            <a href = "{{ url_for ('information', id=flora.id)}}"></a>
+        </p>
+        </div>
+    </div>
+</div>    
+{% endmacro %}
+
+{% macro render_flora_unid(flora) %}
+<div class="row">
+    <div class="col-md-3 text-right metadata">
+        <div>
+        <ul class="list-unstyled">
+            <li>
+                {{ flora.name}}
+            </li>
+        </ul>
+        <ul class="list-unstyled">
+            <li>
+                {{ flora.characteristics}}
             </li>
         </ul>
         <p>

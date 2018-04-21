@@ -34,6 +34,7 @@ class Location(Base):
     latitude = Column(Float)
     longitude = Column(Float)
     visitors = Column(Integer)
+    summary = Column(String(1024))
     
     # one fauna to many locations, since fauna can be found in many locations
     fauna_id = Column(Integer, ForeignKey("fauna.id"))
@@ -83,6 +84,7 @@ class User(Base, UserMixin):
     name = Column(String(128))
     email = Column(String(128), unique=True)
     password = Column(String(128))
+    sighting = relationship("Sighting", backref="author")
 
 # creates parameters for inventory items stored in the database
 class Inventory(Base):
@@ -120,6 +122,7 @@ park_1.region = "North Carolina and Virgina, United States"
 park_1.latitude = 36.659089
 park_1.longitude = -81.077139
 park_1.visitors = "15000"
+park_1.summary = "A park."
  
 session.add(park_1)
 session.commit()
@@ -130,6 +133,7 @@ park_2.region = "Wyoming, United States"
 park_2.latitude = 44.427895
 park_2.longitude = -110.588379
 park_2.visitors = "15000"
+park_2.summary = "A park."
  
 session.add(park_2)
 session.commit()
@@ -140,6 +144,7 @@ park_3.region = "Pennsylvania, United States"
 park_3.latitude = 40.720585
 park_3.longitude = -77.826965
 park_3.visitors = "15000"
+park_3.summary = "A park."
  
 session.add(park_3)
 session.commit()
@@ -150,6 +155,7 @@ park_4.region = "Utah, United States"
 park_4.latitude = 37.317207
 park_4.longitude = -113.022537
 park_4.visitors = "15000"
+park_4.summary = "A park."
  
 session.add(park_4)
 session.commit()
@@ -160,6 +166,7 @@ park_5.region = "California, United States"
 park_5.latitude = 37.865101
 park_5.longitude = -119.538330
 park_5.visitors = "15000"
+park_5.summary = "A park."
  
 session.add(park_5)
 session.commit()
@@ -170,6 +177,7 @@ park_6.region = "California, United States"
 park_6.latitude = 38.235195
 park_6.longitude = -120.066483
 park_6.visitors = "15000"
+park_6.summary = "A park."
  
 session.add(park_6)
 session.commit()
@@ -180,6 +188,7 @@ park_7.region = " Hawaii, United States"
 park_7.latitude = 20.701283
 park_7.longitude = -156.173325
 park_7.visitors = "15000"
+park_7.summary = "A park."
  
 session.add(park_7)
 session.commit()
@@ -190,6 +199,7 @@ park_8.region = "California, United States"
 park_8.latitude = 34.105156
 park_8.longitude = -118.731316
 park_8.visitors = "15000"
+park_8.summary = "A park."
  
 session.add(park_8)
 session.commit()
@@ -200,6 +210,7 @@ park_9.region = "Utah, United States"
 park_9.latitude = 39.187050
 park_9.longitude = -111.379890
 park_9.visitors = "15000"
+park_9.summary = "A park."
  
 session.add(park_9)
 session.commit()
@@ -210,6 +221,7 @@ park_10.region = "Colorado, United States"
 park_10.latitude = 39.639973
 park_10.longitude = -104.831863
 park_10.visitors = "15000"
+park_10.summary = "A park."
  
 session.add(park_10)
 session.commit()
@@ -220,6 +232,7 @@ park_11.region = "Florida, United States"
 park_11.latitude = 27.612417
 park_11.longitude = -81.053383
 park_11.visitors = "15000"
+park_11.summary = "A park."
  
 session.add(park_11)
 session.commit()
@@ -230,6 +243,7 @@ park_12.region = "Colorado, United States"
 park_12.latitude = 38.873840
 park_12.longitude = -104.886665
 park_12.visitors = "15000"
+park_12.summary = "A park."
  
 session.add(park_12)
 session.commit()
@@ -240,6 +254,7 @@ park_13.region = "Arizona, United States"
 park_13.latitude = 34.909988
 park_13.longitude = -109.806793 
 park_13.visitors = "15000"
+park_13.summary = "A park."
  
 session.add(park_13)
 session.commit()
@@ -250,6 +265,7 @@ park_14.region = "Georgia, United States"
 park_14.latitude = 34.765972 
 park_14.longitude = -84.143517
 park_14.visitors = "15000"
+park_14.summary = "A park."
  
 session.add(park_14)
 session.commit()
@@ -260,6 +276,7 @@ park_15.region = "North Dakota, United States"
 park_15.latitude = 47.683880
 park_15.longitude = -102.354126 
 park_15.visitors = "15000"
+park_15.summary = "A park."
  
 session.add(park_15)
 session.commit()
@@ -270,6 +287,7 @@ park_16.region = "California, United States"
 park_16.latitude = 37.8728
 park_16.longitude = -119.573
 park_16.visitors = "15000"
+park_16.summary = "A park."
  
 session.add(park_16)
 session.commit()

@@ -29,9 +29,9 @@ categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Featu
 #need to implement pagination at one point
 #default page, shows up upon activation of the app if user is not already logged in
 @app.route("/")
-@login_required
+#@login_required
 def start_page(page=1):
-    return redirect(url_for('search'))
+    return redirect(url_for('search_all'))
 
 #registration page for new users, user must register username using e-mail, registration allows ability to personalize app (save pictures, plans, checklists, etc.), if logged in, bypass this stage
 @app.route("/registration", methods=["GET", "POST"])
@@ -192,20 +192,49 @@ def search_by_feature():
 #@login_required
 def info_route(category, id):
     category_info = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
-    category_specific = session.query(entries).filter(entries.id == id).first()
+
+'''
+EVERYTHING HERE IS A SHITSHOW, CLEAR IT UP, QUICK
+@app.route("/authorized/user/content/information/<category>/<id>")
+#@login_required
+def view_entry(category, id):
+    cat_unid = session.query(categories[cat[]).filter(categories[cat].id(entries)).one()
+return render_template("information.html", cat_unit=cat_unid)
+
+return render_template("edit_entry.html",entry=entry)
+    
+    #this will have to pull for a specific entry(?)
+    cat_spec = session.query(entries).filter(entries.id == id).first()
+  
+    #or this one?
+    cat_unid = session.query(categories[cat[]).filter(categories[cat].id(entries)).all()
+    session.query(Entry).get(id).delete(id)
+    session.commit()
+    if current_user == entry_unid.author:
+        return render_template("delete_entryid.html", id=id, entry_unid=entry_unid)
+    else:
+        return redirect(url_for('entries'))
+    
     return render_template("information.html")
     
-def unique_entry_id(id):
-    unique_id = session.query(Entry).get(id)
-    return render_template("information.html", entry=entry
+def info_cat_unid(id):
+    info_unid = session.query(Entry).get(id)
+    return render_template("information.html", Entry=Entry
     )
 
     entry_unid = session.query(Entry).get(id)
     return render_template("entry_edit.html", entry_unid=entry_unid
     )
+    
+    entries_pulled = session.query(categories[cat]).filter(categories[cat].name.like(query)).all()
+
+    for entry in entries:
+        print(entry)
 
 def loc_information():
     return render_template("information.html")
+'''    
+    
     
 #directs users to checklist page to check off on items
 @app.route("/authorized/user/content/checklist", methods=["GET"])
@@ -230,7 +259,7 @@ def guide_get():
 def sightings_g():
     return render_template("sighting.html")
 
-@app.route("/authorized/user/content/sighting", methods=["GET"])
+@app.route("/authorized/user/content/sighting", methods=["POST"])
 #@login_required
 def sightings_p():
     sighting = Sighting(

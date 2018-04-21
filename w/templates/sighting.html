@@ -53,29 +53,31 @@
   </style>
     </header>
 
-<body>
 <body class="masthead">
-<nav class="navbar navbar-inverse">
-<div class="container-fluid">
-<div class="navbar-header">
-<button type="button" class="navbar-toggle" data toggle="collapse" data-target="#myNavBar">
-<span class="icon-bar"></span>  
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-<a class="navbar-brand" href="#"><img src="img">
-</div>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data toggle="collapse" data-target="#myNavBar">
+        <span class="icon-bar"></span>  
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+    <a class="navbar-brand" href="#"><img src="img">
+        </div>
     <div class="collapse navbar-collapse" id="myNavBar">
       <ul class="nav navbar-nav navbar-center">
         <li id="nSearch" class=active><a href="/authorized/user/content/search">Search</a></li>
         <li id="nChecklist"><a href="/authorized/user/content/checklist">Checklist</a></li>
         <li id="nGuide"><a href="/authorized/user/content/guide">Guide</a></li>
-        <li id="nSighting" class=active><a href="/authorized/user/content/sighting">Sighting</a></li>
+        <li id="nSighting"><a href="/authorized/user/content/sighting">Sighting</a></li>
         <li id="nLogin"><a href="/login">Log In</a></li>
         <li id="nSignup"><a href="/registration">Sign Up</a></li>
+        {% if current_user.is_authenticated %}
+          <li id="nLogout"><a href="/logout">Logout</a></li>
+        {% endif %}
       </ul>
     </div>
-    </nav><!-- end of navbar group, copy this to other html files -->
+  </nav>
 
       
         <br></br>
@@ -92,7 +94,7 @@
 <h2>Type of Sighting</h2>
 <input type="text" class="form-control" id="title" name="title" placeholder="What did you see?" required>
 </div>
-<div class="form-group">
+<div class="form-group">.
 <br></br>
 <h2>Describe Sighting</h2>
 <textarea class="form-control" id="content" name="content" placeholder="Description of sighting..." rows="10" required></textarea>
