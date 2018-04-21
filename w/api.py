@@ -192,7 +192,7 @@ def search_by_feature():
 #@login_required
 def info_route(category, id):
     category_info = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
-
+    entry_unid_loc=session.query(Location).filter(Location.id==id).one()
 '''
 EVERYTHING HERE IS A SHITSHOW, CLEAR IT UP, QUICK
 @app.route("/authorized/user/content/information/<category>/<id>")
