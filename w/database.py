@@ -65,7 +65,7 @@ class Flora(Base):
 
 # certain landmarks are endemic to specific sites, many can exist in one site
 class Feature(Base):
-    __tablename__ = "features"
+    __tablename__ = "feature"
     
     id = Column(Integer, primary_key=True)
     name = Column((String)(1024))

@@ -193,6 +193,26 @@ def search_by_feature():
 def info_route(category, id):
     category_info = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
     entry_unid_loc=session.query(Location).filter(Location.id==id).one()
+    
+@app.route("/authorized/user/content/information/location/<id>", methods=["GET"])
+def view_location():
+    location_unid=session.query(Location).filter(Location.id==id).one()
+    return render_template("info_location.html", entry=entry)
+    
+@app.route("/authorized/user/content/information/fauna/<id>", methods=["GET"])
+def view_fauna():
+    fauna_unid=session.query(Fauna).filter(Fauna.id==id).one()
+    return render_template("info_fauna.html", entry=entry)
+    
+@app.route("/authorized/user/content/information/flora/<id>", methods=["GET"])
+def view_flora():
+    flora_unid=session.query(Flora).filter(Flora.id==id).one()
+    return render_template("info_flora.html", entry=entry)
+    
+@app.route("/authorized/user/content/information/feature/<id>", methods=["GET"])
+    feature_unid=session.query(Feature).filter(Feature.id==id).one()
+    return render_template("info_feature.html", entry=entry)
+    
 '''
 EVERYTHING HERE IS A SHITSHOW, CLEAR IT UP, QUICK
 @app.route("/authorized/user/content/information/<category>/<id>")
