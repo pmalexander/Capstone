@@ -188,33 +188,37 @@ def search_by_feature():
 
 #displays information page comprising of general information, animals, plants, and natural features
 @app.route("/authorized/user/content/information", methods=["GET"])
-@app.route("/authorized/user/content/information/<category>/<id>", methods=["GET"])
+@app.route("/authorized/user/content/information/<category>/<int:id>", methods=["GET"])
 #@login_required
 def info_route(category, id):
     category_info = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
     entry_unid_loc=session.query(Location).filter(Location.id==id).one()
     
-@app.route("/authorized/user/content/information/location/<id>", methods=["GET"])
-def view_location():
+@app.route("/authorized/user/content/information/location/<int:id>", methods=["GET"])
+def view_location(id):
     location_unid=session.query(Location).filter(Location.id==id).one()
-    return render_template("info_location.html", entry=entry)
+    return render_template("info_location.html", location_unid=location_unid)
     
-@app.route("/authorized/user/content/information/fauna/<id>", methods=["GET"])
-def view_fauna():
+@app.route("/authorized/user/content/information/fauna/<int:id>", methods=["GET"])
+#@login_required
+def view_fauna(id):
     fauna_unid=session.query(Fauna).filter(Fauna.id==id).one()
-    return render_template("info_fauna.html", entry=entry)
+    return render_template("info_fauna.html", fauna_id=fauna_unid)
     
-@app.route("/authorized/user/content/information/flora/<id>", methods=["GET"])
-def view_flora():
+@app.route("/authorized/user/content/information/flora/<int:id>", methods=["GET"])
+#@login_required
+def view_flora(id):
     flora_unid=session.query(Flora).filter(Flora.id==id).one()
-    return render_template("info_flora.html", entry=entry)
+    return render_template("info_flora.html", flora_unid=flora_unid)
     
-@app.route("/authorized/user/content/information/feature/<id>", methods=["GET"])
+@app.route("/authorized/user/content/information/feature/<int:id>", methods=["GET"])
+#@login_required
+def view_feature(id):
     feature_unid=session.query(Feature).filter(Feature.id==id).one()
-    return render_template("info_feature.html", entry=entry)
+    return render_template("info_feature.html", feature_unid=feature_unid)
     
 '''
-EVERYTHING HERE IS A SHITSHOW, CLEAR IT UP, QUICK
+been working through possible options below, (don't work)
 @app.route("/authorized/user/content/information/<category>/<id>")
 #@login_required
 def view_entry(category, id):
@@ -254,7 +258,6 @@ def info_cat_unid(id):
 def loc_information():
     return render_template("information.html")
 '''    
-    
     
 #directs users to checklist page to check off on items
 @app.route("/authorized/user/content/checklist", methods=["GET"])

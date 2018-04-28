@@ -23,7 +23,7 @@ from datetime import datetime
 
 ###need to change to streamlined format (all in one line)
 class Location(Base):
-    __tablename__ = "locations"
+    __tablename__ = "location"
     
 #ISSUE - REGION IS GENERAL, LAT AND LONG DENOTE SOMETHING SPECIFIC - REMOVED REGION
 #BECAUSE THE LAT AND LONGITUDE ARE PRECISE, THEY CAN MEASURE DISTANCE BETWEEN EACH OTHER,

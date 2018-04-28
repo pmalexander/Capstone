@@ -77,23 +77,12 @@
     </div>
 </nav>
 
-<div class="container"></div>
-    <div class="row">
-        <div class="col-md boxed blue">
-        
-        </div>
-    
-        <div class="col-md boxed red">
-    
-        </div>
-    
-        <div class="col-md boxed green">
-    
-        </div>
-        
-        <div class="col-md boxed yellow">
-            
-        </div>
-    </div>
-</div> <!--end container, make sure to donfgure them in css -->       
+{% import "macros.html" as macros %}
+{% block content %}
+{% for fauna in fauna_unid %}
+{{ macros.render_fauna_unid(fauna_unid) }}
+{% endfor %}
+{% endblock %}
+
 </body>
+
