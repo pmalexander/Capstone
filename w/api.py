@@ -192,30 +192,64 @@ def search_by_feature():
 #@login_required
 def info_route(category, id):
     category_info = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
+    
     entry_unid_loc=session.query(Location).filter(Location.id==id).one()
+    
+    for entry_loc in entry_unid_loc:
+        print(entry_loc)
+
+    return render_template('information.html', entry_unid_loc=entry_unid_loc)
     
 @app.route("/authorized/user/content/information/location/<int:id>", methods=["GET"])
 def view_location(id):
+    category_info = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
+    info_cat = 'Location'
+    
     location_unid=session.query(Location).filter(Location.id==id).one()
+    
+    for location in location_unid:
+        print(location)
+
     return render_template("info_location.html", location_unid=location_unid)
     
 @app.route("/authorized/user/content/information/fauna/<int:id>", methods=["GET"])
 #@login_required
 def view_fauna(id):
+    category_info = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
+    info_cat = 'Fauna'
+    
     fauna_unid=session.query(Fauna).filter(Fauna.id==id).one()
+    
+    for fauna in fauna_unid:
+        print(fauna)
+
     return render_template("info_fauna.html", fauna_id=fauna_unid)
     
 @app.route("/authorized/user/content/information/flora/<int:id>", methods=["GET"])
 #@login_required
 def view_flora(id):
+    category_info = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
+    info_cat = 'Flora'
+    
     flora_unid=session.query(Flora).filter(Flora.id==id).one()
+    
+    for flora in flora_unid:
+        print(flora)
+
     return render_template("info_flora.html", flora_unid=flora_unid)
     
 @app.route("/authorized/user/content/information/feature/<int:id>", methods=["GET"])
 #@login_required
 def view_feature(id):
+    category_info = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
+    info_cat = 'Feature'
+    
     feature_unid=session.query(Feature).filter(Feature.id==id).one()
-    return render_template("info_feature.html", feature_unid=feature_unid)
+
+    for feature in feature_unid:
+        print(feature)
+
+    return render_template('info_feature.html', feature_unid=feature_unid)
     
 '''
 been working through possible options below, (don't work)

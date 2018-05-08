@@ -34,7 +34,15 @@ class Location(Base):
     latitude = Column(Float)
     longitude = Column(Float)
     visitors = Column(Integer)
-    summary = Column(String(1024))
+    overview = Column(String(1024))
+    
+    def __init__(self, name, region, latitude, longitude, visitors, overview):
+        self.name = name
+        self.region = region
+        self.latitude = name
+        self.longitude = region
+        self.visitors = name
+        self.overview = overview
     
     # one fauna to many locations, since fauna can be found in many locations
     fauna_id = Column(Integer, ForeignKey("fauna.id"))
@@ -50,6 +58,10 @@ class Fauna(Base):
     id = Column(Integer, primary_key=True)
     name = Column((String)(1024))
     characteristics = Column((String)(1024))
+    
+    def __init__(self, name, characteristics):
+        self.name = name
+        self.characteristics = characteristics
    
     loc_id = Column(Integer, ForeignKey(Location.id), nullable=True)
 
@@ -60,6 +72,10 @@ class Flora(Base):
     id = Column(Integer, primary_key=True)
     name = Column((String)(1024))
     characteristics = Column((String)(1024))
+
+    def __init__(self, name, characteristics):
+        self.name = name
+        self.characteristics = characteristics
     
     loc_id = Column(Integer, ForeignKey(Location.id), nullable=True)
 
@@ -70,6 +86,11 @@ class Feature(Base):
     id = Column(Integer, primary_key=True)
     name = Column((String)(1024))
     characteristics = Column((String)(1024))
+    
+    def __init__(self, name, characteristics):
+        self.name = name
+        self.characteristics = characteristics
+    
     loc_id = Column(Integer, ForeignKey(Location.id), nullable=True)
     #assoc_feature = relationship("Location", backref="assoc_feature")
     
@@ -113,6 +134,8 @@ Base.metadata.create_all(engine)
 ###PARKS/RESERVES/WHATHAVEYOU###
 ################################
 
+name_map = {'first': 'first_name', 'last': 'last_name', 'bd': 'birth_date', 'pk': 'id'}
+
 #all visitor numbers are placeholders, will probably leave out in later version
 # adds national park/reserves to be queried in database, latitude and longitude of location saved
 # region (general) was removed due to complications with latitude and longitude (definitive), lat and long will be used as reference points in relation to others (easier mapping)
@@ -122,10 +145,37 @@ park_1.region = "North Carolina and Virgina, United States"
 park_1.latitude = 36.659089
 park_1.longitude = -81.077139
 park_1.visitors = "15000"
-park_1.summary = "A park."
- 
+park_1.overview = "A park."
+
+park_1 = {"Blue Ridge Parkway", "North Carolina and Virginia, United States",  
+
 session.add(park_1)
 session.commit()
+
+'''
+loc1 = Location('Blue Ridge Parkway', 'North Carolina and Virginia, United States', 36.659089, -81.077139, '15000', 'A park.')
+loc2
+loc3
+loc4
+loc5
+loc6
+loc7
+loc8
+loc9
+
+session.add(loc1
+)
+# insert recipe data
+recipe1 = Recipe('Slow-Cooker Tacos', 'Delicious ground beef that has been simmering in taco seasoning and sauce.  Perfect with hard-shelled tortillas!')
+recipe2 = Recipe('Hamburgers', 'Classic dish elivated with pretzel buns.')
+recipe3 = Recipe('Mediterranean Chicken', 'Grilled chicken served with pitas, hummus, and sauted vegetables.')
+db.session.add(recipe1)
+db.session.add(recipe2)
+db.session.add(recipe3)
+ 
+# commit the changes
+db.session.commit()
+'''
 
 park_2 = Location()
 park_2.name = "Yellowstone National Park"
