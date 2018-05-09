@@ -134,228 +134,47 @@ Base.metadata.create_all(engine)
 ###PARKS/RESERVES/WHATHAVEYOU###
 ################################
 
-name_map = {'first': 'first_name', 'last': 'last_name', 'bd': 'birth_date', 'pk': 'id'}
-
 #all visitor numbers are placeholders, will probably leave out in later version
 # adds national park/reserves to be queried in database, latitude and longitude of location saved
 # region (general) was removed due to complications with latitude and longitude (definitive), lat and long will be used as reference points in relation to others (easier mapping)
-park_1 = Location()
-park_1.name = "Blue Ridge Parkway"
-park_1.region = "North Carolina and Virgina, United States"
-park_1.latitude = 36.659089
-park_1.longitude = -81.077139
-park_1.visitors = "15000"
-park_1.overview = "A park."
 
-park_1 = {"Blue Ridge Parkway", "North Carolina and Virginia, United States",  
-
-session.add(park_1)
-session.commit()
-
-'''
 loc1 = Location('Blue Ridge Parkway', 'North Carolina and Virginia, United States', 36.659089, -81.077139, '15000', 'A park.')
-loc2
-loc3
-loc4
-loc5
-loc6
-loc7
-loc8
-loc9
+loc2 = Location('Yellowstone National Park', 'Wyoming, United States', 44.427895, -110.588379, '15000', 'A park.')
+loc3 = Location('Rothrock State Forest', 'Pennsylvania, United States', 40.720585, -77.826965, '15000', 'A park.')
+loc4 = Location('Zion National Park', 'Utah, United States', 37.317207, -113.022537, '15000', 'A park.')
+loc5 = Location('Yosemite National Park','California, United States', 37.865101, -119.538330, '15000','A park.')
+loc6 = Location('Stanislaus National Forest', 'California, United States', 38.235195, -120.066483, '15000', 'A park.')
+loc7 = Location('Haleakala National Park', 'Hawaii, United States', 20.701283, -156.173325, '15000', 'A park.')
+loc8 = Location('Malibu Creek State Park', 'California, United States', 34.105156, -118.731316, '15000', 'A park.')
+loc9 = Location('Manti-La Sal National Forest', 'Utah, United States', 39.187050, -111.379890, '15000', 'A park.')
+loc10 = Location('Cherry Creek State Park','Colorado, United States', 39.639973, -104.831863, '15000', 'A park.')
+loc11 = Location('Kissimmee Prairie Preserve State Park', 'Florida, United States', 27.612417, -81.053383, '15000', 'A park.')
+loc12 = Location('Garden of Gods', 'Colorado, United States', 38.873840, -104.886665, '15000', 'A park.')
+loc13 = Location('Petrified Forest National Park', 'Arizona, United States', 34.909988, -109.806793 , '15000', 'A park.')
+loc14 = Location('Chattahoochee National Forest', 'Georgia, United States', 34.765972, -84.143517, '15000', 'A park.')
+loc15 = Location('Fort Berthold Indian Reservation', 'North Dakota, United States', 47.683880, -102.354126 , '15000', 'A park.')
+loc16 = Location('Yosemite National Park', 'California, United States', 37.8728, -119.573, '15000', 'A park.')
+loc17 = Location('Sweetwater Creek State Park', 'Georgia, United States', 33.7525, 84.6287, '15000', 'A park.')
 
-session.add(loc1
-)
-# insert recipe data
-recipe1 = Recipe('Slow-Cooker Tacos', 'Delicious ground beef that has been simmering in taco seasoning and sauce.  Perfect with hard-shelled tortillas!')
-recipe2 = Recipe('Hamburgers', 'Classic dish elivated with pretzel buns.')
-recipe3 = Recipe('Mediterranean Chicken', 'Grilled chicken served with pitas, hummus, and sauted vegetables.')
-db.session.add(recipe1)
-db.session.add(recipe2)
-db.session.add(recipe3)
- 
-# commit the changes
-db.session.commit()
-'''
+session.add(loc1)
+session.add(loc2)
+session.add(loc3)
+session.add(loc4)
+session.add(loc5)
+session.add(loc6)
+session.add(loc7)
+session.add(loc8)
+session.add(loc9)
+session.add(loc10)
+session.add(loc11)
+session.add(loc12)
+session.add(loc13)
+session.add(loc14)
+session.add(loc15)
+session.add(loc16)
+session.add(loc17)
 
-park_2 = Location()
-park_2.name = "Yellowstone National Park"
-park_2.region = "Wyoming, United States"
-park_2.latitude = 44.427895
-park_2.longitude = -110.588379
-park_2.visitors = "15000"
-park_2.summary = "A park."
- 
-session.add(park_2)
 session.commit()
-
-park_3 = Location()
-park_3.name = "Rothrock State Forest"
-park_3.region = "Pennsylvania, United States"
-park_3.latitude = 40.720585
-park_3.longitude = -77.826965
-park_3.visitors = "15000"
-park_3.summary = "A park."
- 
-session.add(park_3)
-session.commit()
-
-park_4 = Location()
-park_4.name = "Zion National Park"
-park_4.region = "Utah, United States"
-park_4.latitude = 37.317207
-park_4.longitude = -113.022537
-park_4.visitors = "15000"
-park_4.summary = "A park."
- 
-session.add(park_4)
-session.commit()
-
-park_5 = Location()
-park_5.name = "Yosemite National Park"
-park_5.region = "California, United States"
-park_5.latitude = 37.865101
-park_5.longitude = -119.538330
-park_5.visitors = "15000"
-park_5.summary = "A park."
- 
-session.add(park_5)
-session.commit()
-
-park_6 = Location()
-park_6.name = "Stanislaus National Forest"
-park_6.region = "California, United States"
-park_6.latitude = 38.235195
-park_6.longitude = -120.066483
-park_6.visitors = "15000"
-park_6.summary = "A park."
- 
-session.add(park_6)
-session.commit()
-
-park_7 = Location()
-park_7.name = "Haleakala National Park"
-park_7.region = " Hawaii, United States"
-park_7.latitude = 20.701283
-park_7.longitude = -156.173325
-park_7.visitors = "15000"
-park_7.summary = "A park."
- 
-session.add(park_7)
-session.commit()
-
-park_8 = Location()
-park_8.name = "Malibu Creek State Park"
-park_8.region = "California, United States"
-park_8.latitude = 34.105156
-park_8.longitude = -118.731316
-park_8.visitors = "15000"
-park_8.summary = "A park."
- 
-session.add(park_8)
-session.commit()
-
-park_9 = Location()
-park_9.name = "Manti-La Sal National Forest"
-park_9.region = "Utah, United States"
-park_9.latitude = 39.187050
-park_9.longitude = -111.379890
-park_9.visitors = "15000"
-park_9.summary = "A park."
- 
-session.add(park_9)
-session.commit()
-
-park_10 = Location()
-park_10.name = "Cherry Creek State Park"
-park_10.region = "Colorado, United States"
-park_10.latitude = 39.639973
-park_10.longitude = -104.831863
-park_10.visitors = "15000"
-park_10.summary = "A park."
- 
-session.add(park_10)
-session.commit()
-
-park_11 = Location()
-park_11.name = "Kissimmee Prairie Preserve State Park"
-park_11.region = "Florida, United States"
-park_11.latitude = 27.612417
-park_11.longitude = -81.053383
-park_11.visitors = "15000"
-park_11.summary = "A park."
- 
-session.add(park_11)
-session.commit()
-
-park_12 = Location()
-park_12.name = "Garden of Gods"
-park_12.region = "Colorado, United States"
-park_12.latitude = 38.873840
-park_12.longitude = -104.886665
-park_12.visitors = "15000"
-park_12.summary = "A park."
- 
-session.add(park_12)
-session.commit()
-
-park_13 = Location()
-park_13.name = "Petrified Forest National Park"
-park_13.region = "Arizona, United States"
-park_13.latitude = 34.909988
-park_13.longitude = -109.806793 
-park_13.visitors = "15000"
-park_13.summary = "A park."
- 
-session.add(park_13)
-session.commit()
-
-park_14 = Location()
-park_14.name = "Chattahoochee National Forest"
-park_14.region = "Georgia, United States"
-park_14.latitude = 34.765972 
-park_14.longitude = -84.143517
-park_14.visitors = "15000"
-park_14.summary = "A park."
- 
-session.add(park_14)
-session.commit()
-
-park_15 = Location()
-park_15.name = "Fort Berthold Indian Reservation"
-park_15.region = "North Dakota, United States"
-park_15.latitude = 47.683880
-park_15.longitude = -102.354126 
-park_15.visitors = "15000"
-park_15.summary = "A park."
- 
-session.add(park_15)
-session.commit()
-
-park_16 = Location()
-park_16.name = "Yosemite National Park"
-park_16.region = "California, United States"
-park_16.latitude = 37.8728
-park_16.longitude = -119.573
-park_16.visitors = "15000"
-park_16.summary = "A park."
- 
-session.add(park_16)
-session.commit()
-
-'''
-
-dummied out as a template
-park_ = Location()
-park_.name = ""
-park_.region = ""
-latitude =
-longitude =
-park_.visitors = ""
- 
-session.add(park_)
-session.commit()
-
-'''
 
 ##########
 ###FAUNA##
@@ -366,87 +185,37 @@ session.commit()
 # pictures will be provided at a later date, planning on having at least 3 pictures for each entry
 
 #Bears, big and scary ooo
-fauna_black_bear = Fauna()
-fauna_black_bear.name = "Black Bear"
-fauna_black_bear.characteristics = "A black bear, not brown, not grey, black. the smallest of the North American bear species."
-
-session.add(fauna_black_bear)
-session.commit()
-
-fauna_brown_bear = Fauna()
-fauna_brown_bear.name = "Brown Bear"
-fauna_brown_bear.characteristics = "Colloquially known as the Kodiak brown bear, also known as 'AGGHHH!!!' when directly encountered, brown bear indeed."
-
-session.add(fauna_brown_bear)
-session.commit()
-
-fauna_polar_bear = Fauna()
-fauna_polar_bear.name = "Polar Bear"
-fauna_polar_bear.characteristics = "This hardy bear survives in the extrmee cold without a coat, scientists are baffled."
-
-session.add(fauna_polar_bear)
-session.commit()
+fau1 = Fauna('Black Bear', 'A black bear, not brown, not grey, black. the smallest of the North American bear species.')
+fau2 = Fauna('Brown Bear', 'Colloquially known as the Kodiak brown bear, also known as "AGGHHH!!!" when directly encountered, brown bear indeed.')
+fau3 = Fauna('Polar Bear', 'This hardy bear survives in the extrmee cold without a coat, scientists are baffled.')
 
 #Birds, owls, hawks, finches, uh... ducks
-fauna_albatross = Fauna()
-fauna_albatross.name = "Albatross"
-fauna_albatross.characteristics = "Not a seagull, just an albatross."
-
-session.add(fauna_albatross)
-session.commit()
-
-fauna_brown_thresher = Fauna()
-fauna_brown_thresher.name = "Brown thresher"
-fauna_brown_thresher.characteristics = "Don't expect this bird to do your farmwork."
-
-session.add(fauna_brown_thresher)
-session.commit()
-
-fauna_barn_owl = Fauna()
-fauna_barn_owl.name = "Barn Owl"
-fauna_barn_owl.characteristics = "Subspecies of owl that like hanging out in barns, or flying into them."
-
-session.add(fauna_barn_owl)
-session.commit()
-
-fauna_osprey = Fauna()
-fauna_osprey.name = "Osprey"
-fauna_osprey.characteristics = "The largest bird of prey in North America, and its greatest enemy, fish."
+fau4 = Fauna('Albatross', 'Not a seagull, just an albatross.')
+fau5 = Fauna('Brown thresher', 'Do not expect this bird to do your farmwork.')
+fau6 = Fauna('Barn Owl', 'Subspecies of owl that like hanging out in barns, or flying into them.' )
+fau7 = Fauna('Osprey', 'The largest bird of prey in North America, and its greatest enemy, fish.')
 
 #Big Cats, and just Cats
-fauna_mountain_lion = Fauna()
-fauna_mountain_lion.name = "Mountain Lion"
-fauna_mountain_lion.characteristics = "A lion that hails from the mountains, but not always, sometimes from a hill."
-
-session.add(fauna_mountain_lion)
-session.commit()
+fau8 = Fauna('Mountain Lion', 'A lion that hails from the mountains, but not always, sometimes from a hill.')
 
 #Deer, deers... dears
-fauna_deer = Fauna()
-fauna_deer.name = "Deer"
-fauna_deer.characteristics = "Comes in the white-tailed variety along with moose and elk, neat."
+fau9 = Fauna('Deer', 'Comes in the white-tailed variety along with moose and elk, neat.')
 
-session.add(fauna_deer)
+#Other animals
+fau10 = Fauna('Wild Board', 'Two tusks and usually not happy to see you.')
+
+session.add(fau1)
+session.add(fau2)
+session.add(fau3)
+session.add(fau4)
+session.add(fau5)
+session.add(fau6)
+session.add(fau7)
+session.add(fau8)
+session.add(fau9)
+session.add(fau10)
+
 session.commit()
-
-fauna_wild_boar = Fauna()
-fauna_wild_boar.name = "Wild Boar"
-fauna_wild_boar.characteristics = "Two tusks and usually not happy to see you."
-
-session.add(fauna_wild_boar)
-session.commit()
-
-'''
-
-dummied out as a template
-fauna_ = Fauna()
-fauna_.name = ""
-fauna_.characteristics = ""
-
-session.add(fauna_)
-session.commit()
-
-'''
 
 ###########
 ###FLORA###
@@ -601,17 +370,6 @@ flora_strawberry.characteristics = "The ubiquitous berry, from the vine to your 
 
 session.add(flora_strawberry)
 session.commit()
-
-'''
-
-flora_ = Flora()
-flora_.name = ""
-flora_.characteristics = ""
-
-session.add(flora_)
-session.commit()
-
-'''
 
 #Vegetables
 flora_corn = Flora()
