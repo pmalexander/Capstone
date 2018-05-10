@@ -221,235 +221,45 @@ session.commit()
 ###FLORA###
 ###########
 
+
+flo1 = Flora('American Elderberry', 'Your mother smells of them.')
+flo = Flora('American Grape', 'Jam, jelly, wine, good.')
+flo = Flora('American Mayapple', 'May or may not be an apple.')
+flo = Flora('American Persimmon', 'Per simmon of what?')
+flo = Flora('American Plum', 'Plum...p fruits that are good and good for you.')
+flo = Flora('Beach Plum', 'Beach bum, beach plum, same thing.')
+flo = Flora('Black Cherry', 'It is true, it is sweeter.')
+flo = Flora('Black Raspberry', 'Ditto for these.')
+flo = Flora('Blueberry', 'They are more purple than blue.')
+flo = Flora('Buffalo Berry', 'Does not taste like one, I hope.')
+flo = Flora('Canada Plum', 'See American plum, just a bit milder.')
+flo = Flora('Canadian Serviceberry', 'Colloquially known as "sugarplum" ... yeah, I am confused too.')
+flo = Flora('Chokecherry', 'Please be careful.')
+flo = Flora('Cocoplum', 'Neither coconut or plum, a mystery.')
+flo = Flora('Concord Grape', '... more jam, jelly, and wine.')
+flo = Flora('Cranberry', 'Grows in the water... should have been called Waterberry.')
+flo = Flora('Dewberry', 'Can be mistaken for a blackberry, same family and all that.')
+flo = Flora('Desert Apricot"', 'Strange, right?')
+flo = Flora('Huckleberry', 'Named ones have been to known to exist and take human form.')
+flo = Flora('Raspberry', 'Very tasty, even better if you like chewing on a bunch of seeds.')
+flo = Flora('Strawberry', 'The ubiquitous berry, from the vine to your fruit salad or milkshake.')
+flo = Flora('Corn', 'Amazing plant, tastes good roasted, baked, boiled, and popped with a healthy helping of butter. Can be pretty colorful too!')
+flo = Flora('Fir Tree', 'Not to be confused with fur.')
+flo = Flora('Oak Tree', 'Strong wood, sometimes of the professor variety of popular franchises.')
+flo = Flora('Pine Tree', 'Smell good, so good that people keep them in cars.')
+flo = Flora('Abies Amabilis', 'A tree.')
+flo = Flora('Abies Bracteata', '')
+flo = Flora('Abies Fraseri', '')
+flo = Flora('Abies Lasiocarpa', '')
+flo = Flora('Abies Magnifica', '')
+flo = Flora('Abies Procera', '')
+flo = Flora('Acer Macrophyllum', '')
+flo = Flora('Acer Negundo', '')
+flo = Flora('', '')
+flo = Flora('', '')
+flo = Flora('', '')
 # adds flora and provide descriptions of flora, these can be associated with multiple locations
 # descriptions are not final, just for flavor and fun at the moment until more accurate descriptors (taxonomy and all that) can be issued in a timely manner
-#Fruits/Fruit-bearing plants
-flora_american_elderberry = Flora()
-flora_american_elderberry.name = "American Elderberry"
-flora_american_elderberry.characteristics = "Your mother smells of themn."
-
-session.add(flora_american_elderberry)
-session.commit()
-
-flora_american_grape = Flora()
-flora_american_grape.name = "American Grape"
-flora_american_grape.characteristics = "Jam, jelly, wine, good."
-
-session.add(flora_american_grape)
-session.commit()
-
-flora_american_mayapple = Flora()
-flora_american_mayapple.name = "American Mayapple"
-flora_american_mayapple.characteristics = "May or may not be an apple."
-
-session.add(flora_american_mayapple)
-session.commit()
-
-flora_american_persimmon = Flora()
-flora_american_persimmon.name = "American Persimmon"
-flora_american_persimmon.characteristics = "Per simmon of what?"
-
-session.add(flora_american_persimmon)
-session.commit()
-
-flora_american_plum = Flora()
-flora_american_plum.name = "American Plum"
-flora_american_plum.characteristics = "Plum...p fruits that are good and good for you."
-
-session.add(flora_american_plum)
-session.commit()
-
-flora_beach_plum = Flora()
-flora_beach_plum.name = "Beach Plum"
-flora_beach_plum.characteristics = "Beach bum, beach plum, same thing."
-
-session.add(flora_beach_plum)
-session.commit()
-
-flora_black_cherry = Flora()
-flora_black_cherry.name = "Black Cherry"
-flora_black_cherry.characteristics = "It's true, it is sweeter."
-
-session.add(flora_black_cherry)
-session.commit()
-
-flora_black_raspberry = Flora()
-flora_black_raspberry.name = "Black Raspberry"
-flora_black_raspberry.characteristics = "Ditto for these."
-
-session.add(flora_black_raspberry)
-session.commit()
-
-flora_blueberry = Flora()
-flora_blueberry.name = "Blueberry"
-flora_blueberry.characteristics = "They're more purple than blue."
-
-session.add(flora_blueberry)
-session.commit()
-
-flora_buffalo_berry = Flora()
-flora_buffalo_berry.name = "Buffalo Berry"
-flora_buffalo_berry.characteristics = "Doesn't taste like one, I hope."
-
-session.add(flora_buffalo_berry)
-session.commit()
-
-flora_canada_plum = Flora()
-flora_canada_plum.name = "Canada Plum"
-flora_canada_plum.characteristics = "See American plum, just a bit milder."
-
-session.add(flora_canada_plum)
-session.commit()
-
-flora_canadian_serviceberry = Flora()
-flora_canadian_serviceberry.name = "Canadian Serviceberry"
-flora_canadian_serviceberry.characteristics = "Colloquially known as 'sugarplum' ... yeah, I'm confused too."
-
-session.add(flora_canadian_serviceberry)
-session.commit()
-
-flora_chokecherry = Flora()
-flora_chokecherry.name = "Chokecherry"
-flora_chokecherry.characteristics = "Please don't."
-
-session.add(flora_chokecherry)
-session.commit()
-
-flora_cocoplum = Flora()
-flora_cocoplum.name = "Cocoplum"
-flora_cocoplum.characteristics = "Neither coconut or plum, a mystery."
-
-session.add(flora_cocoplum)
-session.commit()
-
-flora_concord_grape = Flora()
-flora_concord_grape.name = "Concord Grape"
-flora_concord_grape.characteristics = "... more jam, jelly, and wine."
-
-session.add(flora_concord_grape)
-session.commit()
-
-flora_cranberry = Flora()
-flora_cranberry.name = "Cranberry"
-flora_cranberry.characteristics = "Grows in the water... should have been called Waterberry."
-
-session.add(flora_cranberry)
-session.commit()
-
-flora_dewberry = Flora()
-flora_dewberry.name = "Dewberry"
-flora_dewberry.characteristics = "Can be mistaken for a blackberry, same family and all that."
-
-session.add(flora_dewberry)
-session.commit()
-
-flora_desert_apricot = Flora()
-flora_desert_apricot.name = "Desert Apricot"
-flora_desert_apricot.characteristics = "Strange, right?"
-
-session.add(flora_desert_apricot)
-session.commit()
-
-flora_huckleberry = Flora()
-flora_huckleberry.name = "Huckleberry"
-flora_huckleberry.characteristics = "Named ones have been to known to exist and take human form."
-
-session.add(flora_huckleberry)
-session.commit()
-
-flora_raspberry = Flora()
-flora_raspberry.name = "Raspberry"
-flora_raspberry.characteristics = "Very tasty, even better if you like chewing on a bunch of seeds."
-
-session.add(flora_raspberry)
-session.commit()
-
-flora_strawberry = Flora()
-flora_strawberry.name = "Strawberry"
-flora_strawberry.characteristics = "The ubiquitous berry, from the vine to your fruit salad or milkshake."
-
-session.add(flora_strawberry)
-session.commit()
-
-#Vegetables
-flora_corn = Flora()
-flora_corn.name = "Corn"
-flora_corn.characteristics = "Amazing plant, tastes good roasted, baked, boiled, and popped with a healthy helping of butter. Can be pretty colorful too!"
-
-session.add(flora_corn)
-session.commit()
-
-#Trees, just trees
-flora_fir_tree = Flora()
-flora_fir_tree.name = "Fir Tree"
-flora_fir_tree.characteristics = "Not to be confused with fur."
-
-session.add(flora_fir_tree)
-session.commit()
-
-flora_oak_tree = Flora()
-flora_oak_tree.name = "Oak Tree"
-flora_oak_tree.characteristics = "Strong wood, sometimes of the professor variety of popular franchises."
-
-session.add(flora_oak_tree)
-session.commit()
-
-flora_pine_tree = Flora()
-flora_pine_tree.name = "Pine Tree"
-flora_pine_tree.characteristics = "Smell good, so good that people keep them in cars."
-
-session.add(flora_pine_tree)
-session.commit()
-
-flora_abies_amabilis = Flora()
-flora_abies_amabilis.name = "Abies Amabilis"
-flora_abies_amabilis.characteristics = "A tree."
-
-session.add(flora_abies_amabilis)
-session.commit()
-
-flora_abies_bracteata = Flora()
-flora_abies_bracteata.name = "Abies Bracteata"
-flora_abies_bracteata.characteristics = "A tree."
-
-session.add(flora_abies_bracteata)
-session.commit()
-
-flora_abies_fraseri = Flora()
-flora_abies_fraseri.name = "Abies Fraseri"
-flora_abies_fraseri.characteristics = "A tree."
-
-session.add(flora_abies_fraseri)
-session.commit()
-
-############################################# A Tree Index ############################################# 
-flora_ = Flora()
-flora_.name = "Abies Lasiocarpa"
-flora_.characteristics = "A tree."
-
-session.add(flora_)
-session.commit()
-
-flora_ = Flora()
-flora_.name = "Abies Magnifica"
-flora_.characteristics = "A tree."
-
-session.add(flora_)
-session.commit()
-
-flora_ = Flora()
-flora_.name = "Abies Procera"
-flora_.characteristics = "A tree."
-
-session.add(flora_)
-session.commit()
-
-flora_ = Flora()
-flora_.name = "Acer Macrophyllum"
-flora_.characteristics = "A tree."
-
-session.add(flora_)
-session.commit()
 
 flora_ = Flora()
 flora_.name = "Acer Negundo"
