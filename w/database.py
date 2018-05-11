@@ -602,132 +602,33 @@ session.commit()
 # adds features and provide descriptions of landmarks/features endemic to each location, these can be associated with specific locations (parks)
 # descriptions are not final, just for flavor and fun at the moment until more accurate descriptors (taxonomy, attractions, natural formations, historical creations and all that) can be issued in a timely manner
 
-feature_petrified_wood = Feature()
-feature_petrified_wood.name = "Petrified Wood"
-feature_petrified_wood.characteristics = "Really hard and really old wood endemic, but not exclusive to, the Petrified Forest National Park "
+fea1 = Feature('Petrified Wood', 'Really hard and really old wood endemic, but not exclusive to, the Petrified Forest National Park')
+fea2 = Feature('Balanced Rock', 'A precariously placed (by nature) rock that sits atop another rock in Garden of the Gods, do not sleep underneath it.')
+fea3 = Feature('Old Faithful', 'An old geyser, spurts reliably, located in Yellowstone National Park.')
+fea4 = Feature('Grand Prismatic Spring', 'Giant colorful natural spring found in Yellowstone National Park.')
+fea5 = Feature('Cadillac Mountain', 'Not a new car model, but the highest point on the Atlantic Coast.')
+fea6 = Feature('Havasu Falls', 'A colorful and scenic diversion found in the Grand Canyon, as well as an opportunity to get wet.')
+fea7 = Feature('High Dune', 'No worries about wormsign, the High Dune is 30 miles wide and has some of the highest dunes in North America, it is located in the appropriately named Great Sand Dunes National Park and Preserve.')
+fea8 = Feature('Harding Icefield Trail', 'Pack and prepare for nearly 8 miles of trail on a glacial path at a glacial or not-so glacial pace in Kenjai Fords National Park.')
+fea9 = Feature('The Narrows', 'Aptly named as it is the narrowest stretch during your hike in Zion Canyon at the Zion National Park.')
+fea10 = Feature('Landscape Arch', 'Not falling, nor golden, but a group of naturally formed arches at Arches National Park.')
+fea11 = Feature('Tunnel View Overlook', 'A good view of Yosemite National Park attractions, Half Dome, Bridalveil Fall and El Capitan.')
+fea12 = Feature('The General Sherman Tree', 'Unlike Union Army general of its namesake, this tree does not appreciate fire, but is also a historical standout in being the largest tree in the world, located right in Sequoia National Park.')
+fea13 = Feature('Crater Lake', 'Just as the name implies, it is a crater lake. Formed by an eruption from a now inactive volcano a long, long, long, time ago, to be the deepest lake in the United States. Located in the appropirately named Crater Lake National Park.')
+fea14 = Feature('Highline Trail', 'A high-elevation trail in Glacier National Park, with a good view of the mountain peaks and valleys, unless you are acrophobic, in which case it gives a good view of fear.')
+fea15 = Feature('Mount Kilauea', 'This notorious and extremely volatile active volcano is located in the Hawaii Volcanoes National Park, busy producing up to 500,000 cubic meters of lava per day. Do not get too close.')
+fea16 = Feature('Hoh Rain Forest', 'Figured your compass turned you wrong? Nope, this rainforest is a part of Olympic National Park attractions, representative of a temperate rainforest biome located in North America.')
+fea17 = Feature('Bryce Amphitheater', 'A 6-mile stretch of Bryce Canyon National Park features a series of spires, eerily colorful a different points of the day, and invoking the image of a crowd of individuals standing shoulder to shoulder.')
 
-session.add(feature_petrified_wood)
+session.add(fea1)
+session.add(fea2)
+session.add(fea3)
+session.add(fea4)
+session.add(fea5)
+session.add(fea6)
+session.add(fea7)
+session.add(fea8)
+session.add(fea9)
+session.add(fea10)
+
 session.commit()
-
-feature_balanced_rock = Feature()
-feature_balanced_rock.name = "Balanced Rock"
-feature_balanced_rock.characteristics = "A precariously placed (by nature) rock that sits atop another rock in Garden of the Gods, don't sleep underneath it."
-
-session.add(feature_balanced_rock)
-session.commit()
-
-feature_old_faithful = Feature()
-feature_old_faithful.name = "Old Faithful"
-feature_old_faithful.characteristics = "An old geyser, spurts reliably, located in Yellowstone National Park."
-
-session.add(feature_old_faithful)
-session.commit()
-
-feature_grand_prismatic_spring = Feature()
-feature_grand_prismatic_spring.name = "Grand Prismatic Spring"
-feature_grand_prismatic_spring.characteristics = "Giant colorful natural spring found in Yellowstone National Park."
-
-session.add(feature_grand_prismatic_spring)
-session.commit()
-
-feature_cadillac_mountain = Feature()
-feature_cadillac_mountain.name = ""
-feature_cadillac_mountain.characteristics = "Not a new car model, but the highes"
-
-session.add(feature_cadillac_mountain)
-session.commit()
-
-feature_havasu_falls = Feature()
-feature_havasu_falls.name = "Havasu Falls"
-feature_havasu_falls.characteristics = "A colorful and scenic diversion found in the Grand Canyon, as well as an opportunity to get wet."
-
-session.add(feature_havasu_falls)
-session.commit()
-
-feature_high_dune = Feature()
-feature_high_dune.name = "High Dune"
-feature_high_dune.hcharacteristics = "No worries about wormsign, the High Dune is 30 miles wide and has some of the highest dunes in North America, it is located in the appropriately named Great Sand Dunes National Park and Preserve."
-
-session.add(feature_high_dune)
-session.commit()
-
-feature_harding_icefield_trail = Feature()
-feature_harding_icefield_trail.name = "Harding Icefield Trail"
-feature_harding_icefield_trail.characteristics = "Pack and prepare for nearly 8 miles of trail on a glacial path at a glacial or not-so glacial pace in Kenjai Fords National Park."
-
-session.add(feature_harding_icefield_trail)
-session.commit()
-
-feature_the_narrows = Feature()
-feature_the_narrows.name = "The Narrows"
-feature_the_narrows.characteristics = "Aptly named as it is the narrowest stretch during your hike in Zion Canyon at the Zion National Park."
-
-session.add(feature_the_narrows)
-session.commit()
-
-feature_landscape_arch = Feature()
-feature_landscape_arch.name = "Landscape Arch"
-feature_landscape_arch.characteristics = "Not falling, nor golden, but a group of naturally formed arches at Arches National Park."
-
-session.add(feature_landscape_arch)
-session.commit()
-
-feature_tunnel_view_overlook = Feature()
-feature_tunnel_view_overlook.name = "Tunnel View Overlook"
-feature_tunnel_view_overlook.characteristics = "A good view of Yosemite National Park's other attractions, Half Dome, Bridalveil Fall and El Capitan."
-
-session.add(feature_tunnel_view_overlook)
-session.commit()
-
-feature_general_sherman_tree = Feature()
-feature_general_sherman_tree.name = "The General Sherman Tree"
-feature_general_sherman_tree.characteristics = "Unlike Union Army general of its namesake, this tree does not appreciate fire, but is also a historical standout in being the largest tree in the world, located right in Sequoia National Park."
-
-session.add(feature_general_sherman_tree)
-session.commit()
-
-feature_crater_lake = Feature()
-feature_crater_lake.name = "Crater Lake"
-feature_crater_lake.characteristics = "Just as the name implies, it's a crater lake. Formed by an eruption from a now inactive volcano a long, long, long, time ago, to be the deepest lake in the United States. Located in the appropirately named Crater Lake National Park."
-
-session.add(feature_crater_lake)
-session.commit()
-
-feature_highline_trail = Feature()
-feature_highline_trail.name = "Highline Trail"
-feature_highline_trail.characteristics = "A high-elevation trail in Glacier National Park, with a good view of the mountain peaks and valleys, unless you're acrophobic, in which case it gives a good view of fear."
-
-session.add(feature_highline_trail)
-session.commit()
-
-feature_mount_kilauea = Feature()
-feature_mount_kilauea.name = "Mount Kilauea"
-feature_mount_kilauea.characteristics = "This notorious and extremely volatile active volcano is located in the Hawaii Volcanoes National Park, busy producing up to 500,000 cubic meters of lava per day. Don't get too close."
-
-session.add(feature_mount_kilauea)
-session.commit()
-
-feature_hoh_rain_forest = Feature()
-feature_hoh_rain_forest.name = "Hoh Rain Forest"
-feature_hoh_rain_forest.characteristics = "Figured your compass turned you wrong? Nope, this rainforest is a part of Olympic National Park's attractions, representative of a temperate rainforest biome located in North America."
-
-session.add(feature_hoh_rain_forest)
-session.commit()
-
-feature_bryce_amphitheater = Feature()
-feature_bryce_amphitheater.name = "Bryce Amphitheater"
-feature_bryce_amphitheater.characteristics = "A 6-mile stretch of Bryce Canyon National Park features a series of spires, eerily colorful a different points of the day, and invoking the image of a crowd of individuals standing shoulder to shoulder."
-
-session.add(feature_bryce_amphitheater)
-session.commit()
-
-''' template for feature
-
-feature_ = Feature()
-feature_.name = ""
-feature_.characteristics = ""
-
-session.add(feature_)
-session.commit()
-
-'''
