@@ -4,6 +4,10 @@ from w import app
 from flask_migrate import Migrate, MigrateCommand
 from w.database import Base
 
+from w.database import Location, Fauna, Feature, Flora
+
+from w.dataseed import read_rawdata
+
 manager = Manager(app)
 #look over this, this will be written by the Session() on line 21 below, or rather whatever gps app works nowadays
 #session = gps.gps()
@@ -14,6 +18,23 @@ class DB(object):
 
 migrate = Migrate(app, DB(Base.metadata))
 manager.add_command('db', MigrateCommand)
+
+@manager.command
+def seed():
+    locations = read_rawdata("./w/seed/location.src")
+    faunas = read_rawdata("./w/seed/fauna.src", "#")
+    #floras = read_rawdata("./w/seed/flora.src")
+    #features = read_rawdata("./w/seed/features")
+    
+    for location in locations:
+        obj = Location(**location)
+        session.add(obj)
+        session.commit()
+
+    for fauna in faunas:
+        obj = Fauna(**fauna)
+        session.add(obj)
+        session.commit()
 
 @manager.command
 def run():
