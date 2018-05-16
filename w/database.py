@@ -39,9 +39,9 @@ class Location(Base):
     def __init__(self, name, region, latitude, longitude, visitors, overview):
         self.name = name
         self.region = region
-        self.latitude = name
-        self.longitude = region
-        self.visitors = name
+        self.latitude = latitude
+        self.longitude = longitude
+        self.visitors = visitors
         self.overview = overview
     
     # one fauna to many locations, since fauna can be found in many locations

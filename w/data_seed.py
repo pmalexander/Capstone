@@ -1,12 +1,13 @@
 #can be opened in excel, remember
 import csv
 
-firstTime = True
-header = None
-locations = []
-fauna = []
-flora = []
-feature = []
+def read_rawdata(path, our_delimiter=','):
+    firstTime = True
+    header = None
+    locations = []
+    fauna = []
+    flora = []
+    feature = []
 # this code opens a file comma separated #CREATE OTHER SRC FILES FOR FLORA, FAUNA, AND FEATURE
 with open('location.src') as csvfile:
     # here we say that the file uses comma's to separate between columns
@@ -36,6 +37,12 @@ with open('location.src') as csvfile:
             fauna.append(entry)
             flora.append(entry)
             feature.append(entry)
+            
+    return locations
+
+locations = read_locations()
+
+for location in locations
 
 # show us all locations
 print(locations)
@@ -43,12 +50,13 @@ print(locations)
 """
 # guarantee that our classes have init functions that take all parameters we need to populate
 class Location(object):
-    def init_location(name, region, latitude, longitude, visitors):
+    def init_location(name, region, latitude, longitude, visitors, overview):
         self.name = name
         self.region = region
         self.latitude = latitude
         self.longitude = longitude
         self.vistors = visitors
+        self.overview = overview
 
 # this code should exist within manage.py and it is responsible for seeding the location information obtained
 # from the file to the database
