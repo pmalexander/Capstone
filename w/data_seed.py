@@ -34,10 +34,7 @@ with open('location.src') as csvfile:
 
             # we have collected a full entry, we store it in a list, so we can process it later with sqlalchemy
             locations.append(entry)
-            fauna.append(entry)
-            flora.append(entry)
-            feature.append(entry)
-            
+
     return locations
 
 locations = read_locations()
