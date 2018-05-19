@@ -19,13 +19,14 @@ class DB(object):
 migrate = Migrate(app, DB(Base.metadata))
 manager.add_command('db', MigrateCommand)
 
+#seeds raw data contained within src file to populate database
 @manager.command
 def seed():
-    locations = read_rawdata("./w/seed/location.src")
+    locations = read_rawdata("./w/seed/location.src", "#")
     faunas = read_rawdata("./w/seed/fauna.src", "#")
-    #floras = read_rawdata("./w/seed/flora.src")
-    #features = read_rawdata("./w/seed/features")
-    
+    floras = read_rawdata("./w/seed/flora.src", "#")
+    features = read_rawdata("./w/seed/feature.src", "#")
+
     for location in locations:
         obj = Location(**location)
         session.add(obj)
@@ -33,6 +34,16 @@ def seed():
 
     for fauna in faunas:
         obj = Fauna(**fauna)
+        session.add(obj)
+        session.commit()
+        
+    for flora in floras:
+        obj = Fauna(**flora)
+        session.add(obj)
+        session.commit()
+        
+    for feature in features:
+        obj = Feature(**feature)
         session.add(obj)
         session.commit()
 
