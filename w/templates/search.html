@@ -1,5 +1,5 @@
 <html lang="en">
-    <header>
+    <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,9 +8,9 @@
 
         <!-- CSS -->
         <!-- Bootstrap -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
         <!-- Capstone -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
 
         <!-- JavaScript -->
         <!-- jQuery -->
@@ -23,7 +23,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
         <!-- Capstone -->
-        <script src="stylesheet" href="{{ url_for('static', filename='js/main.js') }}"></script>
   <style>
   .navbar {
     margin-bottom: 0;
@@ -51,7 +50,7 @@
   }
 
   </style>
-    </header>
+    </head>
 
 <body class="masthead">
   <nav class="navbar navbar-inverse">
@@ -62,7 +61,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         </button>
-    <a class="navbar-brand" href="#"><img src="img">
+    <a class="navbar-brand" href="#"><img id="pagetop" src="{{ url_for('static', filename='imgs/logo.jpg') }}">
         </div>
     <div class="collapse navbar-collapse" id="myNavBar">
       <ul class="nav navbar-nav navbar-center">
@@ -129,15 +128,13 @@
                 list_of_actions[selector.selectedIndex]);
       }
     </script>
-    </body>
-  </body>
+    
+    {% import "macros.html" as macros %}
 
-{% import "macros.html" as macros %}
-
-  {% for entry in entries %}
-  {{ macros.render_entry(entry) }}
-  {% endfor %}
- 
+    {% for entry in entries %}
+    {{ macros.render_entry(entry) }}
+    {% endfor %}
+    
   <nav aria-label="...">
       <ul class="pager">
           <li><a href="#">Previous</a></li>
@@ -147,7 +144,7 @@
 
   <div align="center">
     <ul>
-      <dt><a href="/authorized/user/content/search" class="cd-top js-cd-top">Back to top</a></dt>
+      <dt><a href="#pagetop" class="cd-top js-cd-top">Back to top</a></dt>
     </ul>
   </div>
 

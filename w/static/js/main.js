@@ -1,5 +1,5 @@
 // Creates a "close" button and append it to each list item by ID defined by myUL
-var myUL = document.getElementbyId("myUL");
+var myUL = document.getElementById("myUL");
 // searches for elements for my myUL as lists 
 var myNodeList = myUL.getElementsByTagName('li');
 console.log(myNodeList);
