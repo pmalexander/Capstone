@@ -66,7 +66,7 @@ def login_g():
 def search_all():
     gen_query = "%%"
     entries = session.query(Location).all()
-    return render_template("search.html")
+    return render_template("search.html", entries=entries)
 
 #need to implement pagination at one point
 @app.route("/authorized/user/content/search/all/", methods=["GET"])
@@ -207,9 +207,6 @@ def view_location(id):
     
     location_unid=session.query(Location).filter(Location.id==id).one()
     
-    for location in location_unid:
-        print(location)
-
     return render_template("info_location.html", location_unid=location_unid)
     
 @app.route("/authorized/user/content/information/fauna/<int:id>", methods=["GET"])
