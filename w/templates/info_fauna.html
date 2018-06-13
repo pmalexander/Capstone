@@ -1,16 +1,16 @@
 <html lang="en">
-    <header class="masthead">
+    <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Information</title
+        <title>Search</title>
 
         <!-- CSS -->
         <!-- Bootstrap -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
         <!-- Capstone -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
 
         <!-- JavaScript -->
         <!-- jQuery -->
@@ -23,7 +23,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
         <!-- Capstone -->
-        <script src="stylesheet" href="{{ url_for('static', filename='js/main.js') }}"></script>
   <style>
   .navbar {
     margin-bottom: 0;
@@ -51,31 +50,33 @@
   }
 
   </style>
-    </header>
+    </head>
 
-<body>
 <body class="masthead">
-<nav class="navbar navbar-inverse">
-<div class="container-fluid">
-<div class="navbar-header">
-<button type="button" class="navbar-toggle" data toggle="collapse" data-target="#myNavBar">
-<span class="icon-bar"></span>  
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-<a class="navbar-brand" href="#"><img src="img">
-</div>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data toggle="collapse" data-target="#myNavBar">
+        <span class="icon-bar"></span>  
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+    <a class="navbar-brand" href="#"><img id="pagetop" src="{{ url_for('static', filename='imgs/logo.jpg') }}">
+        </div>
     <div class="collapse navbar-collapse" id="myNavBar">
-        <ul class="nav navbar-nav navbar-center">
-            <li id="nSearch"><a href="/authorized/user/content/search">Search</a></li>
-            <li id="nChecklist"><a href="/authorized/user/content/checklist">Checklist</a></li>
-            <li id="nGuide"><a href="/authorized/user/content/guide">Guide</a></li>
-            <li id="nSighting"><a href="/authorized/user/content/sighting">Sighting</a></li>
-            <li id="nLogin"><a href="/login">Log In</a></li>
-            <li id="nSignup"><a href="/registration">Sign Up</a></li>
-        </ul>
+      <ul class="nav navbar-nav navbar-center">
+        <li id="nSearch" class=active><a href="/authorized/user/content/search">Search</a></li>
+        <li id="nChecklist"><a href="/authorized/user/content/checklist">Checklist</a></li>
+        <li id="nGuide"><a href="/authorized/user/content/guide">Guide</a></li>
+        <li id="nSighting"><a href="/authorized/user/content/sighting">Sighting</a></li>
+        <li id="nLogin"><a href="/login">Log In</a></li>
+        <li id="nSignup"><a href="/registration">Sign Up</a></li>
+        {% if current_user.is_authenticated %}
+          <li id="nLogout"><a href="/logout">Logout</a></li>
+        {% endif %}
+      </ul>
     </div>
-</nav>
+  </nav>
 
 {% import "macros.html" as macros %}
 {% block content %}

@@ -200,6 +200,7 @@ def info_route(category, id):
 
     return render_template('information.html', entry_unid_loc=entry_unid_loc)
     
+    
 @app.route("/authorized/user/content/information/location/<int:id>", methods=["GET"])
 def view_location(id):
     category_info = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
@@ -247,49 +248,7 @@ def view_feature(id):
         print(feature)
 
     return render_template('info_feature.html', feature_unid=feature_unid)
-    
-'''
-been working through possible options below, (don't work)
-@app.route("/authorized/user/content/information/<category>/<id>")
-#@login_required
-def view_entry(category, id):
-    cat_unid = session.query(categories[cat[]).filter(categories[cat].id(entries)).one()
-return render_template("information.html", cat_unit=cat_unid)
 
-return render_template("edit_entry.html",entry=entry)
-    
-    #this will have to pull for a specific entry(?)
-    cat_spec = session.query(entries).filter(entries.id == id).first()
-  
-    #or this one?
-    cat_unid = session.query(categories[cat[]).filter(categories[cat].id(entries)).all()
-    session.query(Entry).get(id).delete(id)
-    session.commit()
-    if current_user == entry_unid.author:
-        return render_template("delete_entryid.html", id=id, entry_unid=entry_unid)
-    else:
-        return redirect(url_for('entries'))
-    
-    return render_template("information.html")
-    
-def info_cat_unid(id):
-    info_unid = session.query(Entry).get(id)
-    return render_template("information.html", Entry=Entry
-    )
-
-    entry_unid = session.query(Entry).get(id)
-    return render_template("entry_edit.html", entry_unid=entry_unid
-    )
-    
-    entries_pulled = session.query(categories[cat]).filter(categories[cat].name.like(query)).all()
-
-    for entry in entries:
-        print(entry)
-
-def loc_information():
-    return render_template("information.html")
-'''    
-    
 #directs users to checklist page to check off on items
 @app.route("/authorized/user/content/checklist", methods=["GET"])
 #@login_required
