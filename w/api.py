@@ -200,7 +200,6 @@ def info_route(category, id):
 
     return render_template('information.html', entry_unid_loc=entry_unid_loc)
     
-    
 @app.route("/authorized/user/content/information/location/<int:id>", methods=["GET"])
 def view_location(id):
     category_info = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}

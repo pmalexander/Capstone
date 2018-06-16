@@ -6,6 +6,15 @@
             <li>
                 <a href = "{{ url_for ('view_location', id=entry.id)}}"> {{ entry.name }}
             </li>
+            <li>
+                <a href = "{{ url_for ('view_fauna', id=entry.id)}}"> {{ entry.name }}
+            </li>
+            <li>
+                <a href = "{{ url_for ('view_flora', id=entry.id)}}"> {{ entry.name }}
+            </li>
+            <li>
+                <a href = "{{ url_for ('view_feature', id=entry.id)}}"> {{ entry.name }}
+            </li>
         </ul>
         </div>
     </div>
