@@ -207,6 +207,9 @@ def view_location(id):
     
     location_unid=session.query(Location).filter(Location.id==id).one()
     
+    for location in location_unid:
+        print(location)
+    
     return render_template("info_location.html", location_unid=location_unid)
     
 @app.route("/authorized/user/content/information/fauna/<int:id>", methods=["GET"])
