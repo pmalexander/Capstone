@@ -97,7 +97,9 @@ def search_by_all():
 @app.route("/authorized/user/content/search/location/", methods=["GET"])
 @app.route("/authorized/user/content/search/location/?searchq=none", methods=["GET"])
 #@login_required
-def search_by_loc():
+def search_by_location():
+
+    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
 
     cat = 'Location'
     query = request.args.get('searchq', 'None')
@@ -122,6 +124,8 @@ def search_by_loc():
 #@login_required
 def search_by_fauna():
     
+    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
+    
     cat = 'Fauna'
     query = request.args.get('searchq', 'None')
 
@@ -145,6 +149,8 @@ def search_by_fauna():
 #@login_required
 def search_by_flora():
     
+    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
+    
     cat = 'Flora'
     query = request.args.get('searchq', 'None')
 
@@ -167,6 +173,8 @@ def search_by_flora():
 @app.route("/authorized/user/content/search/feature/?searchq=none", methods=["GET"])
 #@login_required
 def search_by_feature():
+    
+    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
     
     cat = 'Feature'
     query = request.args.get('searchq', 'None')
@@ -194,10 +202,10 @@ def info_route(category, id):
     category_info = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
     
     entry_unid_loc=session.query(Location).filter(Location.id==id).one()
-    
+
     for entry_loc in entry_unid_loc:
         print(entry_loc)
-
+        
     return render_template('information.html', entry_unid_loc=entry_unid_loc)
     
 @app.route("/authorized/user/content/information/location/<int:id>", methods=["GET"])
