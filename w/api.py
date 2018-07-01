@@ -123,9 +123,7 @@ def search_by_location():
 @app.route("/authorized/user/content/search/fauna/?searchq=none", methods=["GET"])
 #@login_required
 def search_by_fauna():
-    
-    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
-    
+
     cat = 'Fauna'
     query = request.args.get('searchq', 'None')
 
@@ -148,9 +146,7 @@ def search_by_fauna():
 @app.route("/authorized/user/content/search/flora/?searchq=none", methods=["GET"])
 #@login_required
 def search_by_flora():
-    
-    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
-    
+
     cat = 'Flora'
     query = request.args.get('searchq', 'None')
 
@@ -173,9 +169,7 @@ def search_by_flora():
 @app.route("/authorized/user/content/search/feature/?searchq=none", methods=["GET"])
 #@login_required
 def search_by_feature():
-    
-    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
-    
+
     cat = 'Feature'
     query = request.args.get('searchq', 'None')
 

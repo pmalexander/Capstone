@@ -30,16 +30,16 @@ class Location(Base):
 #USE LAT AND LONG, THINK OF THIS AS A MAPPING TOOL IN THAT SENSE
     id = Column(Integer, primary_key=True)
     name = Column((String)(1024))
-    region = Column((String)(1024))
+    state = Column((String)(1024))
     country = Column((String)(1024))
     latitude = Column(Float)
     longitude = Column(Float)
     visitors = Column(Integer)
     overview = Column(String(1024))
     
-    def __init__(self, name, region, country, latitude, longitude, visitors, overview):
+    def __init__(self, name, state, country, latitude, longitude, visitors, overview):
         self.name = name
-        self.region = region
+        self.state = state
         self.country = country
         self.latitude = latitude
         self.longitude = longitude

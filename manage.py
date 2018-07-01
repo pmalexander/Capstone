@@ -19,30 +19,44 @@ class DB(object):
 migrate = Migrate(app, DB(Base.metadata))
 manager.add_command('db', MigrateCommand)
 
+@manager.command
+def test():
+    print('test')
+
 #seeds raw data contained within src file to populate database
 @manager.command
 def seed():
-    locations = read_rawdata("./w/seed/location.src", "#")
+    print('Anything')
+    locations = read_rawdata("./w/seed/location.src", ",")
     faunas = read_rawdata("./w/seed/fauna.src", "#")
     floras = read_rawdata("./w/seed/flora.src", "#")
     features = read_rawdata("./w/seed/feature.src", "#")
+    
+    print('\n\n\n\n\n\n')
 
     for location in locations:
+#        print(location)
         obj = Location(**location)
+        obj.latitude=float(location['latitude'])
+        obj.longitude=float(location['longitude'])
+        obj.visitors=int(location['visitors'])
         session.add(obj)
         session.commit()
 
     for fauna in faunas:
+#        print(fauna)
         obj = Fauna(**fauna)
         session.add(obj)
         session.commit()
         
     for flora in floras:
-        obj = Fauna(**flora)
+#        print(flora)
+        obj = Flora(**flora)
         session.add(obj)
         session.commit()
         
     for feature in features:
+#        print(feature)
         obj = Feature(**feature)
         session.add(obj)
         session.commit()

@@ -4,14 +4,11 @@ import csv
 def read_rawdata(path, our_delimiter=','):
     firstTime = True
     header = None
-    location = []
-    fauna = []
-    flora = []
-    feature = []
+    model = []
 # this code opens a file comma separated #CREATE OTHER SRC FILES FOR FLORA, FAUNA, AND FEATURE
-    with open('location.src', 'fauna.src', 'flora.src', 'feature.src') as csvfile:
+    with open(path) as csvfile:
         # here we say that the file uses comma's to separate between columns
-        data = csv.reader(csvfile, delimiter=',')
+        data = csv.reader(csvfile, delimiter=our_delimiter)
         for row in data:
             if firstTime == True:
                 # we want to capture the first row independently to ensure we can build the dictionary
@@ -26,14 +23,11 @@ def read_rawdata(path, our_delimiter=','):
                     # create a dictionary entry where the key is the "header" and the value is the row content
                     entry[title] = row[count]
                     # show us how does that look like
-                    print("{}:{}".format(title, row[count]))
+                    #print("{}:{}".format(title, row[count]))
                     # next time it will be a different header(name, region etc)
                     # so we update count to be able to access a different column in the row
                     count += 1
                 # we have collected a full entry, we store it in a list, so we can process it later with sqlalchemy
-                location.append(entry)
-                fauna.append(entry)
-                flora.append(entry)
-                feature.append(entry)
-    #return list            
-    return(location, fauna, flora, feature)
+                model.append(entry)
+    #show us locations, faunas, floras, feature
+    return(model)
