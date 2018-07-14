@@ -26,16 +26,15 @@ def test():
 #seeds raw data contained within src file to populate database
 @manager.command
 def seed():
-    print('Anything')
     locations = read_rawdata("./w/seed/location.src", ",")
     faunas = read_rawdata("./w/seed/fauna.src", "#")
     floras = read_rawdata("./w/seed/flora.src", "#")
     features = read_rawdata("./w/seed/feature.src", "#")
     
-    print('\n\n\n\n\n\n')
+#creates space needed to parse information produced when debugging    print('\n\n\n\n\n\n')
 
     for location in locations:
-#        print(location)
+#used as a means to debugging, showing location keys and values        print(location)
         obj = Location(**location)
         obj.latitude=float(location['latitude'])
         obj.longitude=float(location['longitude'])
@@ -44,19 +43,19 @@ def seed():
         session.commit()
 
     for fauna in faunas:
-#        print(fauna)
+#used as a means to debugging, showing fauna keys and values        print(fauna)
         obj = Fauna(**fauna)
         session.add(obj)
         session.commit()
         
     for flora in floras:
-#        print(flora)
+#used as a means to debugging, showing flora keys and values        print(flora)
         obj = Flora(**flora)
         session.add(obj)
         session.commit()
         
     for feature in features:
-#        print(feature)
+#used as a means to debugging, showing feature keys and values        print(feature)
         obj = Feature(**feature)
         session.add(obj)
         session.commit()

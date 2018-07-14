@@ -131,8 +131,20 @@
     
     {% import "macros.html" as macros %}
 
-    {% for entry in entries %}
-    {{ macros.render_entry(entry) }}
+    {% for entry in l_entries %}
+    {{ macros.render_locentry(entry) }}
+    {% endfor %}
+
+    {% for entry in fa_entries %}
+    {{ macros.render_fauentry(entry) }}
+    {% endfor %}
+
+    {% for entry in fl_entries %}
+    {{ macros.render_floentry(entry) }}
+    {% endfor %}
+    
+    {% for entry in fe_entries %}
+    {{ macros.render_feaentry(entry) }}
     {% endfor %}
     
   <nav aria-label="...">

@@ -22,7 +22,7 @@ def read_rawdata(path, our_delimiter=','):
                 for title in header:
                     # create a dictionary entry where the key is the "header" and the value is the row content
                     entry[title] = row[count]
-                    # show us how does that look like
+                    # shows us how the returned values look like, can be used for debugging values by printing the output
                     #print("{}:{}".format(title, row[count]))
                     # next time it will be a different header(name, region etc)
                     # so we update count to be able to access a different column in the row

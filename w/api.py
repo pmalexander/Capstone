@@ -63,16 +63,17 @@ def login_g():
 @app.route("/authorized/user/content/search", methods=["GET"])
 @app.route("/authorized/user/content/search/?searchq=none", methods=["GET"])
 #@login_required
-def search_all():
+def search_null():
     gen_query = "%%"
     entries = session.query(Location).all()
-    return render_template("search.html", entries=entries)
+    return render_template("search.html")
 
 #need to implement pagination at one point
 @app.route("/authorized/user/content/search/all/", methods=["GET"])
 @app.route("/authorized/user/content/search/all/?searchq=none", methods=["GET"])
 #@login_required
 def search_by_all():
+    categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
     
     #cat is defined as any of the classes in database.py, can be used as a substitute for any single class when making an argument
     cat = 'Location'
@@ -112,12 +113,12 @@ def search_by_location():
 
     query = '%%' + query + '%%'
 
-    entries = session.query(categories[cat]).filter(categories[cat].name.like(query)).all()
+    l_entries = session.query(categories[cat]).filter(categories[cat].name.like(query)).all()
 
-    for entry in entries:
+    for entry in l_entries:
         print(entry)
 
-    return render_template('search.html', entries=entries)
+    return render_template('search.html', l_entries=l_entries)
 
 @app.route("/authorized/user/content/search/fauna/", methods=["GET"])
 @app.route("/authorized/user/content/search/fauna/?searchq=none", methods=["GET"])
@@ -135,12 +136,12 @@ def search_by_fauna():
 
     query = '%%' + query + '%%'
 
-    entries = session.query(categories[cat]).filter(categories[cat].name.like(query)).all()
+    fa_entries = session.query(categories[cat]).filter(categories[cat].name.like(query)).all()
 
-    for entry in entries:
+    for entry in fa_entries:
         print(entry)
 
-    return render_template('search.html', entries=entries)
+    return render_template('search.html', fa_entries=fa_entries)
 
 @app.route("/authorized/user/content/search/flora/", methods=["GET"])
 @app.route("/authorized/user/content/search/flora/?searchq=none", methods=["GET"])
@@ -158,12 +159,12 @@ def search_by_flora():
 
     query = '%%' + query + '%%'
 
-    entries = session.query(categories[cat]).filter(categories[cat].name.like(query)).all()
+    fl_entries = session.query(categories[cat]).filter(categories[cat].name.like(query)).all()
 
-    for entry in entries:
+    for entry in fl_entries:
         print(entry)
 
-    return render_template('search.html', entries=entries)
+    return render_template('search.html', fl_entries=fl_entries)
 
 @app.route("/authorized/user/content/search/feature/", methods=["GET"])
 @app.route("/authorized/user/content/search/feature/?searchq=none", methods=["GET"])
@@ -181,12 +182,12 @@ def search_by_feature():
 
     query = '%%' + query + '%%'
 
-    entries = session.query(categories[cat]).filter(categories[cat].name.like(query)).all()
+    fe_entries = session.query(categories[cat]).filter(categories[cat].name.like(query)).all()
 
-    for entry in entries:
+    for entry in fe_entries:
         print(entry)
 
-    return render_template('search.html', entries=entries)
+    return render_template('search.html', fe_entries=fe_entries)
 
 #displays information page comprising of general information, animals, plants, and natural features
 @app.route("/authorized/user/content/information", methods=["GET"])
