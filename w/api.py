@@ -205,15 +205,23 @@ def info_route(category, id):
     
 @app.route("/authorized/user/content/information/location/<int:id>", methods=["GET"])
 def view_location(id):
-    category_info = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
-    info_cat = 'Location'
-    
-    location_unid=session.query(Location).filter(Location.id==id).one()
-    
-    for location in location_unid:
-        print(location)
-    
+    location_unid=session.query(Location).get(id) 
     return render_template("info_location.html", location_unid=location_unid)
+    
+#allows users to acquire entries on an individual numbered basis
+#@app.route("/entry/<int:id>", methods=["GET"])
+#def unique_id(id):
+#    entry = session.query(Entry).filter(Entry.id == id).first()
+#    return render_template("entry_id.html", entry=entry
+#    )
+    
+#edits entries, requires login information to utilize editing feature, retrieves specific entry
+#@app.route("/entry/<int:id>/edit", methods=["GET"])
+#@login_required
+#def entry_id_edit_g(id):
+#    entry_unid = session.query(Entry).get(id)
+#    return render_template("entry_edit.html", entry_unid=entry_unid
+#    )
     
 @app.route("/authorized/user/content/information/fauna/<int:id>", methods=["GET"])
 #@login_required
