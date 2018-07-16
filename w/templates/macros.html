@@ -69,7 +69,7 @@
 </div>
 {% endmacro %}
 
-{% macro render_location_unid(location_unid) %}
+{% macro render_location_unid(location) %}
 <div class="row">
     <div class="col-md-3 text-right metadata">
         <div>
@@ -90,7 +90,12 @@
         </ul>
         <ul class="list-unstyled">
             <li>
-                Region: {{ location.region}}
+                State: {{ location.state}}
+            </li>
+        </ul>
+        <ul class="list-unstyled">
+            <li>
+                Country: {{ location.country}}
             </li>
         </ul>
         <ul class="list-unstyled">
@@ -99,7 +104,7 @@
             </li>
         </ul>
         <p>
-            <a href = "{{ url_for ('information', id=location.id)}}"></a>
+            <a href = "{{ url_for ('view_location', id=location.id)}}"></a>
         </p>
         </div>
     </div>
@@ -123,18 +128,18 @@
 </div>    
 {% endmacro %}
 
-{% macro render_fauna_unid(fauna_unid) %}
+{% macro render_fauna_unid(fauna) %}
 <div class="row">
     <div class="col-md-3 text-right metadata">
         <div>
         <ul class="list-unstyled">
             <li>
-                Name: {{ fauna_unid.name }}
+                Name: {{ fauna.name }}
             </li>
         </ul>
         <ul class="list-unstyled">
             <li>
-                Description: {{ fauna_unid.characteristics }}
+                Description: {{ fauna.characteristics }}
             </li>
         </ul>
         <p>
@@ -162,7 +167,7 @@
 </div>    
 {% endmacro %}
 
-{% macro render_flora_unid(fauna_unid) %}
+{% macro render_flora_unid(flora) %}
 <div class="row">
     <div class="col-md-3 text-right metadata">
         <div>
@@ -201,7 +206,7 @@
 </div>    
 {% endmacro %}    
 
-{% macro render_feature_unid(feature_unid) %}
+{% macro render_feature_unid(feature) %}
 <div class="row">
     <div class="col-md-3 text-right metadata">
         <div>
@@ -216,7 +221,7 @@
             </li>
         </ul>
         <p>
-            <a href = "{{ url_for ('information', id=feature.id)}}"></a>
+            <a href = "{{ url_for ('view_feature', id=feature.id)}}"></a>
         </p>
         </div>
     </div>
