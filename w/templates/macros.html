@@ -103,12 +103,24 @@
                 Visitors (2017): {{ location.visitors}}
             </li>
         </ul>
+        <ul class="list-unstyled">
+            <li>
+                Overview: {{ location.overview}}
+            </li>
+        </ul>
         <p>
             <a href = "{{ url_for ('view_location', id=location.id)}}"></a>
         </p>
         </div>
     </div>
 </div>
+
+<div align="center">
+  <ul>
+    <dt><a href="/authorized/user/content/search" class="cd-top js-cd-top">Back to Search</a></dt>
+  </ul>
+</div>
+
 {% endmacro %}
 
 {% macro render_fauna(fauna) %}
@@ -148,6 +160,13 @@
         </div>
     </div>
 </div>    
+
+<div align="center">
+  <ul>
+    <dt><a href="/authorized/user/content/search" class="cd-top js-cd-top">Back to Search</a></dt>
+  </ul>
+</div>
+
 {% endmacro %}
 
 {% macro render_flora(flora) %}
@@ -187,6 +206,13 @@
         </div>
     </div>
 </div>    
+
+<div align="center">
+  <ul>
+    <dt><a href="/authorized/user/content/search" class="cd-top js-cd-top">Back to Search</a></dt>
+  </ul>
+</div>
+
 {% endmacro %}
 
 {% macro render_feature(feature) %}
@@ -226,6 +252,13 @@
         </div>
     </div>
 </div>    
+
+<div align="center">
+  <ul>
+    <dt><a href="/authorized/user/content/search" class="cd-top js-cd-top">Back to Search</a></dt>
+  </ul>
+</div>
+
 {% endmacro %}  
 
 {% macro render_sighting() %}

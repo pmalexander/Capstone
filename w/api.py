@@ -31,7 +31,7 @@ categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Featu
 @app.route("/")
 #@login_required
 def start_page(page=1):
-    return redirect(url_for('search_all'))
+    return redirect(url_for('search_by_all'))
 
 #registration page for new users, user must register username using e-mail, registration allows ability to personalize app (save pictures, plans, checklists, etc.), if logged in, bypass this stage
 @app.route("/registration", methods=["GET", "POST"])

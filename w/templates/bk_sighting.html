@@ -1,16 +1,16 @@
 <html lang="en">
-    <head>
+    <header class="masthead">
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>Search</title>
+<title>Sighting</title
 
         <!-- CSS -->
         <!-- Bootstrap -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
         <!-- Capstone -->
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
         <!-- JavaScript -->
         <!-- jQuery -->
@@ -23,6 +23,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
         <!-- Capstone -->
+        <script src="stylesheet" href="{{ url_for('static', filename='js/main.js') }}"></script>
   <style>
   .navbar {
     margin-bottom: 0;
@@ -50,7 +51,7 @@
   }
 
   </style>
-    </head>
+    </header>
 
 <body class="masthead">
   <nav class="navbar navbar-inverse">
@@ -61,7 +62,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         </button>
-    <a class="navbar-brand" href="#"><img id="pagetop" src="{{ url_for('static', filename='imgs/logo.jpg') }}">
+    <a class="navbar-brand" href="#"><img src="img">
         </div>
     <div class="collapse navbar-collapse" id="myNavBar">
       <ul class="nav navbar-nav navbar-center">
@@ -78,9 +79,59 @@
     </div>
   </nav>
 
-{% import "macros.html" as macros %}
-{% block content %}
-{{ macros.render_fauna_unid(fauna_unid) }}
-{% endblock %}
+      
+        <br></br>
+
+
+  <form role="form" method="POST">
+    <div class="container">
+        <div class="col-sm-10" style="width: 600px; margin-left: 250px; margin-top: 50px">
+            <div class="jumbotron">
+                <div class="form-group" style="margin-top: -50px;">
+                    <h1 style="margin-left: 50px;">
+                        Add Sighting
+                    </h1>
+                </div>
+                
+                <hr>
+                
+                <form class="form-horizontal" style="margin-left: 50px;">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">
+                        </span>
+                        <input type="title" class="form-control" id="title" name="title" placeholder="Type of Sighting" required>
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">
+                        </span>
+                        <input type="content" class="form-control" id="content" name="content" placeholder="Enter Description" required>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Submit Sighting</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+  <div align="center">
+    <ul>
+      <dt><a href="/authorized/user/content/sighting" class="cd-top js-cd-top">Back to top</a></dt>
+    </ul>
+  </div>
 
 </body>
+
+  <div align="center">
+    <ul>
+      <dt><a href="/authorized/user/content/sighting" class="cd-top js-cd-top">Back to top</a></dt>
+    </ul>
+  </div>
+
+<footer class="pagefooter">
+</footer>
+
+</html>

@@ -36,7 +36,7 @@ class Location(Base):
     longitude = Column(Float)
     visitors = Column(Integer)
     overview = Column(String(1024))
-    
+
     def __init__(self, name, state, country, latitude, longitude, visitors, overview):
         self.name = name
         self.state = state
