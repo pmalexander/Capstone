@@ -118,25 +118,228 @@
 <div class="container">
     <h1>Locations</h1>
         <p>Select the location of the sighting:</p>
-    <table id="table"></table>
+    <table id="loctable"
+        data-toggle="loctable"
+        data-search="true"
+        data-filter-control="true"
+        data-show-export="true"
+        data-click-to-select="true"
+        data-toolbar="#toolbar">
+            <thead>
+                <tr>
+                    <th data-field="name"
+                    data-sortable="true">Name</th>
+                    <th data-field="state"
+                    data-sortable="true">State</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="bs-checkbox">
+                        <input data-index="0"
+                        name="btnSelectItem"
+                        type="checkbox"></td>
+                        <td>Blue Ridge Parkway</td>
+                        <td>North Carolina and Virginia</td>
+                </tr>
+                <tr>
+                    <td class="bs-checkbox">
+                        <input data-index="1"
+                        name="btnSelectItem"
+                        type="checkbox"></td>
+                        <td>Yellowstone National Park</td>
+                        <td>Wyoming</td>
+                </tr>
+                <tr>
+                    <td class="bs-checkbox">
+                        <input data-index="2"
+                        name="btnSelectItem"
+                        type="checkbox"></td>
+                        <td>Rothrock State Forest</td>
+                        <td>Pennsylvania</td>
+                </tr>
+                <tr>
+                    <td class="bs-checkbox">
+                        <input data-index="3"
+                        name="btnSelectItem"
+                        type="checkbox"></td>
+                        <td>Zion National Park</td>
+                        <td>Utah</td>
+                </tr>
+                <tr>
+                    <td class="bs-checkbox">
+                        <input data-index="4"
+                        name="btnSelectItem"
+                        type="checkbox"></td>
+                        <td>Yosemite National Park</td>
+                        <td>California</td>
+                </tr>
+                <tr>
+                    <td class="bs-checkbox">
+                        <input data-index="5"
+                        name="btnSelectItem"
+                        type="checkbox"></td>
+                        <td>Stanislaus National Forest</td>
+                        <td>California</td>
+                </tr>
+                <tr>
+                    <td class="bs-checkbox">
+                        <input data-index="6"
+                        name="btnSelectItem"
+                        type="checkbox"></td>
+                        <td>Haleakala National Park</td>
+                        <td>Hawaii</td>
+                </tr>
+                <tr>
+                    <td class="bs-checkbox">
+                    <input data-index="7"
+                        name="btnSelectItem"
+                        type="checkbox"></td>
+                        <td>Malibu Creek State Park</td>
+                        <td>California</td>
+                </tr>
+                <tr>
+                    <td class="bs-checkbox">
+                        <input data-index="8"
+                        name="btnSelectItem"
+                        type="checkbox"></td>
+                        <td>Manti-La Sal National Forest</td>
+                        <td>Utah</td>
+                </tr>
+                <tr>
+                    <td class="bs-checkbox">
+                        <input data-index="9"
+                        name="btnSelectItem"
+                        type="checkbox"></td>
+                        <td>Cherry Creek State Park</td>
+                        <td>Colorado</td>
+                </tr>
+                <tr>
+                    <td class="bs-checkbox">
+                        <input data-index="9"
+                        name="btnSelectItem"
+                        type="checkbox"></td>
+                        <td>Kissimmee Prairie Preserve State Park</td>
+                        <td>Florida</td>
+                </tr>
+                <tr>
+                    <td class="bs-checkbox">
+                        <input data-index="10"
+                        name="btnSelectItem"
+                        type="checkbox"></td>
+                        <td>Garden of Gods</td>
+                        <td>Colorado</td>
+                </tr>
+                <tr>
+                    <td class="bs-checkbox">
+                        <input data-index="11"
+                        name="btnSelectItem"
+                        type="checkbox"></td>
+                        <td>Petrified Forest National Park</td>
+                        <td>Arizona</td>
+                </tr>
+                <tr>
+                        <td class="bs-checkbox">
+                        <input data-index="12"
+                        name="btnSelectItem"
+                        type="checkbox"></td>
+                        <td>Chattahoochee National Forest</td>
+                        <td>Georgia</td>
+                </tr>
+                <tr>
+                    <td class="bs-checkbox">
+                        <input data-index="13"
+                        name="btnSelectItem"
+                        type="checkbox"></td>
+                        <td>Fort Berthold Indian Reservation</td>
+                        <td>North Dakota</td>
+                </tr>
+                <tr>
+                    <td class="bs-checkbox">
+                        <input data-index="14"
+                        name="btnSelectItem"
+                        type="checkbox"></td>
+                        <td>Sweetwater Creek State Park</td>
+                        <td>Georgia</td>
+                </tr>
+    </table>
 </div>
 
 <div class="container">
     <h1>Fauna</h1>
         <p>Select the sighted animal(s):</p>
-    <table id="table"></table>
+            <table id="fautable"
+            data-toggle="fautable"
+            data-search="true"
+            data-filter-control="true"
+            data-show-export="true"
+            data-click-to-select="true"
+            data-toolbar="#toolbar">
+                <thead>
+                    <tr>
+                        <th data-field="name"
+                        data-sortable="true">Name</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="bs-checkbox">
+                            <input data-index="2"
+                            name="btnSelectItem"
+                            type="checkbox"></td>
+                            <td>Alligator</td>
+                    </tr>
+                    <tr>
+                        <td class="bs-checkbox">
+                            <input data-index="3"
+                            name="btnSelectItem"
+                            type="checkbox"></td>
+                            <td>American Badger</td>
+                    </tr>   
+                </tbody>
+            </table>
 </div>
 
 <div class="container">    
     <h1>Flora</h1>
         <p>Select the identified plant(s):</p>
-    <table id="table"></table>
+            <table id="flotable" 
+            data-toggle="flotable"
+            data-search="true"
+            data-filter-control="true"
+            data-show-export="true"
+            data-click-to-select="true"
+            data-toolbar="#toolbar">
+                <thead>
+                    <tr>
+                        <th data-field="name"
+                        data-sortable="true">Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="bs-checkbox">
+                            <input data-index="3"
+                            name="btnSelectItem"
+                            type="checkbox"></td>
+                            <td>American Elderberry</td>
+                    </tr>
+                        <td class="bs-checkbox">
+                            <input data-index="4"
+                            name="btnSelectItem"
+                            type="checkbox"></td>
+                            <td>American Grape</td>
+                    </tr>
+                </tbody>
+            </table>
 </div>
 
 <div class="container">
     <h1>Feature</h1>
         <p>Add a notable land feature you find interesting:</p>
-    <table id="table"></table>
+            <div class="form-group input-group">
+                <span class="input-group-addon"></span>
+                    <input type="content" class="form-control" id="content" name="content" placeholder="Enter Description" required>
+            </div>
 </div>
 
 <footer class="pagefooter">
