@@ -79,3 +79,10 @@ function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 } 
+
+// Items checked under Flora and Fauna will populate the information page for Location 
+var myCheck = document.getElementbyId("myCheck");
+// searches for elements for my myCheck as tds 
+var myCheckList = myCheck.getElementsByTagName('td')
+console
+
