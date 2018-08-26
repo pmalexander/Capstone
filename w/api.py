@@ -16,6 +16,7 @@ from flask import request, redirect, url_for, render_template, jsonify, request
 from w.database import User, Sighting #added w to .database o 3/21/2018, might reconsider changing back to .
 
 from werkzeug.security import check_password_hash
+from werkzeug.security import generate_password_hash
 
 from flask_login import login_user
 from flask_login import logout_user
@@ -39,7 +40,22 @@ def registration():
     if request.method == "GET":
         return render_template("registration.html")
     elif request.method == "POST":
-        return redirect(url_for('search_all'))
+        name = request.form['name']
+        email = request.form['email']
+        password = request.form['password']
+        # is it already registered
+        user = session.query(User).filter_by(email=email).first()
+        if user != None:
+            flash("Error, there is already an account under that name or email")
+            return redirect(url_for('registration'))
+        nuser = User()
+        nuser.name = name
+        nuser.email = email
+        nuser.password = generate_password_hash(password)
+        session.add(nuser)
+        session.commit()
+        return redirect(url_for('login_g'))
+        
      
 #login page for users, bypass if user is previously logged in
 @app.route("/login", methods=["GET", "POST"])
@@ -54,7 +70,7 @@ def login_g():
         flash("Sorry, incorrect login information")
         return redirect(url_for("login_g"))  
     login_user(user)
-    return redirect(url_for('search')) 
+    return redirect(url_for('search_null'))
 
 #NEED TO USE SESSION QUERY FOR THE SEARCH FUNCTION 12/19/2017, IF THERE IS A CHANGE HERE, I'D HAVE TO HEAD STRAIGHT TO THE REFERENCED ITEM
 #can be used as a template for the search process, remember to use the percentage sign to get portions of the text of locations, make sure to make it to the name of the location in the database    
@@ -256,7 +272,7 @@ def sightings_p():
     sighting = Sighting(
         title=request.form["title"],
         content=request.form["content"],
-        author=current_user["author"]
+        author_id=current_user.id
     )
     session.add(sighting)
     session.commit()

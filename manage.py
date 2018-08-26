@@ -8,6 +8,10 @@ from w.database import Location, Fauna, Feature, Flora
 
 from w.dataseed import read_rawdata
 
+from w.database import User
+import getpass
+
+
 manager = Manager(app)
 #look over this, this will be written by the Session() on line 21 below, or rather whatever gps app works nowadays
 #session = gps.gps()
@@ -18,6 +22,33 @@ class DB(object):
 
 migrate = Migrate(app, DB(Base.metadata))
 manager.add_command('db', MigrateCommand)
+
+from werkzeug.security import check_password_hash
+from werkzeug.security import generate_password_hash
+
+@manager.command
+def adduser():
+    name = input("User's name: ")
+
+    while True:
+        email = input("Email: ")
+        user = session.query(User).filter_by(email=email).first()
+        if user:
+            print("this email is already in use, choose another")
+        else:
+            break
+
+    password = getpass.getpass(prompt="password: ")
+
+    new_user = User()
+    new_user.name = name
+    new_user.email = email
+    new_user.password = generate_password_hash(password)
+
+    session.add(new_user)
+    session.commit()
+    print("user added successfully")
+    
 
 @manager.command
 def test():
