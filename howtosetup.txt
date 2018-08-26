@@ -1,0 +1,29 @@
+# how to handle database in new install
+
+#debian
+sudo su postgres
+postgres$ createdb wild2.0
+
+#ubuntu
+createdb wild2.0
+
+# setup the virtual environment for our flask app
+
+virtualenv -p python3 e3
+source e3/bin/activate
+pip install -r requirements.txt
+
+
+# running our app
+
+# create a user
+python3 manage.py adduser
+
+# seed database
+
+python3 manage.py seed
+
+# running
+
+python3 manage.py run
+
