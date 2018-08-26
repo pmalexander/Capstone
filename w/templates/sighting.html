@@ -118,23 +118,26 @@
 <div class=container>
     <div class="col-sm-10" style="width: 600px; margin-left: 250px; margin-top: 50px">
         <h1 style="margin-left: 50px;">Select Location</h1>
-        <select name="select-location">
-            <option value="blueridge">Blue Ridge Parkway</option>
-            <option value="yellowstone">Yellowstone National Park</option>
-            <option value="rothrock">Rothrock State Forest</option>
-            <option value="zionnational">Zion National Park</option>
-            <option value="yosemite">Yosemite National Park</option>
-            <option value="stanislaus">Stanislaus National Forest</option>
-            <option value="haleakala">Haleakala National Park</option>
-            <option value="malibu">Malibu State Park</option>
-            <option value="mantila">Manti-La Sal National Forest</option>
-            <option value="cherrycreek">Cherry Creek State Park</option>
-            <option value="kissimmee">Kissimmee Prairie Preserve State Park</option>
-            <option value="garden">Garden of Gods</option>
-            <option value="petrified">Petrified Forest National Park</option>
-            <option value="chatahoochee">Chatahoochee National Forest</option>
-            <option value="fortberthold">Fort Berthold Indian Reservation</option>
-            <option value="sweetwater">Sweetwater Creek State Park</option>
+        <select id="location-select" name="location">
+                <option value="none">--Select the location--</option>
+                <optgroup label="Location">
+                    <option value="blueridge">Blue Ridge Parkway</option>
+                    <option value="yellowstone">Yellowstone National Park</option>
+                    <option value="rothrock">Rothrock State Forest</option>
+                    <option value="zionnational">Zion National Park</option>
+                    <option value="yosemite">Yosemite National Park</option>
+                    <option value="stanislaus">Stanislaus National Forest</option>
+                    <option value="haleakala">Haleakala National Park</option>
+                    <option value="malibu">Malibu State Park</option>
+                    <option value="mantila">Manti-La Sal National Forest</option>
+                    <option value="cherrycreek">Cherry Creek State Park</option>
+                    <option value="kissimmee">Kissimmee Prairie Preserve State Park</option>
+                    <option value="garden">Garden of Gods</option>
+                    <option value="petrified">Petrified Forest National Park</option>
+                    <option value="chatahoochee">Chatahoochee National Forest</option>
+                    <option value="fortberthold">Fort Berthold Indian Reservation</option>
+                    <option value="sweetwater">Sweetwater Creek State Park</option>
+                </optgroup>
         </select>
     </div>
 </div>
@@ -146,7 +149,7 @@
             <option value="none">--Select the sighted animal--</option>
             <optgroup label="Animal">
                 <option value="alligator">Alligator</option>
-                <option value="americanbadger">American Badge</option>
+                <option value="americanbadger">American Badger</option>
                 <option value="blackbear">Black Bear</option>
                 <option value="brownbear">Brown Bear</option>
                 <option value="polarbear">Polar Bear</option>
@@ -175,7 +178,7 @@
         <h1 style="margin-left: 50px;">Select Plant</h1>
         <select id="flora-select" name="flora">
             <option value="none">--Select the sighted plant life--</option>
-            <optgroup label="">
+            <optgroup label="Flora">
                 <option value="americanelderberry">American Elderberry</option>
                 <option value="americangrape">American Grape</option>
                 <option value="americanmayapple">American Mayapple</option>
@@ -184,7 +187,7 @@
                 <option value="beachplum">Beach Plum</option>
                 <option value="blackcherry">Black Cherry</option>
                 <option value="blackraspberry">Black Raspberry</option>
-                <option value="blueberry"></option>
+                <option value="blueberry">Blueberry</option>
                 <option value="buffaloberry">Buffalo Berry</option>
                 <option value="canadaplum">Canada Plum</option>
                 <option value="canadianserviceberry">Canadian Serviceberry</option>
