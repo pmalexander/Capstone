@@ -36,8 +36,11 @@ class Location(Base):
     longitude = Column(Float)
     visitors = Column(Integer)
     overview = Column(String(1024))
+    animals = Column(String(1024))
+    plants = Column(String(1024))
+    features = Column(String(1024))
 
-    def __init__(self, name, state, country, latitude, longitude, visitors, overview):
+    def __init__(self, name, state, country, latitude, longitude, visitors, overview, animals, plants, features):
         self.name = name
         self.state = state
         self.country = country
@@ -45,6 +48,9 @@ class Location(Base):
         self.longitude = longitude
         self.visitors = visitors
         self.overview = overview
+        self.animals = animals
+        self.plants = plants
+        self.features = features
     
     # one fauna to many locations, since fauna can be found in many locations
     fauna_id = Column(Integer, ForeignKey("fauna.id"))
