@@ -1,17 +1,17 @@
-name,state,country,latitude,longitude,visitors,overview,animals,plants,features
-Blue Ridge Parkway,North Carolina and Virginia,United States,36.659089,-81.077139,15000,A park.,Brown Bear / Mountain Lion
-Yellowstone National Park,Wyoming,United States,44.427895,-110.588379,15000,A park.,Brown Bear,Blueberry,Grand Prismatic Spring
-Rothrock State Forest,Pennsylvania,United States,40.720585,-77.826965,15000,A park,.Brown Bear,Strawberry
-Zion National Park,Utah,United States,37.317207,-113.022537,15000,A park.,Chuckwalla / Osprey,Raspberry
-Yosemite National Park,California,United States,37.865101,-119.538330,15000,A park.,Brown Bear / Mountain Lion,Blueberry 
-Stanislaus National Forest,California,United States,38.235195,-120.066483,15000,A park.,Bark Scorpion / Brown Bear,Raspberry
-Haleakala National Park,Hawaii,United States,20.701283,-156.173325,15000,A park.,Bark Scorpion,Strawberry
-Malibu Creek State Park,California,United States,34.105156,-118.731316,15000,A park.,Brown Bear,Strawberry
-Manti-La Sal National Forest,Utah,United States,39.187050,-111.379890,15000,A park.,Bark Scorpion,Blueberry
-Cherry Creek State Park,Colorado,United States,39.639973,-104.831863,15000,A park.,Bark Scorpion,Raspberry
-Kissimmee Prairie Preserve State Park,Florida,United States,27.612417,-81.053383,15000,A park.,
-Garden of Gods,Colorado,United States,38.873840,-104.886665,15000,A park.,Bark Scorpion,Blueberry
-Petrified Forest National Park,Arizona,United States,34.909988,-109.806793,15000,A park.,Chuckwalla,Raspberry,Petrified Wood
-Chattahoochee National Forest,Georgia,United States,34.765972,-84.143517,15000,A park.,Bark Scorpion / Chuckwalla
-Fort Berthold Indian Reservation,North Dakota,United States,47.683880,-102.354126,15000,A park.,Bark Scorpion,Strawberry
-Sweetwater Creek State Park,Georgia,United States,33.7525,84.6287,15000,A park.,Raccoon,Strawberry
+name,state,country,latitude,longitude,visitors,overview
+Blue Ridge Parkway,North Carolina and Virginia,United States,36.659089,-81.077139,15000,A park.
+Yellowstone National Park,Wyoming,United States,44.427895,-110.588379,15000,A park.
+Rothrock State Forest,Pennsylvania,United States,40.720585,-77.826965,15000,A park.
+Zion National Park,Utah,United States,37.317207,-113.022537,15000,A park.
+Yosemite National Park,California,United States,37.865101,-119.538330,15000,A park.
+Stanislaus National Forest,California,United States,38.235195,-120.066483,15000,A park.
+Haleakala National Park,Hawaii,United States,20.701283,-156.173325,15000,A park.,
+Malibu Creek State Park,California,United States,34.105156,-118.731316,15000,A park.
+Manti-La Sal National Forest,Utah,United States,39.187050,-111.379890,15000,A park.
+Cherry Creek State Park,Colorado,United States,39.639973,-104.831863,15000,A park.
+Kissimmee Prairie Preserve State Park,Florida,United States,27.612417,-81.053383,15000,A park.
+Garden of Gods,Colorado,United States,38.873840,-104.886665,15000,A park.
+Petrified Forest National Park,Arizona,United States,34.909988,-109.806793,15000,A park.
+Chattahoochee National Forest,Georgia,United States,34.765972,-84.143517,15000,A park.
+Fort Berthold Indian Reservation,North Dakota,United States,47.683880,-102.354126,15000,A park.
+Sweetwater Creek State Park,Georgia,United States,33.7525,84.6287,15000,A park.
