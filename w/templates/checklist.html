@@ -1,5 +1,5 @@
 <html lang="en">
-    <head>
+    <header>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,11 +27,12 @@
   .navbar {
     margin-bottom: 0;
     border-radius: 0;
-    background-color: #5E4485;
+    background-color: #228B22;
     color: #FFF;
     padding: 1% 0;
-    font-size: 1.2em;
+    font-size: 2.2em;
     border: 0;
+    border-bottom: solid 1em #556B2F;
   
   }
   .navbar-brand {
@@ -42,15 +43,14 @@
   .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .acgtive a:focus, .navbar-inverse .navbar-nav .active:hover
   {
     color: #FFF;
-    background-color: #5E4485;
+    background-color: #228B22;
   }
     .navbar-inverse .navbar-nav li a
   {
     color: #d5d5d5
   }
-
   </style>
-    </head>
+    </header>
 
 <body class="masthead">
   <nav class="navbar navbar-inverse">
@@ -65,8 +65,8 @@
         </div>
     <div class="collapse navbar-collapse" id="myNavBar">
       <ul class="nav navbar-nav navbar-center">
-        <li id="nSearch" class=active><a href="/authorized/user/content/search">Search</a></li>
-        <li id="nChecklist"><a href="/authorized/user/content/checklist">Checklist</a></li>
+        <li id="nSearch"><a href="/authorized/user/content/search">Search</a></li>
+        <li id="nChecklist" class=active><a href="/authorized/user/content/checklist">Checklist</a></li>
         <li id="nGuide"><a href="/authorized/user/content/guide">Guide</a></li>
         <li id="nSighting"><a href="/authorized/user/content/sighting">Sighting</a></li>
         <li id="nLogin"><a href="/login">Log In</a></li>
@@ -97,14 +97,18 @@
 <button class="btn btn-primary col-xs-12" id="get-checked-data">Save List and Notes</button><section class=equipment-section>
 <div id="myDIV" class="header">
   <div align="center">
-    <ul>
-      <dt><a href="/authorized/user/content/checklist" class="cd-top js-cd-top">Back to top</a></dt>
-    </ul>
+    <ul></ul>
   </div>
 
 </body>
 
 <footer class="pagefooter">
+  <div align="center">
+    <ul>
+      <dt><a href="#pagetop" class="cd-top js-cd-top">Back to top</a></dt>
+    </ul>
+  </div>
 </footer>
+
 <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </html>

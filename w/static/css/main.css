@@ -179,7 +179,7 @@ input[type=text]:focus {
 #nSearch {
     margin-bottom: 0;
     border-radius: 0;
-    background-color: #5E4485;
+    background-color: #228B22;
     color: #FFF;
     padding: 1% 0;
     font-size: 1em;
@@ -189,7 +189,7 @@ input[type=text]:focus {
 #nChecklist {
     margin-bottom: 0;
     border-radius: 0;
-    background-color: #5E4485;
+    background-color: #228B22;
     color: #FFF;
     padding: 1% 0;
     font-size: 1em;
@@ -200,7 +200,7 @@ input[type=text]:focus {
 #nGuide {
     margin-bottom: 0;
     border-radius: 0;
-    background-color: #5E4485;
+    background-color: #228B22;
     color: #FFF;
     padding: 1% 0;
     font-size: 1em;
@@ -210,7 +210,7 @@ input[type=text]:focus {
 #nSighting {
     margin-bottom: 0;
     border-radius: 0;
-    background-color: #5E4485;
+    background-color: #228B22;
     color: #FFF;
     padding: 1% 0;
     font-size: 1em;
@@ -220,7 +220,7 @@ input[type=text]:focus {
 #nRegistration {
     margin-bottom: 0;
     border-radius: 0;
-    background-color: #5E4485;
+    background-color: #228B22;
     color: #FFF;
     padding: 1% 0;
     font-size: 1em;
@@ -230,7 +230,7 @@ input[type=text]:focus {
 #nLogin {
     margin-bottom: 0;
     border-radius: 0;
-    background-color: #5E4485;
+    background-color: #228B22;
     color: #FFF;
     padding: 1% 0;
     font-size: 1em;
@@ -240,7 +240,7 @@ input[type=text]:focus {
 #nLogout {
     margin-bottom: 0;
     border-radius: 0;
-    background-color: #5E4485;
+    background-color: #228B22;
     color: #FFF;
     padding: 1% 0;
     font-size: 1em;
@@ -251,7 +251,7 @@ input[type=text]:focus {
 #nSignup {
     margin-bottom: 0;
     border-radius: 0;
-    background-color: #5E4485;
+    background-color: #228B22;
     color: #FFF;
     padding: 1% 0;
     font-size: 1em;
@@ -263,7 +263,7 @@ input[type=text]:focus {
 }
 
 .masthead {
-  background-image:url("");
+  background-color: #DEB887;
   background-repeat:no-repeat;
   background-size:cover;
 }
@@ -271,6 +271,8 @@ input[type=text]:focus {
 header {
   color: black;
   text-align: center;
+  font-family: "Open Sans", "Helvetica Neue", sans serif;
+  font-size: 2.2em;
 }
 
 body {
@@ -295,7 +297,11 @@ body {
 
 .pagefooter {
   /* Red, Green, Blue: #RRGGBB */
-  background-color: #FFF;
+  background-color: #A0522D;
+  color: black;
+  text-align: center;
+  font-family: "Open Sans", "Helvetica Neue", sans serif;
+  font-size: 2.2em;
 }
 
 /* Sets positional parameters for section layout */
@@ -312,6 +318,43 @@ body {
   text-align: center; 
 }
 
+.headercust-section{
+ /* Typography Declarations */
+  font-family: "Gentium Book Basic", Georgia, serif;
+  font-size: 2.2em;
+  max-width: 80em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.tips-section{
+ /* Typography Declarations */
+  font-family: "Gentium Book Basic", Georgia, serif;
+  font-size: 1.2em;
+  max-width: 80em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.tools-section{
+ /* Typography Declarations */
+  font-family: "Gentium Book Basic", Georgia, serif;
+  font-size: 1.2em;
+  max-width: 80em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.headercust-section > p,
 .tips-section > p,
 .tools-section > p,
 .search-section > p,
@@ -323,7 +366,6 @@ body {
 .pagefooter > p, 
 .type-section > p,
 .description-section > p,
-.pagefooter > p, 
 .equipment-section > p{
     /* Typography Declarations */
     font-weight: 300;
@@ -346,7 +388,7 @@ ul li {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
-    background: #FFF;
+    background: #;
     font-size: 18px;
     transition: 0.2s;
 
@@ -398,7 +440,7 @@ ul li.checked::before {
 
 /* Style the header */
 .header {
-    background-color: #FFF;
+    background-color: #DEB887;
     padding: 30px 40px;
     color: black;
     text-align: center;

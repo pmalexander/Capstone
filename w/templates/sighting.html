@@ -1,5 +1,5 @@
 <html lang="en">
-    <header class="masthead">
+    <header>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,11 +28,12 @@
   .navbar {
     margin-bottom: 0;
     border-radius: 0;
-    background-color: #5E4485;
+    background-color: #228B22;
     color: #FFF;
     padding: 1% 0;
-    font-size: 1.2em;
+    font-size: 2.2em;
     border: 0;
+    border-bottom: solid 1em #556B2F;
   
   }
   .navbar-brand {
@@ -43,13 +44,12 @@
   .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .acgtive a:focus, .navbar-inverse .navbar-nav .active:hover
   {
     color: #FFF;
-    background-color: #5E4485;
+    background-color: #228B22;
   }
     .navbar-inverse .navbar-nav li a
   {
     color: #d5d5d5
   }
-
   </style>
     </header>
 
@@ -66,10 +66,10 @@
         </div>
     <div class="collapse navbar-collapse" id="myNavBar">
       <ul class="nav navbar-nav navbar-center">
-        <li id="nSearch" class=active><a href="/authorized/user/content/search">Search</a></li>
+        <li id="nSearch"><a href="/authorized/user/content/search">Search</a></li>
         <li id="nChecklist"><a href="/authorized/user/content/checklist">Checklist</a></li>
         <li id="nGuide"><a href="/authorized/user/content/guide">Guide</a></li>
-        <li id="nSighting"><a href="/authorized/user/content/sighting">Sighting</a></li>
+        <li id="nSighting" class=active><a href="/authorized/user/content/sighting">Sighting</a></li>
         <li id="nLogin"><a href="/login">Log In</a></li>
         <li id="nSignup"><a href="/registration">Sign Up</a></li>
         {% if current_user.is_authenticated %}
@@ -79,41 +79,7 @@
     </div>
   </nav>
 
-      
         <br></br>
-
-
-  <form role="form" method="POST">
-    <div class="container">
-        <div class="col-sm-10" style="width: 600px; margin-left: 250px; margin-top: 50px">
-            <div class="jumbotron">
-                <div class="form-group" style="margin-top: -50px;">
-                    <h1 style="margin-left: 50px;">
-                        Add Sighting
-                    </h1>
-                </div>
-                
-                <hr>
-                
-                <form class="form-horizontal" style="margin-left: 50px;">
-                    <div class="form-group input-group">
-                        <span class="input-group-addon">
-                        </span>
-                        <input type="title" class="form-control" id="title" name="title" placeholder="Type of Sighting" required>
-                    </div>
-                    <div class="form-group input-group">
-                        <span class="input-group-addon">
-                        </span>
-                        <input type="content" class="form-control" id="content" name="content" placeholder="Enter Description" required>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary">Submit Sighting</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
 
 <div class=container>
     <div class="col-sm-10" style="width: 600px; margin-left: 250px; margin-top: 50px">
@@ -207,15 +173,14 @@
 </div>
 
 <div class="container">
-    <h1>Feature</h1>
-        <p>Add a notable land feature you find interesting:</p>
-            <div class="form-group input-group">
-                <span class="input-group-addon"></span>
-                    <input type="content" class="form-control" id="content" name="content" placeholder="Enter Description" required>
-                        <div class="form-group">
-                            <button class="btn btn-primary">Submit Feature</button>
-                        </div>        
-            </div>
+    <div class="col-sm-10" style="width: 600px; margin-left: 250px; margin-top: 50px">
+        <h1>Feature</h1>
+            <p>Add a notable feature you find interesting:</p>
+                <input type="content" class="form-control" id="content" name="content" placeholder="Enter Description" required>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Submit Feature</button>
+                    </div>        
+    </div>            
 </div>
 
 <footer class="pagefooter">

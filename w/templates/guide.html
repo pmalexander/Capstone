@@ -1,5 +1,5 @@
 <html lang="en">
-    <header class="masthead">
+    <header>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,11 +28,12 @@
   .navbar {
     margin-bottom: 0;
     border-radius: 0;
-    background-color: #5E4485;
+    background-color: #228B22;
     color: #FFF;
     padding: 1% 0;
-    font-size: 1.2em;
+    font-size: 2.2em;
     border: 0;
+    border-bottom: solid 1em #556B2F;
   
   }
   .navbar-brand {
@@ -43,13 +44,12 @@
   .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .acgtive a:focus, .navbar-inverse .navbar-nav .active:hover
   {
     color: #FFF;
-    background-color: #5E4485;
+    background-color: #228B22;
   }
     .navbar-inverse .navbar-nav li a
   {
     color: #d5d5d5
   }
-
   </style>
     </header>
 
@@ -66,9 +66,9 @@
         </div>
     <div class="collapse navbar-collapse" id="myNavBar">
       <ul class="nav navbar-nav navbar-center">
-        <li id="nSearch" class=active><a href="/authorized/user/content/search">Search</a></li>
+        <li id="nSearch"><a href="/authorized/user/content/search">Search</a></li>
         <li id="nChecklist"><a href="/authorized/user/content/checklist">Checklist</a></li>
-        <li id="nGuide"><a href="/authorized/user/content/guide">Guide</a></li>
+        <li id="nGuide" class=active><a href="/authorized/user/content/guide">Guide</a></li>
         <li id="nSighting"><a href="/authorized/user/content/sighting">Sighting</a></li>
         <li id="nLogin"><a href="/login">Log In</a></li>
         <li id="nSignup"><a href="/registration">Sign Up</a></li>
@@ -82,15 +82,15 @@
         <br></br>
 
 <div class="header">
-  <h1>Guide</h1>
+  <h1>Outdoors Guide</h1>
 </div>
 
 <section class=tips-section>
   <h1>Helpful Tips</h1>
-  <h2>Things to keep in mind while in the outdoors!</h2>
+  <h2>Things to keep in mind while in the outdoors, a careful review of these tips can provide a safer and more enjoyable experience.</h2>
     <ul>
-      <li>If caught without potable drinking water, a water trap can be used in a pinch if you are unable to find an appropriate water source for hydration, a step-by-step diagram can be found here ((placeholder, link goes here))</li>
-      <li>A bear bag is any container used for the purpose of keeping essentials, primarily food, out of the reach of bears and other wild animals. It requires the use of a line, harness, and tree, a ste-by-step diagram can be found here ((placeholder, link goes here))</li>
+      <li>If caught without potable drinking water, a water trap can be used in a pinch if you are unable to find an appropriate water source for hydration, see <a href="">here</a> on how to use it.</li>
+      <li>A bear bag is any container used for the purpose of keeping essentials, primarily food, out of the reach of bears and other wild animals. It requires the use of a line, harness, and tree, look <a href="">here</a> for a step-by-step diagram.</li>
       <li>Moss always faces north, use this as a reference point when making landmarks to find your way.</li>
       <li>It is always better to have more than enough than not enough. If planning for an extending outing, prepare your inventory for a time period at least twice as long as your expected stay.</li>
       <li>Rule of thumb when encountering potentially dangerous wild animals is to give them wide berth and not make eye contact, animal behavior can change depending on their condition, whether they are wounded, defending their young, or are in their mating cycle. It is important to understand what wildlife you may encounter in the area before venturing forth.</li>
@@ -100,8 +100,8 @@
       <br></br>
 
 <section class=tools-section>
-  <h1>Useful Tools/Equipment</h1>
-    <h2>Keep yourself safe and well-supplied on your outing!</h2>     
+  <h1>Tools/Equipment</h1>
+    <h2>These tools can be very helpful in the outdoors. Check out the available links for steps on how to utilize these tools effectively.</h2>     
       <h3>Hatchet</h3>
         <ul>
           <li>Used to split firewood as well as strip and clear light brush and branches for kindling.</li>
@@ -112,7 +112,7 @@
         </ul>
       <h3>Knife</h3>
         <ul>
-          <li>An important implement in the outdoors used for the preparation of kindling, cutting lines, self-defense weapon, preparing food, and first aid. Can be fashioned into an impromptu spear with the help of an appropriately prepared piece of wood and paracord.</li>
+          <li>An important implement in the outdoors used for the preparation of kindling, cutting lines, self-defense weapon, preparing food, and first aid. Can be fashioned into an impromptu spear with the help of an appropriately prepared piece of wood and paracord. <a href="">Click here for a brief lesson.</a></li>
         </ul>
       <h3>Matches</h3>
         <ul>
@@ -120,23 +120,15 @@
         </ul>
       <h3>Paracord</h3>
         <ul>
-          <li>A useful item known for its versatility, it can be utilized as a securing line for tents and tarps, used to replace pack straps, replace bootlaces, applied as emergency tourniquet, used as an improvised grip for many tools, and much more. 50 feet of paracord should be sufficient to carry for most applications in the outdoors.</li>
+          <li>A useful item known for its versatility, it can be utilized as a securing line for tents and tarps, used to replace pack straps, replace bootlaces, applied as emergency tourniquet, used as an improvised grip for many tools, and much more. 50 feet of paracord should be sufficient to carry for most applications in the outdoors. <a href="">Click here to review on how to properly utilize this tool</a></li>
         </ul>
       <h3>Canteen/Flask</h3>
         <ul>
           <li>Always have a means of carrying water on you in the event stored water is unavailable or goes bad, as well as staying hydrated in transit.</li>
         </ul>
 </section>
-</body>
 
   <br></br>
-
-<nav aria-label="...">
-  <ul class="pager">
-    <li><a href="#">Previous</a></li>
-    <li><a href="#">Next</a></li>
-  </ul>
-</nav>
 
   <div align="center">
     <ul>
@@ -147,6 +139,11 @@
 </body>
 
 <footer class="pagefooter">
+  <div align="center">
+    <ul>
+      <dt><a href="#pagetop" class="cd-top js-cd-top">Back to top</a></dt>
+    </ul>
+  </div>
 </footer>
 
 </html>

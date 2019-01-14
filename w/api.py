@@ -242,6 +242,26 @@ def view_flora(id):
 def view_feature(id):
     feature_unid=session.query(Feature).get(id) 
     return render_template("info_feature.html", feature_unid=feature_unid)
+    
+@app.route("/authorized/user/content/watertrap", methods=["GET"])
+#@login_required
+def trap_get():
+    return render_template("watertrap.html")
+
+@app.route("/authorized/user/content/bearbag", methods=["GET"])
+#@login_required
+def bear_get():
+    return render_template("bearbag.html")
+
+@app.route("/authorized/user/content/spear", methods=["GET"])
+#@login_required
+def spear_get():
+    return render_template("spear.html")
+
+@app.route("/authorized/user/content/paralesson", methods=["GET"])
+#@login_required
+def paralesson_get():
+    return render_template("paralesson.html")
 
 #directs users to checklist page to check off on items
 @app.route("/authorized/user/content/checklist", methods=["GET"])

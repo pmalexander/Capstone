@@ -28,11 +28,12 @@
   .navbar {
     margin-bottom: 0;
     border-radius: 0;
-    background-color: #5E4485;
+    background-color: #228B22;
     color: #FFF;
     padding: 1% 0;
-    font-size: 1.2em;
+    font-size: 2em;
     border: 0;
+    border-bottom: solid 1em #556B2F;
   
   }
   .navbar-brand {
@@ -43,13 +44,12 @@
   .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .acgtive a:focus, .navbar-inverse .navbar-nav .active:hover
   {
     color: #FFF;
-    background-color: #5E4485;
+    background-color: #228B22;
   }
     .navbar-inverse .navbar-nav li a
   {
     color: #d5d5d5
   }
-
   </style>
     </header>
 
@@ -62,16 +62,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         </button>
-	<a class="navbar-brand" href="#"><img id="pagetop" src="{{ url_for('static', filename='imgs/logo.jpg') }}">
+	  <a class="navbar-brand" href="#"><img id="pagetop" src="{{ url_for('static', filename='imgs/logo.jpg') }}">
         </div>
     <div class="collapse navbar-collapse" id="myNavBar">
       <ul class="nav navbar-nav navbar-center">
-        <li id="nSearch" class=active><a href="/authorized/user/content/search">Search</a></li>
+        <li id="nSearch"><a href="/authorized/user/content/search">Search</a></li>
         <li id="nChecklist"><a href="/authorized/user/content/checklist">Checklist</a></li>
         <li id="nGuide"><a href="/authorized/user/content/guide">Guide</a></li>
         <li id="nSighting"><a href="/authorized/user/content/sighting">Sighting</a></li>
         <li id="nLogin"><a href="/login">Log In</a></li>
-        <li id="nSignup"><a href="/registration">Sign Up</a></li>
+        <li id="nSignup" class=active><a href="/registration">Sign Up</a></li>
         {% if current_user.is_authenticated %}
           <li id="nLogout"><a href="/logout">Logout</a></li>
         {% endif %}
@@ -79,7 +79,7 @@
     </div>
   </nav>
 
-<br></br>
+  <br></br>
 
   <form role="form" method="POST">
     <div class="container">
@@ -117,17 +117,6 @@
         </div>
     </div>
 </form>
-<!-->
-
-  <div align="center">
-    <ul>
-      <dt><a href="/registration" class="cd-top js-cd-top">Back to top</a></dt>
-    </ul>
-  </div>
-
-</body>
-
-<footer class="pagefooter">
-</footer>
 
 </html>
+
