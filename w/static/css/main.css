@@ -354,6 +354,18 @@ body {
   text-align: center;
 }
 
+.search-section{
+ /* Typography Declarations */
+  font-family: "Gentium Book Basic", Georgia, serif;
+  font-size: 1.2em;
+  max-width: 80em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+
 .headercust-section > p,
 .tips-section > p,
 .tools-section > p,

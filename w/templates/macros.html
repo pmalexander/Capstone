@@ -6,6 +6,7 @@
             <li>
                 <a href = "{{ url_for ('view_location', id=entry.id)}}"> {{ entry.name }}
             </li>
+        </ul>
         </div>
     </div>
 </div>
@@ -16,6 +17,7 @@
     <div class="col-md-6 text-right metadata">
         <div>
         <ul class="list-unstyled">
+            <li>
                 <a href = "{{ url_for ('view_fauna', id=entry.id)}}"> {{ entry.name }}
             </li>
         </ul>
@@ -29,6 +31,7 @@
     <div class="col-md-6 text-right metadata">
         <div>
         <ul class="list-unstyled">
+            <li>
                 <a href = "{{ url_for ('view_flora', id=entry.id)}}"> {{ entry.name }}
             </li>
         </ul>

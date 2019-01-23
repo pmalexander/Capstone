@@ -34,7 +34,7 @@ categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Featu
 def start_page(page=1):
     return redirect(url_for('search_by_all'))
 
-#registration page for new users, user must register username using e-mail, registration allows ability to personalize app (save pictures, plans, checklists, etc.), if logged in, bypass this stage
+#registration page for new users, user must register username using e-mail, registration allows ability to personalize app (save pictures, plans, checklists, etc. can be enabled in this state), if logged in, bypass this stage
 @app.route("/registration", methods=["GET", "POST"])
 def registration():
     if request.method == "GET":
@@ -84,7 +84,7 @@ def search_null():
     entries = session.query(Location).all()
     return render_template("search.html")
 
-#need to implement pagination at one point
+#need to implement pagination at some point
 @app.route("/authorized/user/content/search/all/", methods=["GET"])
 @app.route("/authorized/user/content/search/all/?searchq=none", methods=["GET"])
 #@login_required
@@ -118,9 +118,11 @@ def search_by_location():
 
     categories = {'Location':Location, 'Fauna':Fauna, 'Flora':Flora, 'Feature':Feature}
 
+    #cat is defined as any of the classes in database.py, can be used as a substitute for any single class when making an argument
     cat = 'Location'
     query = request.args.get('searchq', 'None')
 
+    #if nothing is provided in the search form, message below is provided and search form is reset
     if cat == 'None' or query == 'None':
         print("Please provide a name to query")
         return render_template('search.html', entries=[])
@@ -263,7 +265,7 @@ def spear_get():
 def paralesson_get():
     return render_template("paralesson.html")
 
-#directs users to checklist page to check off on items
+#directs users to checklist page to add items as a reminder to what they've brought for an outing
 @app.route("/authorized/user/content/checklist", methods=["GET"])
 #@login_required
 def checklist_get():
